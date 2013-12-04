@@ -1,0 +1,69 @@
+body{
+	overflow: scroll; 
+	background-color: #e2e2e2;
+	height: 100%; 
+	width: 100%;
+	left: 0px;
+	top: 0px;
+}
+.container{
+	/*background-image: url(http://image.xinli001.com/20121106/09155481d07eddc284ae7e.jpg); */
+	/*background-color: blue;*/
+}
+.layer1{
+	height: 50px;
+}
+#up_part{
+	background-image: url(../img/destination_search_bg.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+#search_layer{
+	background-image: url(../img/layer_bg.png);
+	border-radius: 5px;
+	height: 150px;
+}
+#search_bar{
+	position: relative;
+	left: 5px;
+}
+.recommend_ul{
+	float: left;
+}
+.recommend_ul>li{
+	float: left;
+}
+#recommend_title{
+	font-color:#636363;
+}
+.title{
+	font-size: 24px;
+	line-size:26px;
+}
+#theme_list{
+	margin: 0 auto 0 auto;
+}
+#figure_list{
+	margin:30px 0px 30px 0px;
+	list-style: none;
+}
+.item{
+	margin: 10px 20px 10px 20px;
+	width: 230px;
+	height: 230px;
+	float: left;
+}
+#footer{
+	background-image: url(../img/layer_bg.png);
+	background-size: cover;
+	color: #c2c2c2;
+	font-weight: bold;
+	height: 100px;
+}
+.map{
+	width: 600px;
+	height: 370px;
+}
+.article{
+	height: 400px;
+}

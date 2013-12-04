@@ -1,0 +1,41 @@
+body{
+	overflow: scroll; 
+	background-color: #cce1fc;
+	/*background-image: url(../img/bg2.jpg);*/
+	background-size: cover;
+	height: 100%; 
+	width: 100%;
+	left: 0px;
+	top: 0px;
+}
+.container{
+	/*background-image: url(http://image.xinli001.com/20121106/09155481d07eddc284ae7e.jpg); */
+	
+}
+.main_frame{
+	background-color: white;
+	border-radius: 5px;
+	padding: 5px;
+/*	border: 2px;
+	border-color: black;
+	border-style: solid;*/
+	height: 400px;
+}
+#left_bar{
+	height: 400px;
+	border-style: solid;
+	border-top: 2px;
+	border-left: 2px;
+	border-bottom: 2px;
+	text-align: center;
+}
+#left_bar>div{
+	height: 50px;	
+}
+#footer{
+	background-image: url(../img/layer_bg.png);
+	background-size: cover;
+	color: #c2c2c2;
+	font-weight: bold;
+	height: 100px;
+}

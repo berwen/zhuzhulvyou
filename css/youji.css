@@ -1,0 +1,49 @@
+body{
+	overflow: scroll; 
+	background-color: #e2e2e2;
+	height: 100%; 
+	width: 100%;
+	left: 0px;
+	top: 0px;
+}
+.container{
+	/*background-image: url(http://image.xinli001.com/20121106/09155481d07eddc284ae7e.jpg); */
+	/*background-color: blue;*/
+}
+.layer1{
+	height: 50px;
+}
+#up_part{
+	background-image: url(../img/destination_search_bg.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+#leftside{
+	/*margin-right: 10px;*/
+	/*padding-right: 10px;*/
+}
+#rightside{
+	/*margin-left:10px; */
+}
+.article{
+	height: 400px;
+	overflow: auto;
+	margin: 0 10px 0 10px;
+}
+.lytieshi .comment{
+	margin: 0 10px 0 10px;
+}
+
+.item{
+	margin: 10px 20px 10px 20px;
+	width: 230px;
+	height: 230px;
+	float: left;
+}
+#footer{
+	background-image: url(../img/layer_bg.png);
+	background-size: cover;
+	color: #c2c2c2;
+	font-weight: bold;
+	height: 100px;
+}
