@@ -1,12 +1,16 @@
-<!DOCTYPE html>
+<?php 
+require "php\uplevel.php";
+$discount_info = discount($config);
+ ?>
 <html>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 <head>
 	<title>猪猪旅游-游记</title>
 	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
 	<link rel="stylesheet" type="text/css" href="css/ticket.css">
-	<!-- <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css"> -->
 	<link rel="stylesheet" type="text/css" href="jquery-ui-themes-1.10.3/themes/smoothness/jquery-ui.css"> 
+	<script type="text/javascript" src="http://api.map.baidu.com/api?v=1.4&ak=1bbe1bfaa50c4eb69022911a5a8735ea;"></script>
+	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 	<!-- // <script src="javascript/jquery.min.js"></script> -->
 	<!-- <script src="javascript/index.js"></script> -->
 	<!-- // <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script> -->
@@ -59,40 +63,31 @@
 					<p>返回日期<input type="text" class="date"></p>
 					<form class="form-search">
 					  <div class="input-append">
-					    <input type="text" class="span1" placeholder="出发地">
-					    <input type="text" class="span1" placeholder="目的地">
+					  	<input type="text" class="span1" placeholder="出发地" id="startplace">
+					    <input type="text" class="span1" placeholder="目的地" id="destplace">
+					    
 					    <button type="submit" class="btn">Search</button>
 					  </div>
 					</form>
 				</div>
 				<div class="row youhui">
 					<h3>优惠推荐</h3>
-					<p>上海-漠河全网机票最低价！</p>
-					<p>上海欢乐谷8折！</p>
+					<?php 
+					foreach ($discount_info as $row) {
+						echo '<li>'.$row['name'].$row['description'].'</li>';
+					}
+					 ?>
 				</div>
 			</div>
 			<div class="span8">
 				<div class="row">
 					<h3>地图</h3>
-					<div class="map"></div>
-					<h3>票务信息</h3>
-					<div >
-						<div class="row list_title">
-							<ul>
-								<li >景点</li>
-								<li >项目</li>
-								<li >费用</li>
-								<li >订票</li>
-							</ul>
-						</div>
-						<div class="row row ticket_list">
-							<div class="sightspot">sightspot</div>
-							<div class="project">project</div>
-							<div class="cost">project</div>
-							<div class="booking">project</div>
-						</div>
+					<div class="map" id="mapcontainer"></div>
+
+					<div id = "ticket_info">
 					</div>
 				</div>
+			</div>
 		</div>
 	</div>
 	<div class="row" id="footer">
@@ -110,7 +105,9 @@
 	<!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script> -->
 	<script type="text/javascript" src="javascript/jquery-1.10.2.min.js"></script>
 	<script src="javascript/ticket.js"></script>
-	<!-- // <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script> -->
+	<script src="javascript/ticketmap.js"></script>
 	<script type="text/javascript" src="jquery-ui-themes-1.10.3/jquery-ui.js"></script>
+	 
+
 </body>
 <html>
