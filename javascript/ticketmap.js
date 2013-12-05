@@ -78,10 +78,10 @@ function displayUsernameByDOM(){
   ajax.setRequestHeader("Content-type","application/x-www-form-urlencoded");
   ajax.send("pName="+name+"&pUser="+user);*/
   $.ajax({
-      url: 'php/ajax_php.php',
+      url: 'php/ajax.php',
       type: 'POST',
       dataType: 'JSON',
-      data: {item: 'get_ticket_info',lat: globalLat, lon: globalLng}
+      data: {item:'ticket_info', lat: globalLat, lon: globalLng}
   })
   .done(function(data) {
       if (data['detail']){
@@ -100,7 +100,7 @@ function displayUsernameByDOM(){
                             '<div class="sightspot">'+data['attraction_name']+'</div>'+
                             '<div class="project">'+data['detail'][i]['name']+'</div>'+
                             '<div class="cost">'+data['detail'][i]['price']+'</div>'+
-                            '<div class="booking">预定</div>'+
+                            '<div class="booking"><button onclick=book_ticket('+data['detail'][i]['id']+')>预定</button></div>'+
                         '</div>';
             code += temp;
           }
@@ -116,6 +116,25 @@ function displayUsernameByDOM(){
     
 }
 
+function book_ticket(ticket_id){
+	$.ajax({
+		url: 'php/ajax.php',
+		type: 'POST',
+		dataType: 'JSON',
+		data: {item:'book_ticket', ticket_id: ticket_id},
+	})
+	.done(function(data) {
+		switch(data['status']){
+			case 'success': alert("订票成功"); break;
+			case 'nologin': alert("请先登录"); break;
+			default: alert("未知的错误"); break;
+		}
+	})
+	.fail(function() {
+		alert("订票失败，请检查您的网络链接");
+	});
+	
+}
 
 
 

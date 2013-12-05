@@ -1,11 +1,11 @@
 <?php 
 $item = $_POST['item'];
+
+require "functions.php";
 switch ($item) {
-	case 'get_ticket_info':
+	case 'ticket_info':
 		$lat = $_POST['lat'];
 		$lon = $_POST['lon'];
-
-		require "functions.php";
 
 		$conn = connect($config);
 		$info = location_with_attraction($conn, $lat, $lon);
@@ -19,8 +19,25 @@ switch ($item) {
 		$result['attraction_name'] = $info[0]['name'];
 		$result['detail'] = $data;
 		echo json_encode($result);
-		break;	
+		break;
+	
+	case 'book_ticket':
+		$user_id = 121; // TO BE DONE
+		$ticket_id = $_POST['ticket_id'];
+		$result = array();
+
+		if (true){//改为登录	
+			$conn = connect($config);
+			book_ticket($conn, $user_id, $ticket_id);
+			
+			$result['status'] = 'success';
+		}
+		else {$result['status'] = 'nologin';}
+		echo json_encode($result);	
+		break;
+		
 	default:
+		# code...
 		break;
 }
 
