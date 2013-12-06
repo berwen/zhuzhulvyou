@@ -92,6 +92,7 @@
 <script type="text/javascript">
 map = new BMap.Map("container");                        // 创建Map实例
 map.centerAndZoom("闵行区", 12);     // 初始化地图,设置中心点坐标和地图级别
+map.enableScrollWheelZoom();
 var key = 1;    //开关
 var newpoint;   //一个经纬度
 var points = [];    //数组，放经纬度信息
@@ -113,9 +114,9 @@ y=dataArray.length-1;
       tHave=dataArray[x][6];
 
      if(tHave==0) {
-        if(dataArray[x][8] != "upload/") sSound = "<br><audio controls='controls' height='100' width='100'><source src='http://127.0.0.1/map/"+dataArray[x][8]+"' type='audio/mp3' /><embed height='100' width='100' src='song.mp3' /></audio> </div>";
+        if(dataArray[x][8] != "upload/") sSound = "<br><audio controls='controls' height='100' width='100'><source src='/zhuzhulvyou/"+dataArray[x][8]+"' type='audio/mp3' /><embed height='100' width='100' src='song.mp3' /></audio> </div>";
         else sSound = "</div>";
-        if(dataArray[x][7] != "upload/") sImg =  "<div><img style='float:center;margin:4px' id='imgDemo' src='http://127.0.0.1/map/"+dataArray[x][7]+"' width='80%' height='120' /></div>" ;
+        if(dataArray[x][7] != "upload/") sImg =  "<div><img style='float:center;margin:4px' id='imgDemo' src='/zhuzhulvyou/"+dataArray[x][7]+"' width='80%' height='120' /></div>" ;
         else sImg = "";
         sContent ="<div><h4 style='margin:0 0 5px 0;padding:0.2em 0'><p id='aa'>"+tPlace+"</p></h4><div width='50%'><ul><li>类型："+tType+"</li><li>介绍:" + tIntro+ "</li></ul><div id='vButton'><input type='Button' name='visited' id='visited' style='float:right;' value='标记去过' onclick='displayUsernameByDOM();''></div></div>";
         sContent = sContent + sImg + sSound;
@@ -125,9 +126,9 @@ y=dataArray.length-1;
         points.push(newpoint);  //将新增的点放到数组中
         polyline.setPath(points);   //设置折线的点数组
         map.addOverlay(polyline);   //将折线添加到地图上
-        if(dataArray[x][8] != "upload/") sSound = "<br><audio controls='controls' height='100' width='100'><source src='http://127.0.0.1/map/"+dataArray[x][8]+"' type='audio/mp3' /><embed height='100' width='100' src='song.mp3' /></audio></div>";
+        if(dataArray[x][8] != "upload/") sSound = "<br><audio controls='controls' height='100' width='100'><source src='/zhuzhulvyou/"+dataArray[x][8]+"' type='audio/mp3' /><embed height='100' width='100' src='song.mp3' /></audio></div>";
         else sSound = "</div>";
-        if(dataArray[x][7] != "upload/") sImg =  "<div><img style='float:center;margin:4px' id='imgDemo' src='http://127.0.0.1/map/"+dataArray[x][7]+"' width='80%' height='120'/></div>" ;
+        if(dataArray[x][7] != "upload/") sImg =  "<div><img style='float:center;margin:4px' id='imgDemo' src='/zhuzhulvyou/"+dataArray[x][7]+"' width='80%' height='120'/></div>" ;
         else sImg = " ";
         sContent =
         "<h4 style='margin:0 0 5px 0;padding:0.2em 0'>"+tPlace+"</h4><div ><ul><li>类型："+tType+"<br></li><li>介绍:" + tIntro+ "</li></ul><input type='Button' name='visited' id='visited' style='filter:Alpha(opacity=30);background:gray;float:right;' value='已去过''>";
@@ -320,7 +321,7 @@ function displayUsernameByDOM(){
   ajax.open("POST","visitedplace.php",true);
   ajax.setRequestHeader("Content-type","application/x-www-form-urlencoded");
   ajax.send("pName="+name+"&pUser="+user);
-  window.location.href="/map/php/fav_map.php"; 
+  window.location.href="/zhuzhulvyou/php/fav_map.php"; 
 }
 
 

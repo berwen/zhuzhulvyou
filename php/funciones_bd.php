@@ -134,12 +134,13 @@ class funciones_BD {
 
     }
 
-    public function updatebuilding($placename) {
+    public function updatebuilding($placename,$username,$value) {
        mysql_query("set names utf8");
 
      //   $result = mysql_query("INSERT INTO favplace_guest(placename,guestname) VALUES('$placename','$username')");
         mysql_query("UPDATE winner set value = value * 2  WHERE placename = '$placename'");
         mysql_query("UPDATE winner set fee = fee * 2  WHERE placename = '$placename'"); 
+        mysql_query("UPDATE users set caifu = caifu -'$value' WHERE username = '$username'"); 
     }
 
     public function buybuilding($placename,$ownername,$buyername,$value) {

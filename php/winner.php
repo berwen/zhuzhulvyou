@@ -126,18 +126,18 @@ y=dataArray.length-1;
   //  var sContent = placeInfo(tPlace,,tVisited,tType,tIntro);
      if(tOwner==userArray[0]) {
 
-        if(tSound != "") sSound = "<br><audio controls='controls' height='100' width='100'><source src='http://127.0.0.1/map/"+tSound+"' type='audio/mp3' /><embed height='100' width='100' src='song.mp3' /></audio> ";
+        if(tSound != "") sSound = "<br><audio controls='controls' height='100' width='100'><source src='/zhuzhulvyou/"+tSound+"' type='audio/mp3' /><embed height='100' width='100' src='song.mp3' /></audio> ";
         else sSound = "";
-        if(tPic != "") sImg = "<img style='float:right;margin:4px' id='imgDemo' src='http://127.0.0.1/map/"+tPic+"' width='139' height='104' />" 
+        if(tPic != "") sImg = "<img style='float:right;margin:4px' id='imgDemo' src='/zhuzhulvyou/"+tPic+"' width='139' height='104' />" 
         else tPic = " ";
         sContent ="<td><h4 style='margin:0 0 5px 0;padding:0.2em 0'><p id='aa'>"+tPlace+"</p></h4>所有者:<div id='owner'>"+tOwner+"</div><p>介绍:"+tIntro+"</p></td><td>价值:<div id='value'>"+tValue+"</div>收费:<div id='fee'>"+tFee+"</div> <input type='Button' name='visited' id='visited' value='升级' onclick='displayUsernameByDOM();''></td>";
       //    "<audio controls='controls' height='100' width='100'><source src='http://127.0.0.1/map/upload/4.mp3' type='audio/mp3' /><embed height='100' width='100' src='song.mp3' /></audio> <input type='Button' name='visited' id='visited' value='升级' onclick='displayUsernameByDOM();''></div>";
       }  
       else{
 
-         if(tSound != "") sSound = "<br><audio controls='controls' height='100' width='100'><source src='http://127.0.0.1/map/"+tSound+"' type='audio/mp3' /><embed height='100' width='100' src='song.mp3' /></audio> ";
+         if(tSound != "") sSound = "<br><audio controls='controls' height='100' width='100'><source src='/zhuzhulvyou/"+tSound+"' type='audio/mp3' /><embed height='100' width='100' src='song.mp3' /></audio> ";
         else sSound = "";
-        if(tPic != "") sImg = "<img style='float:right;margin:4px' id='imgDemo' src='http://127.0.0.1/map/"+tPic+"' width='139' height='104' />" 
+        if(tPic != "") sImg = "<img style='float:right;margin:4px' id='imgDemo' src='/zhuzhulvyou/"+tPic+"' width='139' height='104' />" 
         else tPic = " ";
         sContent ="<td><h4 style='margin:0 0 5px 0;padding:0.2em 0'><p id='aa'>"+tPlace+"</p></h4>所有者:<div id='owner'>"+tOwner+"</div><p>介绍:"+tIntro+"</p></td><td>价值:<div id='value'>"+tValue+"</div>收费:<div id='fee'>"+tFee+"</div><input type='Button' name='visited' id='visited' value='购买' onclick='displayUsernameByDOM1();''> <input type='Button'  value='模拟缴费' onclick='displayUsernameByDOM2();''></td>";
     
@@ -289,7 +289,8 @@ if (r==true)
 
     ajax.open("POST","winner_update.php",true);
     ajax.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-    ajax.send("pName="+name);
+    ajax.send("pName="+name+"&pUser="+userArray[0]+"&pValue="+value*2);
+     window.location.href="/zhuzhulvyou/php/winner.php"; 
   }
 else
   {
@@ -356,7 +357,7 @@ if(userArray[1] < value){
   ajax.open("POST","winner_buy.php",true);
   ajax.setRequestHeader("Content-type","application/x-www-form-urlencoded");
   ajax.send("pName="+name+"&pOwner="+owner+"&pBuyer="+userArray[0]+"&pValue="+value);
-
+   window.location.href="/zhuzhulvyou/winner.php"; 
   }
 else
   {

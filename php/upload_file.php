@@ -46,7 +46,7 @@ $db = new funciones_BD();
 	
 		$re = $db->addplace($pName,$ptype, $pIntro,$pLng,$pLat,"upload/".$_FILES["file"]["name"][0],"upload/".$_FILES["file"]["name"][1]);
 		
-	  header("Location: /map/php/fav_map.php");     
+	  header("Location: /zhuzhulvyou/php/fav_map.php");     
 		exit;  
 /*else
   {
