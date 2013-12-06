@@ -1,0 +1,78 @@
+body{
+	overflow: scroll; 
+	background-color: #cce1fc;
+	/*background-image: url(../img/bg2.jpg);*/
+	background-size: cover;
+	height: 100%; 
+	width: 100%;
+	left: 0px;
+	top: 0px;
+	font-family: Microsoft YaHei;
+}
+.container{
+	/*background-image: url(http://image.xinli001.com/20121106/09155481d07eddc284ae7e.jpg); */
+	
+}
+.main_frame{
+	background-color: white;
+	border-radius: 5px;
+	padding: 5px;
+	/*text-align: center;*/
+}
+#left_bar{
+	height: 700px;
+	border-style: solid;
+	border-top: 2px;
+	border-left: 2px;
+	border-bottom: 2px;
+	text-align: center;
+}
+#left_bar>div{
+	height: 50px;	
+}
+#footer{
+	background-image: url(../img/layer_bg.png);
+	background-size: cover;
+	color: #c2c2c2;
+	font-weight: bold;
+	height: 100px;
+}
+#edit_attraction{
+	/*text-align: center;*/
+	display: none;
+}
+#edit_discount{
+	display: none;
+}
+#edit_ticket{
+	display: none;
+}
+.control_button{
+	text-align: center;
+	/*position: relative;
+	left: 90px;*/
+}
+.map{
+	width: 600px;
+	height: 370px;
+}
+#footer{
+}
+.control-group>label{
+	float: left;
+}
+.inputform{
+	/*text-align: center;*/
+}
+#personal_user{
+	display: none;
+}
+#company_user{
+	display: none;
+}
+#select_type{
+	text-align: center;
+}
+.main_frame>h3{
+	text-align: center;
+}

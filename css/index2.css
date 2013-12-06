@@ -1,0 +1,30 @@
+body{
+	overflow: scroll; 
+	/*background-color: #e2e2e2;*/
+	background-image: url(../img/index_bg1.jpg);
+	background-size: 100% 400%;
+	height: 100%; 
+	width: 100%;
+	left: 0px;
+	top: 0px;
+	font-family: Microsoft YaHei;
+}
+.navigation_bar{
+	height: 100px;
+	width: 1300px;
+	background-image: url(../img/navigate_bar.png);
+}
+.container{
+
+}
+
+#footer{
+	background-image: url(../img/layer_bg.png);
+	background-size: cover;
+	color: #c2c2c2;
+	font-weight: bold;
+	height: 100px;
+	position: fixed;
+	bottom: 0;
+	display: none;
+}

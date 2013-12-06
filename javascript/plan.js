@@ -91,8 +91,12 @@ $(document).ready(function() {
 	$('#add_button').click(function(){
 		addcity_funct($("#add_input").val());
 		addDestination($('#add_input').val());
-
 	});
+	$('.submit_plan').click(function(){
+		$('.planlist').fadeOut(1);
+		$('.after_submit').css('display','block');
+	});
+
 });
 function addcity_funct()
 {
