@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2013 年 12 月 06 日 18:06
+-- 生成日期: 2013 年 12 月 06 日 19:34
 -- 服务器版本: 5.6.12-log
 -- PHP 版本: 5.4.12
 
@@ -121,7 +121,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `identity` varchar(10) NOT NULL,
   `caifu` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC AUTO_INCREMENT=16 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC AUTO_INCREMENT=17 ;
 
 --
 -- 转存表中的数据 `users`
@@ -135,7 +135,8 @@ INSERT INTO `users` (`id`, `username`, `mingzi`, `password`, `identity`, `caifu`
 (12, '328332569@qq.com', 'lihuaxin', '1234', '', 0),
 (13, 'cdsvsb', '', '', '', 0),
 (14, 'cdsvsb@qq.com', 'fafa', '1234', '', 0),
-(15, 'agagaga@163.com', 'vava', '1234', '', 0);
+(15, 'agagaga@163.com', 'vava', '1234', '', 0),
+(16, 'shishikan@163.com', 'shishikan', '1234', '', 200);
 
 -- --------------------------------------------------------
 

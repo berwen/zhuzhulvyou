@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2013 年 12 月 06 日 18:08
+-- 生成日期: 2013 年 12 月 06 日 19:34
 -- 服务器版本: 5.6.12-log
 -- PHP 版本: 5.4.12
 
@@ -290,7 +290,7 @@ CREATE TABLE IF NOT EXISTS `isns_currentuser` (
 --
 
 INSERT INTO `isns_currentuser` (`username`, `id`, `caifu`) VALUES
-('', 1, 465);
+('shishikan@163.com', 1, 210);
 
 -- --------------------------------------------------------
 
@@ -336,14 +336,16 @@ CREATE TABLE IF NOT EXISTS `isns_event` (
   KEY `grade` (`grade`),
   KEY `member_num` (`member_num`),
   KEY `user_id` (`user_id`,`event_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- 转存表中的数据 `isns_event`
 --
 
 INSERT INTO `isns_event` (`event_id`, `user_id`, `user_name`, `dateline`, `title`, `type_id`, `province`, `city`, `location`, `poster`, `poster_thumb`, `thumb`, `remote`, `deadline`, `start_time`, `end_time`, `public`, `member_num`, `follow_num`, `view_num`, `grade`, `photo_num`, `update_time`, `detail`, `template`, `limit_num`, `verify`, `allow_pic`, `allow_post`, `allow_invite`, `allow_fellow`, `is_pass`, `comments`) VALUES
-(1, 1, 'muxiaonuo', 0, '北京 上海', 3, '甘肃', '兰州', 'mpkj', 'uploadfiles/event/default_event_poster.jpg', 'uploadfiles/event/default_event_poster.jpg', 0, 0, 1385794740, 1385621940, 1385794800, 2, 1, 0, 1, 1, 0, 1385708458, '北大法宝', '次的', 2, 0, 1, 1, 1, 0, 1, 0);
+(1, 1, 'muxiaonuo', 0, '北京 上海', 3, '甘肃', '兰州', 'mpkj', 'uploadfiles/event/default_event_poster.jpg', 'uploadfiles/event/default_event_poster.jpg', 0, 0, 1385794740, 1385621940, 1385794800, 2, 1, 0, 2, 1, 0, 1385708458, '北大法宝', '次的', 2, 0, 1, 1, 1, 0, 1, 0),
+(2, 15, 'vava', 0, '去杭州玩！', 2, '浙江', '杭州', '杭州', 'uploadfiles/event/default_event_poster.jpg', 'uploadfiles/event/default_event_poster.jpg', 0, 0, 1388341500, 1388255040, 1389896700, 2, 2, 0, 3, 1, 0, 1386354323, '<p>大家一起去杭州玩吧！</p>', '', 0, 0, 1, 1, 1, 0, 1, 0),
+(3, 16, 'shishikan', 0, '杭州N日游～', 2, '浙江', '杭州', '杭州', 'uploadfiles/event/default_event_poster.jpg', 'uploadfiles/event/default_event_poster.jpg', 0, 0, 1391110020, 1389986820, 1391110020, 2, 1, 0, 1, 1, 0, 1386358167, '大家一起玩几天～', '', 0, 0, 1, 1, 1, 0, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -410,7 +412,10 @@ CREATE TABLE IF NOT EXISTS `isns_event_members` (
 --
 
 INSERT INTO `isns_event_members` (`event_id`, `user_id`, `user_name`, `user_sex`, `user_ico`, `reside_province`, `reside_city`, `dateline`, `status`, `fellow`, `template`) VALUES
-(1, 1, 'muxiaonuo', 1, 'uploadfiles/photo_store/2013/11/24/2013112411002844_ico_small.jpg', '', '', 1385708458, 4, 0, '');
+(1, 1, 'muxiaonuo', 1, 'uploadfiles/photo_store/2013/11/24/2013112411002844_ico_small.jpg', '', '', 1385708458, 4, 0, ''),
+(2, 15, 'vava', 1, 'skin/default/jooyea/images/d_ico_1_small.gif', '', '', 1386354323, 4, 0, ''),
+(2, 1, 'muxiaonuo', 1, 'uploadfiles/photo_store/2013/11/24/2013112411002844_ico_small.jpg', '', '', 1386354362, 2, 0, ''),
+(3, 16, 'shishikan', 1, 'skin/default/jooyea/images/d_ico_1_small.gif', '', '', 1386358167, 4, 0, '');
 
 -- --------------------------------------------------------
 
@@ -620,7 +625,7 @@ CREATE TABLE IF NOT EXISTS `isns_guest` (
   `add_time` datetime DEFAULT NULL,
   PRIMARY KEY (`guest_id`),
   KEY `user_id` (`user_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=18 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=19 ;
 
 --
 -- 转存表中的数据 `isns_guest`
@@ -630,7 +635,8 @@ INSERT INTO `isns_guest` (`guest_id`, `guest_user_id`, `guest_user_name`, `guest
 (15, 1, 'muxiaonuo', 'uploadfiles/photo_store/2013/11/24/2013112411002844_ico_small.jpg', 2, '2013-12-05 20:20:37'),
 (10, 2, 'berwin', 'skin/default/jooyea/images/d_ico_1_small.gif', 1, '2013-11-30 00:45:09'),
 (11, 6, '', 'skin/default/jooyea/images/d_ico_1_small.gif', 1, '2013-11-30 13:12:47'),
-(17, 5, 'lihuaxin0033@163.com', 'skin/default/jooyea/images/d_ico_1_small.gif', 1, '2013-12-06 17:35:47');
+(17, 5, 'lihuaxin0033@163.com', 'skin/default/jooyea/images/d_ico_1_small.gif', 1, '2013-12-06 17:35:47'),
+(18, 15, 'vava', 'skin/default/jooyea/images/d_ico_1_small.gif', 1, '2013-12-07 02:21:36');
 
 -- --------------------------------------------------------
 
@@ -798,7 +804,7 @@ CREATE TABLE IF NOT EXISTS `isns_msg_inbox` (
   `readed` tinyint(2) DEFAULT '0',
   PRIMARY KEY (`mess_id`),
   KEY `user_id` (`user_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
 --
 -- 转存表中的数据 `isns_msg_inbox`
@@ -807,7 +813,10 @@ CREATE TABLE IF NOT EXISTS `isns_msg_inbox` (
 INSERT INTO `isns_msg_inbox` (`mess_id`, `mess_title`, `mess_content`, `from_user_id`, `from_user`, `from_user_ico`, `user_id`, `add_time`, `mesinit_id`, `readed`) VALUES
 (1, 'berwin添加您为好友', 'berwin添加您为好友。<br />此条信息为系统发送，不必回复 <br />您可以<a href="javascript:{send_join_js}">加其为好友</a>或<a href="modules.php?app=mypals_search">搜索其他好友</a><br>', 2, '系统发送', 'skin/default/jooyea/images/d_ico_1_small.gif', 1, '2013-11-24 10:50:33', 0, 0),
 (2, 'muxiaonuo添加您为好友', 'muxiaonuo添加您为好友。<br />此条信息为系统发送，不必回复 <br />您可以<a href="javascript:{send_join_js}">加其为好友</a>或<a href="modules.php?app=mypals_search">搜索其他好友</a><br>', 1, '系统发送', 'skin/default/jooyea/images/d_ico_1_small.gif', 2, '2013-11-24 10:55:27', 0, 1),
-(3, 'lihuaxin0033@163.com添加您为好友', 'lihuaxin0033@163.com添加您为好友。<br />此条信息为系统发送，不必回复 <br />您可以<a href="javascript:{send_join_js}">加其为好友</a>或<a href="modules.php?app=mypals_search">搜索其他好友</a><br>', 5, '系统发送', 'skin/default/jooyea/images/d_ico_1_small.gif', 1, '2013-12-06 17:35:41', 0, 0);
+(3, 'lihuaxin0033@163.com添加您为好友', 'lihuaxin0033@163.com添加您为好友。<br />此条信息为系统发送，不必回复 <br />您可以<a href="javascript:{send_join_js}">加其为好友</a>或<a href="modules.php?app=mypals_search">搜索其他好友</a><br>', 5, '系统发送', 'skin/default/jooyea/images/d_ico_1_small.gif', 1, '2013-12-06 17:35:41', 0, 0),
+(4, 'vava添加您为好友', 'vava添加您为好友。<br />此条信息为系统发送，不必回复 <br />您可以<a href="javascript:{send_join_js}">加其为好友</a>或<a href="modules.php?app=mypals_search">搜索其他好友</a><br>', 15, '系统发送', 'skin/default/jooyea/images/d_ico_1_small.gif', 1, '2013-12-07 02:21:32', 0, 0),
+(5, 'shishikan添加您为好友', 'shishikan添加您为好友。<br />此条信息为系统发送，不必回复 <br />您可以<a href="javascript:{send_join_js}">加其为好友</a>或<a href="modules.php?app=mypals_search">搜索其他好友</a><br>', 16, '系统发送', 'skin/default/jooyea/images/d_ico_1_small.gif', 1, '2013-12-07 03:26:38', 0, 0),
+(6, 'shishikan添加您为好友', 'shishikan添加您为好友。<br />此条信息为系统发送，不必回复 <br />您可以<a href="javascript:{send_join_js}">加其为好友</a>或<a href="modules.php?app=mypals_search">搜索其他好友</a><br>', 16, '系统发送', 'skin/default/jooyea/images/d_ico_1_small.gif', 2, '2013-12-07 03:26:40', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -851,14 +860,14 @@ CREATE TABLE IF NOT EXISTS `isns_online` (
   `session_code` char(32) DEFAULT NULL,
   PRIMARY KEY (`online_id`),
   UNIQUE KEY `user_id` (`user_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=114 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=117 ;
 
 --
 -- 转存表中的数据 `isns_online`
 --
 
 INSERT INTO `isns_online` (`online_id`, `user_id`, `user_name`, `user_sex`, `user_ico`, `birth_year`, `birth_province`, `birth_city`, `reside_province`, `reside_city`, `active_time`, `hidden`, `session_code`) VALUES
-(112, 1, 'muxiaonuo', 1, 'uploadfiles/photo_store/2013/11/24/2013112411002844_ico_small.jpg', NULL, NULL, NULL, NULL, NULL, 1386347288, 0, NULL);
+(116, 16, 'shishikan', 1, 'skin/default/jooyea/images/d_ico_1_small.gif', NULL, NULL, NULL, NULL, NULL, 1386357995, 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -904,16 +913,19 @@ CREATE TABLE IF NOT EXISTS `isns_pals_mine` (
   KEY `user_id` (`user_id`),
   KEY `pals_id` (`pals_id`),
   KEY `pals_sort_id` (`pals_sort_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
 --
 -- 转存表中的数据 `isns_pals_mine`
 --
 
 INSERT INTO `isns_pals_mine` (`id`, `user_id`, `pals_id`, `pals_sort_id`, `pals_sort_name`, `pals_name`, `pals_sex`, `add_time`, `pals_ico`, `accepted`, `active_time`) VALUES
-(1, 2, 1, 0, NULL, 'muxiaonuo', 1, '2013-11-24 10:50:33', 'uploadfiles/photo_store/2013/11/24/2013112411002844_ico_small.jpg', 2, '2013-12-06 15:03:48'),
+(1, 2, 1, 0, NULL, 'muxiaonuo', 1, '2013-11-24 10:50:33', 'uploadfiles/photo_store/2013/11/24/2013112411002844_ico_small.jpg', 2, '2013-12-07 02:26:01'),
 (2, 1, 2, 0, NULL, 'berwin', 1, '2013-11-24 10:55:27', 'skin/default/jooyea/images/d_ico_1_small.gif', 2, '2013-11-30 00:45:13'),
-(3, 5, 1, 0, NULL, 'muxiaonuo', 1, '2013-12-06 17:35:41', 'uploadfiles/photo_store/2013/11/24/2013112411002844_ico_small.jpg', 1, NULL);
+(3, 5, 1, 0, NULL, 'muxiaonuo', 1, '2013-12-06 17:35:41', 'uploadfiles/photo_store/2013/11/24/2013112411002844_ico_small.jpg', 1, '2013-12-07 02:26:01'),
+(4, 15, 1, 0, NULL, 'muxiaonuo', 1, '2013-12-07 02:21:32', 'uploadfiles/photo_store/2013/11/24/2013112411002844_ico_small.jpg', 1, '2013-12-07 02:26:01'),
+(5, 16, 1, 0, NULL, 'muxiaonuo', 1, '2013-12-07 03:26:38', 'uploadfiles/photo_store/2013/11/24/2013112411002844_ico_small.jpg', 1, NULL),
+(6, 16, 2, 0, NULL, 'berwin', 1, '2013-12-07 03:26:40', 'skin/default/jooyea/images/d_ico_1_small.gif', 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -1155,7 +1167,7 @@ CREATE TABLE IF NOT EXISTS `isns_recent_affair` (
   KEY `user_id` (`user_id`),
   KEY `type_id` (`type_id`),
   KEY `mod_type` (`mod_type`,`for_content_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=14 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=15 ;
 
 --
 -- 转存表中的数据 `isns_recent_affair`
@@ -1168,6 +1180,7 @@ INSERT INTO `isns_recent_affair` (`id`, `type_id`, `title`, `content`, `user_id`
 (4, 1, '头像更新为', '<img class="photo_frame" onerror=parent.pic_error(this) src="uploadfiles/photo_store/2013/11/24/2013112411002844_ico.jpg" align="top">', 1, 'muxiaonuo', 'uploadfiles/photo_store/2013/11/24/2013112411002844_ico_small.jpg', '2013-11-24 11:00:47', '2013-11-24 11:00:47', 0, 7),
 (5, 1, '心情更新', '我是猪猪', 1, 'muxiaonuo', 'uploadfiles/photo_store/2013/11/24/2013112411002844_ico_small.jpg', '2013-11-24 16:24:42', '2013-11-24 16:24:42', 3, 6),
 (6, 1, '心情更新', 'fwvw', 1, 'muxiaonuo', '', '2013-11-24 20:04:11', '2013-11-24 20:04:11', 4, 6),
+(14, 0, '加入了活动<a href="home.php?h=1&app=event_space&event_id=2" target="_blank">去杭州玩！</a>', '<a href="home.php?h=1&app=event_space&event_id=2" target="_blank">去杭州玩！</a>', 1, 'muxiaonuo', 'uploadfiles/photo_store/2013/11/24/2013112411002844_ico_small.jpg', '2013-12-07 02:26:01', '2013-12-07 02:26:01', 0, 11),
 (8, 2, '在相册<a href="home.php?h=1&app=photo_list&album_id=1" target="_blank">fsf</a>中上传了新照片', '<a href="home.php?h=1&app=photo&photo_id=2&album_id=1" target="_blank"><img class="photo_frame" onerror=parent.pic_error(this) src="uploadfiles/album/2013/11/29/thumb_2013112910372266.gif"></a>', 1, 'muxiaonuo', 'uploadfiles/photo_store/2013/11/24/2013112411002844_ico_small.jpg', '2013-11-29 22:37:27', '2013-11-29 22:37:27', 2, 3),
 (9, 1, '心情更新', 'vdsb', 1, 'muxiaonuo', 'uploadfiles/photo_store/2013/11/24/2013112411002844_ico_small.jpg', '2013-11-29 22:37:44', '2013-11-29 22:37:44', 5, 6),
 (10, 4, '分享了<a href="home.php?h=1" target="_blank">muxiaonuo</a>的照片<a href="home.php?h=1&app=photo&photo_id=2&album_id=1" target="_blank">snslogo (2)</a>', '<a href="home.php?h=1&app=photo&photo_id=2&album_id=1" target="_blank"><img class="photo_frame" onerror=parent.pic_error(this) src="uploadfiles/album/2013/11/29/thumb_2013112910372266.gif"/></a>', 2, 'berwin', 'skin/default/jooyea/images/d_ico_1_small.gif', '2013-11-30 00:45:13', '2013-11-30 00:45:13', 1, 5),
@@ -1214,14 +1227,16 @@ CREATE TABLE IF NOT EXISTS `isns_remind` (
   `count` mediumint(8) unsigned DEFAULT '1',
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`,`is_focus`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
 
 --
 -- 转存表中的数据 `isns_remind`
 --
 
 INSERT INTO `isns_remind` (`id`, `user_id`, `type_id`, `date`, `content`, `is_focus`, `from_uid`, `from_uname`, `from_uico`, `link`, `count`) VALUES
-(3, 2, 0, '2013-11-24 10:55:50', '在心情<a href={link} onclick={js} target=_blank>[em_6]</a>中回复了您', 1, 1, 'muxiaonuo', 'skin/default/jooyea/images/d_ico_1_small.gif', 'home.php?h=2&app=mood_more&remind=1&mod=1', 1);
+(3, 2, 0, '2013-11-24 10:55:50', '在心情<a href={link} onclick={js} target=_blank>[em_6]</a>中回复了您', 1, 1, 'muxiaonuo', 'skin/default/jooyea/images/d_ico_1_small.gif', 'home.php?h=2&app=mood_more&remind=1&mod=1', 1),
+(7, 1, 1, '2013-12-07 03:26:38', '{num}个通知', 0, 16, 'shishikan', 'skin/default/jooyea/images/d_ico_1_small.gif', 'modules.php?app=msg_notice', 1),
+(8, 2, 1, '2013-12-07 03:26:40', '{num}个通知', 0, 16, 'shishikan', 'skin/default/jooyea/images/d_ico_1_small.gif', 'modules.php?app=msg_notice', 1);
 
 -- --------------------------------------------------------
 
@@ -1429,16 +1444,17 @@ CREATE TABLE IF NOT EXISTS `isns_users` (
   `activation_id` int(8) DEFAULT '-1' COMMENT '激活码id值',
   PRIMARY KEY (`user_id`),
   UNIQUE KEY `user_email` (`user_email`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=16 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=17 ;
 
 --
 -- 转存表中的数据 `isns_users`
 --
 
 INSERT INTO `isns_users` (`user_id`, `user_email`, `user_name`, `user_pws`, `user_sex`, `birth_province`, `birth_city`, `reside_province`, `reside_city`, `user_ico`, `is_pass`, `user_add_time`, `birth_year`, `birth_month`, `birth_day`, `creat_group`, `join_group`, `guest_num`, `integral`, `access_limit`, `access_questions`, `access_answers`, `inputmess_limit`, `palsreq_limit`, `lastlogin_datetime`, `invite_from_uid`, `hidden_pals_id`, `hidden_type_id`, `login_ip`, `is_recommend`, `dressup`, `use_plugins`, `use_apps`, `user_group`, `forget_pass`, `activation_id`) VALUES
-(1, 'lihuaxin0033@163.com', 'muxiaonuo', '6572bdaff799084b973320f43f09b363', 1, NULL, NULL, NULL, NULL, 'uploadfiles/photo_store/2013/11/24/2013112411002844_ico_small.jpg', 1, '2013-11-23 22:33:12', '', '', '', NULL, NULL, 3, 81, 0, NULL, NULL, 0, 0, '2013-11-30 13:08:07', 0, NULL, NULL, '127.0.0.1', 0, 'cyan', NULL, NULL, 'base', NULL, -1),
+(1, 'lihuaxin0033@163.com', 'muxiaonuo', '6572bdaff799084b973320f43f09b363', 1, NULL, NULL, NULL, NULL, 'uploadfiles/photo_store/2013/11/24/2013112411002844_ico_small.jpg', 1, '2013-11-23 22:33:12', '', '', '', NULL, NULL, 4, 81, 0, NULL, NULL, 0, 0, '2013-11-30 13:08:07', 0, NULL, NULL, '127.0.0.1', 0, 'cyan', NULL, NULL, 'base', NULL, -1),
 (2, 'bwbw1992@163.com', 'berwin', 'e10adc3949ba59abbe56e057f20f883e', 1, NULL, NULL, NULL, NULL, 'skin/default/jooyea/images/d_ico_1_small.gif', 1, '2013-11-24 10:49:14', '', '', '', NULL, NULL, 1, 12, 0, NULL, NULL, 0, 0, '2013-11-24 10:49:14', 0, NULL, NULL, '59.78.8.155', 0, '0', NULL, NULL, 'base', NULL, -1),
 (5, 'bwbwbw', 'lihuaxin0033@163.com', 'lihuaxin003', 0, NULL, NULL, NULL, NULL, 'skin/default/jooyea/images/d_ico_1_small.gif', 0, '2013-11-24 10:49:14', '', '', '', NULL, NULL, 0, 11, 0, NULL, NULL, 0, 0, '0000-00-00 00:00:00', 1, NULL, NULL, '', 0, '0', NULL, NULL, 'base', NULL, -1),
+(16, 'shishikan@163.com', 'shishikan', '243e61e9410a9f577d2d662c67025ee9', 1, NULL, NULL, NULL, NULL, 'skin/default/jooyea/images/d_ico_1_small.gif', 0, '0000-00-00 00:00:00', '', '', '', NULL, NULL, 0, 10, 0, NULL, NULL, 0, 0, '0000-00-00 00:00:00', 1, NULL, NULL, '', 0, '0', NULL, NULL, 'base', NULL, -1),
 (15, 'agagaga@163.com', 'vava', '243e61e9410a9f577d2d662c67025ee9', 1, NULL, NULL, NULL, NULL, 'skin/default/jooyea/images/d_ico_1_small.gif', 0, '0000-00-00 00:00:00', '', '', '', NULL, NULL, 0, 10, 0, NULL, NULL, 0, 0, '0000-00-00 00:00:00', 1, NULL, NULL, '', 0, '0', NULL, NULL, 'base', NULL, -1);
 
 -- --------------------------------------------------------
