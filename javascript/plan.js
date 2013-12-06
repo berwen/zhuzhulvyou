@@ -52,11 +52,11 @@ map.addEventListener("dblclick",function(e){   //双击地图，形成多边形�
 
 
 function addDestination(palcename){
-alert(palcename);
+//alert(palcename);
 // 将地址解析结果显示在地图上,并调整地图视野
 gc.getPoint(palcename, function(e){
 	if(e){
-		alert(e.lng);
+		//alert(e.lng);
 		globalMarker = new BMap.Marker(e);  // 创建标注
 
 		 map.addOverlay(globalMarker); //添加到地图中

@@ -4,7 +4,7 @@ tmoney=getCookie('money');
 if (username!=null && username!="")
 {
 
-  alert('ff');
+//  alert('ff');
   $('#head_login').fadeOut(1);
           $('#head_menu').append("<p style='float:left' id='user_info'>"+username+"欢迎登陆   当前财富"+tmoney+"</p>");
           $('#head_menu').append("<button type='submit' class='btn' id='logout'>退出</button>");
