@@ -36,6 +36,13 @@ switch ($item) {
 		echo json_encode($result);	
 		break;
 		
+	case 'search_travel_notes':
+		$conn = connect_blog($config);
+		$data = query("SELECT log_id,log_title,add_time FROM isns_blog",
+					   array(),
+					   $conn);
+		echo json_encode($data);
+		break;
 	default:
 		# code...
 		break;
