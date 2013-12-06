@@ -47,6 +47,8 @@ if(name == ""){
   return;
 }
 var gc = new BMap.Geocoder();
+placearray = [];
+     placecount = [];
   //var cost = document.getElementById("yusuan").value;
  //   var name = document.getElementById("yuefen").value;
 
@@ -59,8 +61,7 @@ var gc = new BMap.Geocoder();
     },
     function(data,status){
      //  alert("F"+data);
-     placearray = [];
-     placecount = [];
+     
        for(x in data){
           var newpoint = new BMap.Point(data[x]["lng"],data[x]["lat"]);
           gc.getLocation(newpoint, function(rs){
@@ -69,26 +70,32 @@ var gc = new BMap.Geocoder();
               if($.inArray(addComp.city, placearray)==-1){
                 placearray.push(addComp.city);
                 placecount.push(1);
+                alert(addComp.city);
               }
               else{
                 placecount[$.inArray(addComp.city, placearray)]++;
               }
-              alert(placecount[$.inArray(addComp.city, placearray)]);
+             // alert(placecount[$.inArray(addComp.city, placearray)]);
           }
           }); 
       }
 
+      //for(y in placearray){
+       // alert(placearray.length);
+    //  }
 
-      var tmp = -1;
-      var tmpposition;
-      for (y=0;y<placecount.length;y++){
-        if(placecount[y]>tmp){
-          tmp = placecount[y];
-          tmpposition = y;
-        }
-      } 
+
+    //   var tmp = -1;
+    //   var tmpposition;
+    //   y=0;
+    //   for (;y<placecount.length;y++){
+    //     if(placecount[y]>tmp){
+    //       tmp = placecount[y];
+    //       tmpposition = y;
+    //     }
+    //   } 
     
-    alert("cc"+placearray[y]);
+    // alert("cc"+placearray[y]);
 
 
     },"json");

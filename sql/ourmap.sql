@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2013 年 12 月 06 日 20:39
+-- 生成日期: 2013 年 12 月 06 日 22:50
 -- 服务器版本: 5.6.12-log
 -- PHP 版本: 5.4.12
 
@@ -54,7 +54,8 @@ CREATE TABLE IF NOT EXISTS `favplace` (
   `lng` double NOT NULL,
   `lat` double NOT NULL,
   `pic` text NOT NULL,
-  `sound` text NOT NULL
+  `sound` text NOT NULL,
+  UNIQUE KEY `placename` (`placename`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
@@ -62,20 +63,13 @@ CREATE TABLE IF NOT EXISTS `favplace` (
 --
 
 INSERT INTO `favplace` (`placename`, `visited`, `placetype`, `placeintro`, `lng`, `lat`, `pic`, `sound`) VALUES
-('彩色', 1, 'cs', '4', 31.0282429560779, 121.436347961426, '', ''),
-('上海交大', 3, '学校', '非常棒', 121.420173, 31.100896, '', ''),
-('vwvw', 1, 'vwvw', 'vwvwvwvw', 121.426461, 31.089609, '', ''),
-('擦手擦', 1, 'vava', '', 121.436954, 31.091279, '', ''),
-('vrwvw', 0, '不闻不问', '不闻不问', 121.412268, 31.094557, '', ''),
-('fcafvwe', 0, 'vewvwrb', 'ebvwbvwrb', 121.372132, 30.983137, 'upload/vf.gif', ''),
+('快乐大本营', 1, '综艺节目', '很好看的综艺节目，每天都会看哦！', 112.990007, 28.230034, 'upload/Jellyfish.jpg', 'upload/'),
+('vwvw', 0, 'vwvw', 'vwvwvwvw', 121.426461, 31.089609, '', ''),
+('擦手擦', 0, 'vava', '', 121.436954, 31.091279, '', ''),
 ('vewvew', 1, 'brwabre', '你忍忍enetne', 121.476192, 31.152891, 'upload/122.jpg', ''),
 ('NALI', 1, 'FAV', 'EFVW', 121.368107, 31.174645, 'upload/X.jpg', ''),
-('vdjbwkvdw', 0, 'brebe', 'breberb', 121.301417, 31.051967, 'upload/Chrysanthemum.jpg', ''),
-('ve', 0, 'vev', 'vdvd', 121.425024, 31.24284, 'upload/top-5-countdown-for-week-ending-23nov13.mp3', ''),
-('y', 0, 'y', 'n', 121.301417, 30.958366, 'upload/vf.gif', 'upload/scientists-debate-prepare-for-killer-asteroid.mp3'),
-('n', 1, 'n', 'n', 121.399728, 31.056916, 'upload/snslogo (2).gif', 'upload/top-5-countdown-for-week-ending-23nov13.mp3'),
-('sss', 0, 'sss', 'sss', 121.639468, 31.161791, 'upload/Desert.jpg', 'upload/'),
-('casv', 1, 'vev', 'vevevev', 121.537133, 31.285807, 'upload/Penguins.jpg', 'upload/');
+('n', 0, 'n', 'n', 121.399728, 31.056916, 'upload/snslogo (2).gif', 'upload/top-5-countdown-for-week-ending-23nov13.mp3'),
+('casv', 0, 'vev', 'vevevev', 121.537133, 31.285807, 'upload/Penguins.jpg', 'upload/');
 
 -- --------------------------------------------------------
 
@@ -84,28 +78,19 @@ INSERT INTO `favplace` (`placename`, `visited`, `placetype`, `placeintro`, `lng`
 --
 
 CREATE TABLE IF NOT EXISTS `favplace_guest` (
-  `id` int(11) NOT NULL,
   `placename` varchar(50) NOT NULL,
-  `guestname` varchar(50) NOT NULL
+  `guestname` varchar(50) NOT NULL,
+  UNIQUE KEY `placename` (`placename`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- 转存表中的数据 `favplace_guest`
 --
 
-INSERT INTO `favplace_guest` (`id`, `placename`, `guestname`) VALUES
-(10000, '彩色', 'lihuaxin0033@163.com'),
-(99999, '上海交大', 'lihuaxin0033@163.com'),
-(0, '擦手擦', 'lihuaxin0033@163.com'),
-(0, 'NALI', 'lihuaxin0033@163.com'),
-(0, '华为lihuaxin0033@163.comhuawei', ''),
-(0, 'vwvw', 'lihuaxin0033@163.com'),
-(0, 'vewvew', 'lihuaxin0033@163.com'),
-(0, '华为lihuaxin0033@163.comhuawei', ''),
-(0, '华为lihuaxin0033@163.comhuawei', ''),
-(0, '华为', ''),
-(0, 'n', 'lihuaxin0033@163.com'),
-(0, 'casv', 'lihuaxin0033@163.com');
+INSERT INTO `favplace_guest` (`placename`, `guestname`) VALUES
+('NALI', 'lihuaxin0033@163.com'),
+('vewvew', 'lihuaxin0033@163.com'),
+('快乐大本营', 'lihuaxin0033@163.com');
 
 -- --------------------------------------------------------
 
@@ -153,7 +138,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 INSERT INTO `users` (`id`, `username`, `mingzi`, `password`, `identity`, `caifu`) VALUES
 (2, 'lhc', '', 'acd', 'c', 520),
-(1, 'lihuaxin0033@163.com', 'muxiaonuo', 'lihuaxin003', 'c', 384),
+(1, 'lihuaxin0033@163.com', 'muxiaonuo', 'lihuaxin003', 'c', 500),
 (5, 'bwbwbw', '', '123123', 'c', 200),
 (11, '2625689005@qq.com', 'lihuaxin', '123456', '', 0),
 (12, '328332569@qq.com', 'lihuaxin', '1234', '', 0),
@@ -169,7 +154,7 @@ INSERT INTO `users` (`id`, `username`, `mingzi`, `password`, `identity`, `caifu`
 --
 
 CREATE TABLE IF NOT EXISTS `winner` (
-  `placename` text NOT NULL,
+  `placename` varchar(20) NOT NULL,
   `placeintro` text NOT NULL,
   `lng` double NOT NULL,
   `lat` double NOT NULL,
@@ -178,7 +163,8 @@ CREATE TABLE IF NOT EXISTS `winner` (
   `owner` text NOT NULL,
   `builder` text NOT NULL,
   `value` int(11) NOT NULL,
-  `fee` int(11) NOT NULL
+  `fee` int(11) NOT NULL,
+  UNIQUE KEY `placename` (`placename`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
@@ -186,7 +172,7 @@ CREATE TABLE IF NOT EXISTS `winner` (
 --
 
 INSERT INTO `winner` (`placename`, `placeintro`, `lng`, `lat`, `pic`, `sound`, `owner`, `builder`, `value`, `fee`) VALUES
-('华为', '一所公司', 131, 29, '', '', 'lihuaxin0033@163.com', 'huawei', 200, 40);
+('华为', '一所公司', 131, 29, '', '', 'lihuaxin0033@163.com', 'huawei', 400, 80);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
