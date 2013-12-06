@@ -27,12 +27,14 @@ $(document).ready(function() {
 						$('#recommend_place').fadeIn('slow');
 					});
 				}
+				else window.location.href = "destination_index.html";
 
 			})
 			.fail(function() {
 				alert("请检查您的网络连接！");
 			});
 		}
+		else window.location.href = "destination_index.html";
 	});
 });
 
