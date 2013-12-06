@@ -1,5 +1,6 @@
 <?php 
 require "php/functions.php";
+if (!isset($_GET['log_id'])) header("location:destination_index.html");
 $log_id = $_GET['log_id'];
 $conn = connect_blog($config);
 $data = query("SELECT * FROM isns_blog WHERE log_id = :log_id",
