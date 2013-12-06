@@ -3,6 +3,8 @@ username=getCookie('curname');
 tmoney=getCookie('money');
 if (username!=null && username!="")
 {
+
+  alert('ff');
   $('#head_login').fadeOut(1);
           $('#head_menu').append("<p style='float:left' id='user_info'>"+username+"欢迎登陆   当前财富"+tmoney+"</p>");
           $('#head_menu').append("<button type='submit' class='btn' id='logout'>退出</button>");
@@ -19,8 +21,6 @@ if (username!=null && username!="")
           window.location.href="qiye_index.html"; 
           return;
       }
-      setCookie("curname",name,3);
-      setCookie("money",data["money"],3);
       $('body').on("click","#logout",function(){
         $('#logout').remove();
         $('#user_info').remove();

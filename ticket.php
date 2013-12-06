@@ -39,12 +39,12 @@ $discount_info = discount($config);
 					  <li ><a href="index.html">主页</a></li>
 					  <li><a href="destination_index.html">目的地</a></li>
 					  <li class="active"><a href="#">票务</a></li>
-					  <li><a href="#">我的空间</a></li>
+					  <li><a href="../iwebsns/index.php">我的空间</a></li>
 					</ul>
 			      </div>
 			      <div class="navbar-form pull-left" id="head_login">
-					  <input type="text" class="span2" placeholder="用户名">
-					  <input type="text" class="span2" placeholder="密码">
+					  <input type="text" class="span2" placeholder="用户名" id = "username">
+					  <input type="password" class="span2" placeholder="密码" id = "password">
 					  <button type="submit" class="btn" id="head_submit">登录</button>
 					  <button type="submit" class="btn">注册</button>
 				  </div>
