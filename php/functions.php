@@ -19,6 +19,21 @@ function connect($config)
 	}
 }
 
+function connect_blog($config)
+{
+	try {
+		$conn = new \PDO('mysql:host=localhost;dbname=iwebsns',
+						$config['username'],
+						$config['password']);
+
+		$conn->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+
+		return $conn;
+	} catch(Exception $e) {
+		return false;
+	}
+}
+
 //无返回结果
 function query_without_results($query, $bindings, $conn){
 	$conn->query('set names utf8;');

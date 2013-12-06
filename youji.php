@@ -1,4 +1,12 @@
-<!DOCTYPE html>
+<?php 
+require "php/functions.php";
+$log_id = 1;
+$conn = connect_blog($config);
+$data = query("SELECT * FROM isns_blog WHERE log_id = :log_id",
+			   array('log_id' => $log_id),
+			   $conn);
+ ?>
+
 <html>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 <head>
@@ -52,8 +60,10 @@
 		<div class="row">
 			<div class="span8" id="leftside">
 				<div class="row article">
-					<h3>漠河（第六版）</h3>
-					<p>简介 漠河地处北纬53度半，“白夜”和“北极光”两大天然奇景是漠河的特别之处，夏至前后半个月，每晚只有子夜时分一两个钟头，随后又是朝霞似锦，旭日高悬，黑夜于是变成了“白夜”；北极村的冬天漫长而寒冷，白天短，夜间长，当地人称之为“黑昼”，这里还是中国唯一可观赏到北极光和极昼现象的地方。冬季漠河的旅游项目都跟冰雪有关，北极村的茫茫雪海，漠河县的冰灯、雪雕展，马拉爬犁等别具情趣。</p>
+					<?php 
+						echo '<h3>' .$data[0]['log_title']. '</h3>';
+						echo $data[0]['log_content'];
+					 ?>
 				</div>
 				<div class="row article_list">
 					<h3>相关推荐</h3>
