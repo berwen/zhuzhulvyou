@@ -1,7 +1,7 @@
 <?php 
 
 $config = array('username' => 'root',
-			    'password' => 'Xiaotaozi21');
+			    'password' => '');
 
 //连接ticket数据库
 function connect($config)

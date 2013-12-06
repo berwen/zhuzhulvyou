@@ -1,6 +1,6 @@
 <?php 
 require "php/functions.php";
-$log_id = 1;
+$log_id = $_GET['log_id'];
 $conn = connect_blog($config);
 $data = query("SELECT * FROM isns_blog WHERE log_id = :log_id",
 			   array('log_id' => $log_id),
