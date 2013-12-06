@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2013 年 12 月 06 日 10:33
+-- 生成日期: 2013 年 12 月 06 日 18:06
 -- 服务器版本: 5.6.12-log
 -- PHP 版本: 5.4.12
 
@@ -116,20 +116,26 @@ INSERT INTO `favplace_guest` (`id`, `placename`, `guestname`) VALUES
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(20) NOT NULL,
+  `mingzi` text NOT NULL,
   `password` varchar(20) NOT NULL,
   `identity` varchar(10) NOT NULL,
   `caifu` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC AUTO_INCREMENT=16 ;
 
 --
 -- 转存表中的数据 `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `password`, `identity`, `caifu`) VALUES
-(2, 'lhc', 'acd', 'c', 520),
-(1, 'lihuaxin0033@163.com', 'lihuaxin003', 'c', 384),
-(5, 'bwbwbw', '123123', 'c', 200);
+INSERT INTO `users` (`id`, `username`, `mingzi`, `password`, `identity`, `caifu`) VALUES
+(2, 'lhc', '', 'acd', 'c', 520),
+(1, 'lihuaxin0033@163.com', 'muxiaonuo', 'lihuaxin003', 'c', 384),
+(5, 'bwbwbw', '', '123123', 'c', 200),
+(11, '2625689005@qq.com', 'lihuaxin', '123456', '', 0),
+(12, '328332569@qq.com', 'lihuaxin', '1234', '', 0),
+(13, 'cdsvsb', '', '', '', 0),
+(14, 'cdsvsb@qq.com', 'fafa', '1234', '', 0),
+(15, 'agagaga@163.com', 'vava', '1234', '', 0);
 
 -- --------------------------------------------------------
 

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2013 年 12 月 06 日 07:59
+-- 生成日期: 2013 年 12 月 06 日 18:08
 -- 服务器版本: 5.6.12-log
 -- PHP 版本: 5.4.12
 
@@ -218,7 +218,7 @@ CREATE TABLE IF NOT EXISTS `isns_blog` (
 
 INSERT INTO `isns_blog` (`log_id`, `user_id`, `user_name`, `user_ico`, `log_title`, `log_sort`, `is_pass`, `log_sort_name`, `log_content`, `add_time`, `edit_time`, `privacy`, `hits`, `comments`, `tag`) VALUES
 (3, 1, 'muxiaonuo', 'uploadfiles/photo_store/2013/11/24/2013112411002844_ico_small.jpg', '三亚的东西！！', 2, 1, '游记', '<p style="margin-top:0px;margin-bottom:1em;padding:0px;min-height:20px;color:#333333;font-family:Arial, 宋体;font-size:14px;line-height:21px;"><span style="font-family:宋体;color:#404040;font-size:19px;">-----</span><span style="font-family:宋体;color:#404040;font-size:19px;">有些人或地方一直没机会见，等有机会见了，却又犹豫了，相见争如怀念。</span></p>\r\n<p style="margin-top:0px;margin-bottom:1em;padding:0px;min-height:20px;color:#333333;font-family:Arial, 宋体;font-size:14px;line-height:21px;"></p>\r\n<p style="margin-top:0px;margin-bottom:1em;padding:0px;min-height:20px;color:#333333;font-family:Arial, 宋体;font-size:14px;line-height:21px;"><span style="font-family:宋体;color:#404040;font-size:19px;">甫一出站，我那晃荡得早已疲惫一夜的心瞬间被治愈了。火车到站的时间比较早，<a href="http://lvyou.baidu.com/sanya" class="a-notes-innerlink" target="_blank" style="text-decoration:none;color:#007ed9;">三亚</a>的天才刚微微亮，晨曦的微光依稀可见，深吸一口气，微热的微风瞬间沁入心脾，抬眼一片广袤的天空，深蓝中带着紫色的霞光，视野所及之处，一片辽阔。回过神，车站门口的广场上伴随着到站的人们依次走出来，三三两两，奔向各自的方向。随着人流踏向我的方向，我的三亚之旅便由此开始。</span><span style="font-family:宋体;color:#404040;font-size:19px;"><br />\r\n<a href="http://lvyou.baidu.com/notes/photo/5ed28924608be80b3d109ca8" target="_blank" class="notes-photo-link" style="text-decoration:none;display:inline-block;max-width:600px;color:#007ed9;"><img class="notes-photo-img" src="http://a.hiphotos.baidu.com/lvpics/s%3D800/sign=56ab6996bb014a90853e4bbd99763971/8b13632762d0f703d93343f80afa513d2697c515.jpg" data-purl="8b13632762d0f703d93343f80afa513d2697c515" width="600" height="450" data-id="5ed28924608be80b3d109ca8" data-url="8b13632762d0f703d93343f80afa513d2697c515" style="border:0px;max-width:600px;display:block;" /></a></span></p>\r\n<p style="margin-top:0px;margin-bottom:1em;padding:0px;min-height:20px;color:#333333;font-family:Arial, 宋体;font-size:14px;line-height:21px;"></p>\r\n<p style="margin-top:0px;margin-bottom:1em;padding:0px;min-height:20px;color:#333333;font-family:Arial, 宋体;font-size:14px;line-height:21px;"><span style="font-family:宋体;color:#404040;font-size:19px;">来到三叶草，首先结识的是一位超帅哥，初次见面的时候，他是一副冷漠不易接近的样子，搞的我们在客厅坐着都把腰杆给挺得直直的不敢妄动。后来熟识了才知道，原来他就是个闷骚型，那副深沉样儿完全是装出来的。然后再是神交已久的雪梅姐，和几位热情和善的打扫大姐。这些人们，都一如相像中的可亲可善，令我们毫无拘束。</span></p>\r\n<p style="margin-top:0px;margin-bottom:1em;padding:0px;min-height:20px;color:#333333;font-family:Arial, 宋体;font-size:14px;line-height:21px;"><span style="font-family:宋体;color:#404040;font-size:19px;">我们到达的头几天主要就是出去熟悉下三亚的大体环境。三亚别的不说，就是海特别多，我们首先去的就是<a href="http://lvyou.baidu.com/dadonghai" class="a-notes-innerlink" target="_blank" style="text-decoration:none;color:#007ed9;">大东海</a>，我们去的时候正是一个阳光的午后，转过路口进到沙滩的入口，眼前顿时一片豁然开朗，漫长的海岸线，水天一线的澄蓝大海，浪花起伏，伴随着舒爽的海风拂过我的发梢，让我感觉从身到心，由内而外，通体舒畅。这是我们在三亚第一次看到的大海。即使已经去过<a href="http://lvyou.baidu.com/shenzhen" class="a-notes-innerlink" target="_blank" style="text-decoration:none;color:#007ed9;">深圳</a>大梅沙，厦门鼓浪屿，三亚的大海依然给了我一种震撼的感觉。心中有个声音在告诉我，这才是我心目中该有的大海。即便后来我们在这里看了一个月的各种海，那一次的感觉依然是我心中最深刻。</span></p>\r\n<p style="margin-top:0px;margin-bottom:1em;padding:0px;min-height:20px;color:#333333;font-family:Arial, 宋体;font-size:14px;line-height:21px;"><span style="font-family:宋体;color:#404040;font-size:19px;">如同小家碧玉的小<a href="http://lvyou.baidu.com/donghai" class="a-notes-innerlink" target="_blank" style="text-decoration:none;color:#007ed9;">东海</a>，清幽剔透的亚龙湾，绵延不绝的<a href="http://lvyou.baidu.com/sanyawan" class="a-notes-innerlink" target="_blank" style="text-decoration:none;color:#007ed9;">三亚湾</a>，秀丽无双的蜈支洲……每一个海湾似一样，却又不尽相同。各自保持着不同的特点。小东海和大东海因为临近的原因，我们去的次数最多，闲暇时都会间或骑车过去走走，日子过得缓慢而美妙。</span><span style="font-family:宋体;color:#404040;font-size:19px;"><br />\r\n<a href="http://lvyou.baidu.com/notes/photo/87862d7e02414b3755f0e9a8" target="_blank" class="notes-photo-link" style="text-decoration:none;display:inline-block;max-width:600px;color:#007ed9;"></a><br />\r\n<br />\r\n<a href="http://lvyou.baidu.com/notes/photo/a3dd29414b3755f080caf6a8" target="_blank" class="notes-photo-link" style="text-decoration:none;display:inline-block;max-width:600px;color:#007ed9;"></a><br />\r\n<br />\r\n</span></p>\r\n<p style="margin-top:0px;margin-bottom:1em;padding:0px;min-height:20px;color:#333333;font-family:Arial, 宋体;font-size:14px;line-height:21px;"></p>\r\n<p style="margin-top:0px;margin-bottom:1em;padding:0px;min-height:20px;color:#333333;font-family:Arial, 宋体;font-size:14px;line-height:21px;"><span style="font-family:宋体;color:#404040;font-size:19px;">我们所在的三叶草南边海店临近鹿回头公园，熟悉了这边以后，隔个两天我们休息的时候，便邀约一起骑上自行车去鹿回头渔村那边的海滩走走，大多是傍晚时刻，天边的云彩和晚霞正是好，绚烂多姿，衬着这高远蔚蓝的天空，就是一幅画。</span><br />\r\n<a href="http://lvyou.baidu.com/notes/photo/00f5cef5b652472634bef0a8" target="_blank" class="notes-photo-link" style="text-decoration:none;display:inline-block;max-width:600px;color:#007ed9;"></a><br />\r\n<br />\r\n<a href="http://lvyou.baidu.com/notes/photo/49569d52472634beffe9f1a8" target="_blank" class="notes-photo-link" style="text-decoration:none;display:inline-block;max-width:600px;color:#007ed9;"></a></p>\r\n<p style="margin-top:0px;margin-bottom:1em;padding:0px;min-height:20px;color:#333333;font-family:Arial, 宋体;font-size:14px;line-height:21px;"></p>\r\n<p style="margin-top:0px;margin-bottom:1em;padding:0px;min-height:20px;color:#333333;font-family:Arial, 宋体;font-size:14px;line-height:21px;"><span style="font-family:宋体;color:#404040;font-size:19px;">我喜欢静静的走在国宾馆前面的那座长长的栈桥，一路走过，就如同走过我我每一寸的时光与心情，一步步沉淀，直到桥尽头亦是海中央。我左右观望，前方是即将下落海里的夕阳，放眼望去，能看到斜对岸的灯塔；左右是不断拍打着桥廊柱的浪花，身后是一轮孤独且明亮的圆月。那一霎，我觉得我好像独自飘荡在海中央，随着浪花一起，不断沉浮。</span><span style="font-family:宋体;color:#404040;font-size:19px;"><br />\r\n<a href="http://lvyou.baidu.com/notes/photo/01b872c20f7e11df15e127af" target="_blank" class="notes-photo-link" style="text-decoration:none;display:inline-block;max-width:600px;color:#007ed9;"></a><br />\r\n<br />\r\n<a href="http://lvyou.baidu.com/notes/photo/8e61247e11df15e197ed24af" target="_blank" class="notes-photo-link" style="text-decoration:none;display:inline-block;max-width:600px;color:#007ed9;"></a><br />\r\n</span></p>\r\n<p style="margin-top:0px;margin-bottom:1em;padding:0px;min-height:20px;color:#333333;font-family:Arial, 宋体;font-size:14px;line-height:21px;"><span style="font-family:宋体;color:#404040;font-size:19px;">最爱看三亚天空，与各种云朵。每时每刻，无论我哪次不经意的抬头看天空，它都会给我不同的惊喜。天晴时明媚如洗，阴天时或雾霭沉沉，或东西各异，雨天时类似海市蜃楼。大自然的美妙总是让人惊叹不已。</span></p>', '2013-12-06 15:02:05', NULL, '', 1, 1, '上海 四川 三亚'),
-(4, 1, 'muxiaonuo', 'uploadfiles/photo_store/2013/11/24/2013112411002844_ico_small.jpg', '猪猪思密达', 2, 1, '游记', '<p style="margin-top:0px;margin-bottom:1em;padding:0px;min-height:20px;color:#333333;font-family:Arial, 宋体;font-size:14px;line-height:21px;"><span style="color:#555555;font-family:simsun;">来到<a href="http://lvyou.baidu.com/xiamen" class="a-notes-innerlink" target="_blank" style="text-decoration:none;color:#007ed9;">厦门</a>这个城市两年多了，在此之前来过厦门两次，每一次都爱这个城市多一点，所以第三次就干脆不走了。在厦门的两年多时间，每一年都会出一版新的攻略，因为对这个城市了解的越多，爱这个地方就更多一点，能够分享的也就更多。真心希望把这个城市最美好最精髓的东西传达给更多的人，让更多的人了解真正的厦门。还是那句话，如果你还没有去过厦门，那么这篇文章你一定要收藏，因为那是一个无论如何你都会去一次的城市。如果你已经去过厦门，那么这篇文章也应该会对你有所帮助，因为那是一个去了一次就一定会再想去的城市。最新最全的信息，最实用的路线，厦门是会值得一来再来的哦~~</span><br />\r\n</p>\r\n<p style="margin-top:0px;margin-bottom:1em;padding:0px;min-height:20px;color:#333333;font-family:Arial, 宋体;font-size:14px;line-height:21px;"><span style="color:#555555;font-family:simsun;">为了给大家提供最详尽的信息，这篇攻略内容会比较多，所以这次我会把最重要的先放在前面说，能够让大家更充分了解厦门的信息及花费放在后面附加。也会做一个常见问题的Q&amp;A。当然如果还有更多问题，只要小驴能解决的，一定帮忙。</span></p>', '2013-12-06 15:03:48', NULL, '', 1, 2, '北京');
+(4, 1, 'muxiaonuo', 'uploadfiles/photo_store/2013/11/24/2013112411002844_ico_small.jpg', '猪猪思密达', 2, 1, '游记', '<p style="margin-top:0px;margin-bottom:1em;padding:0px;min-height:20px;color:#333333;font-family:Arial, 宋体;font-size:14px;line-height:21px;"><span style="color:#555555;font-family:simsun;">来到<a href="http://lvyou.baidu.com/xiamen" class="a-notes-innerlink" target="_blank" style="text-decoration:none;color:#007ed9;">厦门</a>这个城市两年多了，在此之前来过厦门两次，每一次都爱这个城市多一点，所以第三次就干脆不走了。在厦门的两年多时间，每一年都会出一版新的攻略，因为对这个城市了解的越多，爱这个地方就更多一点，能够分享的也就更多。真心希望把这个城市最美好最精髓的东西传达给更多的人，让更多的人了解真正的厦门。还是那句话，如果你还没有去过厦门，那么这篇文章你一定要收藏，因为那是一个无论如何你都会去一次的城市。如果你已经去过厦门，那么这篇文章也应该会对你有所帮助，因为那是一个去了一次就一定会再想去的城市。最新最全的信息，最实用的路线，厦门是会值得一来再来的哦~~</span><br />\r\n</p>\r\n<p style="margin-top:0px;margin-bottom:1em;padding:0px;min-height:20px;color:#333333;font-family:Arial, 宋体;font-size:14px;line-height:21px;"><span style="color:#555555;font-family:simsun;">为了给大家提供最详尽的信息，这篇攻略内容会比较多，所以这次我会把最重要的先放在前面说，能够让大家更充分了解厦门的信息及花费放在后面附加。也会做一个常见问题的Q&amp;A。当然如果还有更多问题，只要小驴能解决的，一定帮忙。</span></p>', '2013-12-06 15:03:48', NULL, '', 2, 3, '北京');
 
 -- --------------------------------------------------------
 
@@ -239,7 +239,7 @@ CREATE TABLE IF NOT EXISTS `isns_blog_comment` (
   `readed` tinyint(2) DEFAULT '0',
   PRIMARY KEY (`comment_id`),
   KEY `log_id` (`log_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 --
 -- 转存表中的数据 `isns_blog_comment`
@@ -248,7 +248,8 @@ CREATE TABLE IF NOT EXISTS `isns_blog_comment` (
 INSERT INTO `isns_blog_comment` (`comment_id`, `visitor_ico`, `is_hidden`, `visitor_id`, `log_id`, `host_id`, `visitor_name`, `content`, `add_time`, `readed`) VALUES
 (1, 'uploadfiles/photo_store/2013/11/24/2013112411002844_ico_small.jpg', 0, 1, 4, 1, 'muxiaonuo', 'breberb', '2013-12-06 15:57:59', 0),
 (2, 'uploadfiles/photo_store/2013/11/24/2013112411002844_ico_small.jpg', 0, 1, 4, 1, 'muxiaonuo', '猪猪思密达', '2013-12-06 15:58:53', 0),
-(3, 'uploadfiles/photo_store/2013/11/24/2013112411002844_ico_small.jpg', 0, 1, 3, 1, 'muxiaonuo', '猪猪思密达！', '2013-12-06 15:59:08', 0);
+(3, 'uploadfiles/photo_store/2013/11/24/2013112411002844_ico_small.jpg', 0, 1, 3, 1, 'muxiaonuo', '猪猪思密达！', '2013-12-06 15:59:08', 0),
+(4, 'skin/default/jooyea/images/d_ico_1_small.gif', 0, 5, 4, 1, 'lihuaxin0033@163.com', 'vvewvew', '2013-12-06 17:35:50', 0);
 
 -- --------------------------------------------------------
 
@@ -289,7 +290,7 @@ CREATE TABLE IF NOT EXISTS `isns_currentuser` (
 --
 
 INSERT INTO `isns_currentuser` (`username`, `id`, `caifu`) VALUES
-('lihuaxin0033@163.com', 1, 462);
+('', 1, 465);
 
 -- --------------------------------------------------------
 
@@ -619,7 +620,7 @@ CREATE TABLE IF NOT EXISTS `isns_guest` (
   `add_time` datetime DEFAULT NULL,
   PRIMARY KEY (`guest_id`),
   KEY `user_id` (`user_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=16 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=18 ;
 
 --
 -- 转存表中的数据 `isns_guest`
@@ -628,7 +629,8 @@ CREATE TABLE IF NOT EXISTS `isns_guest` (
 INSERT INTO `isns_guest` (`guest_id`, `guest_user_id`, `guest_user_name`, `guest_user_ico`, `user_id`, `add_time`) VALUES
 (15, 1, 'muxiaonuo', 'uploadfiles/photo_store/2013/11/24/2013112411002844_ico_small.jpg', 2, '2013-12-05 20:20:37'),
 (10, 2, 'berwin', 'skin/default/jooyea/images/d_ico_1_small.gif', 1, '2013-11-30 00:45:09'),
-(11, 6, '', 'skin/default/jooyea/images/d_ico_1_small.gif', 1, '2013-11-30 13:12:47');
+(11, 6, '', 'skin/default/jooyea/images/d_ico_1_small.gif', 1, '2013-11-30 13:12:47'),
+(17, 5, 'lihuaxin0033@163.com', 'skin/default/jooyea/images/d_ico_1_small.gif', 1, '2013-12-06 17:35:47');
 
 -- --------------------------------------------------------
 
@@ -796,7 +798,7 @@ CREATE TABLE IF NOT EXISTS `isns_msg_inbox` (
   `readed` tinyint(2) DEFAULT '0',
   PRIMARY KEY (`mess_id`),
   KEY `user_id` (`user_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- 转存表中的数据 `isns_msg_inbox`
@@ -804,7 +806,8 @@ CREATE TABLE IF NOT EXISTS `isns_msg_inbox` (
 
 INSERT INTO `isns_msg_inbox` (`mess_id`, `mess_title`, `mess_content`, `from_user_id`, `from_user`, `from_user_ico`, `user_id`, `add_time`, `mesinit_id`, `readed`) VALUES
 (1, 'berwin添加您为好友', 'berwin添加您为好友。<br />此条信息为系统发送，不必回复 <br />您可以<a href="javascript:{send_join_js}">加其为好友</a>或<a href="modules.php?app=mypals_search">搜索其他好友</a><br>', 2, '系统发送', 'skin/default/jooyea/images/d_ico_1_small.gif', 1, '2013-11-24 10:50:33', 0, 0),
-(2, 'muxiaonuo添加您为好友', 'muxiaonuo添加您为好友。<br />此条信息为系统发送，不必回复 <br />您可以<a href="javascript:{send_join_js}">加其为好友</a>或<a href="modules.php?app=mypals_search">搜索其他好友</a><br>', 1, '系统发送', 'skin/default/jooyea/images/d_ico_1_small.gif', 2, '2013-11-24 10:55:27', 0, 1);
+(2, 'muxiaonuo添加您为好友', 'muxiaonuo添加您为好友。<br />此条信息为系统发送，不必回复 <br />您可以<a href="javascript:{send_join_js}">加其为好友</a>或<a href="modules.php?app=mypals_search">搜索其他好友</a><br>', 1, '系统发送', 'skin/default/jooyea/images/d_ico_1_small.gif', 2, '2013-11-24 10:55:27', 0, 1),
+(3, 'lihuaxin0033@163.com添加您为好友', 'lihuaxin0033@163.com添加您为好友。<br />此条信息为系统发送，不必回复 <br />您可以<a href="javascript:{send_join_js}">加其为好友</a>或<a href="modules.php?app=mypals_search">搜索其他好友</a><br>', 5, '系统发送', 'skin/default/jooyea/images/d_ico_1_small.gif', 1, '2013-12-06 17:35:41', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -848,14 +851,14 @@ CREATE TABLE IF NOT EXISTS `isns_online` (
   `session_code` char(32) DEFAULT NULL,
   PRIMARY KEY (`online_id`),
   UNIQUE KEY `user_id` (`user_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=113 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=114 ;
 
 --
 -- 转存表中的数据 `isns_online`
 --
 
 INSERT INTO `isns_online` (`online_id`, `user_id`, `user_name`, `user_sex`, `user_ico`, `birth_year`, `birth_province`, `birth_city`, `reside_province`, `reside_city`, `active_time`, `hidden`, `session_code`) VALUES
-(112, 1, 'muxiaonuo', 1, 'uploadfiles/photo_store/2013/11/24/2013112411002844_ico_small.jpg', NULL, NULL, NULL, NULL, NULL, 1386316643, 0, NULL);
+(112, 1, 'muxiaonuo', 1, 'uploadfiles/photo_store/2013/11/24/2013112411002844_ico_small.jpg', NULL, NULL, NULL, NULL, NULL, 1386347288, 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -901,7 +904,7 @@ CREATE TABLE IF NOT EXISTS `isns_pals_mine` (
   KEY `user_id` (`user_id`),
   KEY `pals_id` (`pals_id`),
   KEY `pals_sort_id` (`pals_sort_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- 转存表中的数据 `isns_pals_mine`
@@ -909,7 +912,8 @@ CREATE TABLE IF NOT EXISTS `isns_pals_mine` (
 
 INSERT INTO `isns_pals_mine` (`id`, `user_id`, `pals_id`, `pals_sort_id`, `pals_sort_name`, `pals_name`, `pals_sex`, `add_time`, `pals_ico`, `accepted`, `active_time`) VALUES
 (1, 2, 1, 0, NULL, 'muxiaonuo', 1, '2013-11-24 10:50:33', 'uploadfiles/photo_store/2013/11/24/2013112411002844_ico_small.jpg', 2, '2013-12-06 15:03:48'),
-(2, 1, 2, 0, NULL, 'berwin', 1, '2013-11-24 10:55:27', 'skin/default/jooyea/images/d_ico_1_small.gif', 2, '2013-11-30 00:45:13');
+(2, 1, 2, 0, NULL, 'berwin', 1, '2013-11-24 10:55:27', 'skin/default/jooyea/images/d_ico_1_small.gif', 2, '2013-11-30 00:45:13'),
+(3, 5, 1, 0, NULL, 'muxiaonuo', 1, '2013-12-06 17:35:41', 'uploadfiles/photo_store/2013/11/24/2013112411002844_ico_small.jpg', 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -1210,7 +1214,7 @@ CREATE TABLE IF NOT EXISTS `isns_remind` (
   `count` mediumint(8) unsigned DEFAULT '1',
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`,`is_focus`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
 --
 -- 转存表中的数据 `isns_remind`
@@ -1425,16 +1429,17 @@ CREATE TABLE IF NOT EXISTS `isns_users` (
   `activation_id` int(8) DEFAULT '-1' COMMENT '激活码id值',
   PRIMARY KEY (`user_id`),
   UNIQUE KEY `user_email` (`user_email`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=16 ;
 
 --
 -- 转存表中的数据 `isns_users`
 --
 
 INSERT INTO `isns_users` (`user_id`, `user_email`, `user_name`, `user_pws`, `user_sex`, `birth_province`, `birth_city`, `reside_province`, `reside_city`, `user_ico`, `is_pass`, `user_add_time`, `birth_year`, `birth_month`, `birth_day`, `creat_group`, `join_group`, `guest_num`, `integral`, `access_limit`, `access_questions`, `access_answers`, `inputmess_limit`, `palsreq_limit`, `lastlogin_datetime`, `invite_from_uid`, `hidden_pals_id`, `hidden_type_id`, `login_ip`, `is_recommend`, `dressup`, `use_plugins`, `use_apps`, `user_group`, `forget_pass`, `activation_id`) VALUES
-(1, 'lihuaxin0033@163.com', 'muxiaonuo', '6572bdaff799084b973320f43f09b363', 1, NULL, NULL, NULL, NULL, 'uploadfiles/photo_store/2013/11/24/2013112411002844_ico_small.jpg', 1, '2013-11-23 22:33:12', '', '', '', NULL, NULL, 2, 81, 0, NULL, NULL, 0, 0, '2013-11-30 13:08:07', 0, NULL, NULL, '127.0.0.1', 0, 'green', NULL, NULL, 'base', NULL, -1),
+(1, 'lihuaxin0033@163.com', 'muxiaonuo', '6572bdaff799084b973320f43f09b363', 1, NULL, NULL, NULL, NULL, 'uploadfiles/photo_store/2013/11/24/2013112411002844_ico_small.jpg', 1, '2013-11-23 22:33:12', '', '', '', NULL, NULL, 3, 81, 0, NULL, NULL, 0, 0, '2013-11-30 13:08:07', 0, NULL, NULL, '127.0.0.1', 0, 'cyan', NULL, NULL, 'base', NULL, -1),
 (2, 'bwbw1992@163.com', 'berwin', 'e10adc3949ba59abbe56e057f20f883e', 1, NULL, NULL, NULL, NULL, 'skin/default/jooyea/images/d_ico_1_small.gif', 1, '2013-11-24 10:49:14', '', '', '', NULL, NULL, 1, 12, 0, NULL, NULL, 0, 0, '2013-11-24 10:49:14', 0, NULL, NULL, '59.78.8.155', 0, '0', NULL, NULL, 'base', NULL, -1),
-(5, 'cvwv', 'lihuaxin0033@163.com', 'lihuaxin003', 0, NULL, NULL, NULL, NULL, 'skin/default/jooyea/images/d_ico_1_small.gif', 0, '0000-00-00 00:00:00', '', '', '', NULL, NULL, 0, 10, 0, NULL, NULL, 0, 0, '0000-00-00 00:00:00', 1, NULL, NULL, '', 0, '0', NULL, NULL, 'base', NULL, -1);
+(5, 'bwbwbw', 'lihuaxin0033@163.com', 'lihuaxin003', 0, NULL, NULL, NULL, NULL, 'skin/default/jooyea/images/d_ico_1_small.gif', 0, '2013-11-24 10:49:14', '', '', '', NULL, NULL, 0, 11, 0, NULL, NULL, 0, 0, '0000-00-00 00:00:00', 1, NULL, NULL, '', 0, '0', NULL, NULL, 'base', NULL, -1),
+(15, 'agagaga@163.com', 'vava', '243e61e9410a9f577d2d662c67025ee9', 1, NULL, NULL, NULL, NULL, 'skin/default/jooyea/images/d_ico_1_small.gif', 0, '0000-00-00 00:00:00', '', '', '', NULL, NULL, 0, 10, 0, NULL, NULL, 0, 0, '0000-00-00 00:00:00', 1, NULL, NULL, '', 0, '0', NULL, NULL, 'base', NULL, -1);
 
 -- --------------------------------------------------------
 

@@ -23,12 +23,13 @@ class funciones_BD {
     /**
      * agregar nuevo usuario
      */
-    public function adduser($username, $password,$email,$sex) {
+    public function adduser($username, $password,$email) {
 		mysql_query("set names utf8");
-		$result = mysql_query("INSERT INTO users(username,password) VALUES('$username','$password')");
+		$result = mysql_query("INSERT INTO users(username,mingzi,password) VALUES('$email','$username','$password')");
 		mysql_query("use iwebsns");
+        $jiami = md5('$password');
 		$sql="insert into isns_users (user_name,user_pws,user_sex,user_email,user_add_time,user_ico,invite_from_uid,is_pass,lastlogin_datetime,birth_year , birth_month , birth_day ,login_ip )"
-					." values('$username','$password','$sex','$email','date(\"Y-m-d H:i:s\")','skin/default/jooyea/images/d_ico_1_small.gif',1,'','','','','','')";
+					." values('$username','$jiami','1','$email','date(\"Y-m-d H:i:s\")','skin/default/jooyea/images/d_ico_1_small.gif',1,'','','','','','')";
 		
 		mysql_query($sql);
 		mysql_query("use ourmap");

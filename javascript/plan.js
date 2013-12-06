@@ -131,5 +131,23 @@ function addcity_redo()
 	//$('#add_newcity').fadeIn(1);
 }
 
+// function redo()
+// {
+// 	$("#plan_citylist").html("");
+// 	for(x in points){
+// 		gc.getLocation(points[x], function(rs){
+//     var addComp = rs.addressComponents;
+//     addcity_funct(addComp.city);
+
+//     }); 
+// 	}
+// var transit = new BMap.TransitRoute(map, {
+//   renderOptions: {map: map}
+// });
+// transit.search("王府井", "西单");
+// //local.search("景点");
+// transit.search("天安门", "西单");
+// }
+
 
 
