@@ -10,7 +10,7 @@ $discount_info = discount($config);
 	<link rel="stylesheet" type="text/css" href="css/ticket.css">
 	<link rel="stylesheet" type="text/css" href="jquery-ui-themes-1.10.3/themes/smoothness/jquery-ui.css"> 
 	<script type="text/javascript" src="http://api.map.baidu.com/api?v=1.4&ak=1bbe1bfaa50c4eb69022911a5a8735ea;"></script>
-	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+	<!-- // <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script> -->
 	<!-- // <script src="javascript/jquery.min.js"></script> -->
 	<!-- <script src="javascript/index.js"></script> -->
 	<!-- // <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script> -->
@@ -55,7 +55,7 @@ $discount_info = discount($config);
 		</div>
 	</div>
 	<div class="container">
-		<div class="row">
+		<div class="row main">
 			<div class="span4">
 				<div class="row search">
 					<h3>搜索</h3>

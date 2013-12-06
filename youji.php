@@ -57,7 +57,7 @@ $data = query("SELECT * FROM isns_blog WHERE log_id = :log_id",
 		</div>
 	</div>
 	<div class="container">
-		<div class="row">
+		<div class="row main">
 			<div class="span8" id="leftside">
 				<div class="row article">
 					<?php 

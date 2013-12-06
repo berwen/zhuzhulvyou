@@ -1,10 +1,11 @@
 body{
 	overflow: scroll; 
-	background-color: #e2e2e2;
+	background-color: #cce1fc;
 	height: 100%; 
 	width: 100%;
 	left: 0px;
 	top: 0px;
+	font-family: Microsoft YaHei;
 }
 .container{
 	/*background-image: url(http://image.xinli001.com/20121106/09155481d07eddc284ae7e.jpg); */
@@ -74,4 +75,8 @@ body{
 .ticket_list>div{
 	float: left;
 	width: 150px;
+}
+.main{
+	background-color: white;
+	border-radius: 5px;
 }
