@@ -97,8 +97,8 @@ $comment = query("SELECT visitor_name,content,add_time FROM isns_blog_comment
 						echo '<p>'.$row['add_time'].'</p>';
 					}
 					 ?>
-					<textarea rows="3"></textarea>
-					<button type="submit" class="btn btn-primary">评论</button>
+					<textarea rows="3" id="youji_comment"></textarea>
+					<button type="button" class="btn btn-primary" onclick=<?php echo '"submit_comment('.$log_id.')"'; ?>>评论</button>
 				</div>
 			</div>
 		</div>
