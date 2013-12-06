@@ -2,10 +2,12 @@
 <html>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 <head>
-	<title>猪猪旅游-规划行程</title>
+	<title>猪猪旅游-游记</title>
 	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
 	<link rel="stylesheet" type="text/css" href="css/plan.css">
 	<!-- <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css"> -->
+	<script type="text/javascript" src="http://api.map.baidu.com/api?v=1.4&key=1bbe1bfaa50c4eb69022911a5a8735ea;"></script>
+	<script type="text/javascript" src="http://api.map.baidu.com/library/CurveLine/1.5/src/CurveLine.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="jquery-ui-themes-1.10.3/themes/smoothness/jquery-ui.css"> 
 	<!-- // <script src="javascript/jquery.min.js"></script> -->
 	<!-- <script src="javascript/index.js"></script> -->
@@ -27,15 +29,15 @@
 			      </a>
 			 
 			      <!-- Be sure to leave the brand out there if you want it shown -->
-			      <a class="brand" href="index.html">猪猪旅游</a>
+			      <a class="brand" href="#">猪猪旅游</a>
 			      <!-- Everything you want hidden at 940px or less, place within here -->
 			      <div class="nav-collapse collapse" id="head_menu">
 			        <!-- .nav, .navbar-search, .navbar-form, etc -->
 			        <ul class="nav">
-					  <li><a href="index.html">主页</a></li>
+					  <li ><a href="index.html">主页</a></li>
 					  <li><a href="destination_index.html">目的地</a></li>
-					  <li><a href="ticket.php">票务</a></li>
-					  <li><a href="">我的空间</a></li>
+					  <li><a href="ticket.html">票务</a></li>
+					  <li><a href="#">我的空间</a></li>
 					</ul>
 			      </div>
 			      <div class="navbar-form pull-left" id="head_login">
@@ -51,8 +53,8 @@
 		</div>
 	</div>
 	<div class="container">
-		<div class="row main">
-			<div class="span3">
+		<div class="row">
+			<div class="span5">
 				<div class="row planlist">
 					<h3>规划行程</h3>
 					<div>出发日期<input type="text" class="date span2"></div>
@@ -70,10 +72,11 @@
 					</div>
 				</div>
 			</div>
-			<div class="span9">
-				<div class="row map">
+			<div class="span7">
+				<div class="row map" id="mapcontainer">
 					
 				</div>
+				<input type='Button' value='路线重置' onclick='addcity_redo();'>
 			</div>
 		</div>
 	</div>

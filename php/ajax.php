@@ -22,14 +22,25 @@ switch ($item) {
 		break;
 	
 	case 'book_ticket':
-		$user_id = 121; // TO BE DONE
 		$ticket_id = $_POST['ticket_id'];
+		$con = mysql_connect("localhost","root","");
+                      if (!$con){  
+                        die('Could not connect: ' . mysql_error());
+                      }  
+                      mysql_query("set names utf8");
+                      mysql_query("use iwebsns");
+		$result=mysql_query("SELECT username FROM isns_currentuser WHERE id='1'");//用户名已经记录了
+		$count = mysql_fetch_row($result);
+		$username= $count[0];
+		mysql_query("use ourmap");
+		$result1=mysql_query("SELECT id FROM users WHERE username='$username'");
+		$count1 = mysql_fetch_row($result1);
+		$user_id = $count1[0]; // TO BE DONE
 		$result = array();
-
-		if (true){//改为登录	
+		
+		if ($username!=""){//改为登录
 			$conn = connect($config);
 			book_ticket($conn, $user_id, $ticket_id);
-			
 			$result['status'] = 'success';
 		}
 		else {$result['status'] = 'nologin';}
