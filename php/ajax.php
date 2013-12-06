@@ -37,9 +37,11 @@ switch ($item) {
 		break;
 		
 	case 'search_travel_notes':
+		$attraction = '%'.$_POST['attraction'].'%';
 		$conn = connect_blog($config);
-		$data = query("SELECT log_id,log_title,add_time FROM isns_blog",
-					   array(),
+		$data = query("SELECT log_id,log_title,add_time FROM isns_blog 
+					   WHERE (log_sort_name = '游记') AND (tag LIKE :attraction)",
+					   array('attraction' => $attraction),
 					   $conn);
 		echo json_encode($data);
 		break;

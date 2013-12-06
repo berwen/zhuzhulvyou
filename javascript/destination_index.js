@@ -5,33 +5,34 @@ $(document).ready(function() {
 	});
 
 	$('#search_button').click(function() {
-		$.ajax({
-			url: 'php/ajax.php',
-			type: 'POST',
-			dataType: 'JSON',
-			data: {item: 'search_travel_notes'},
-		})
-		.done(function(data) {
-			if (data){
-				var code = '';
-				for (var i=0; i<data.length; i++){
-					var temp = '<li>'+
-									'<span><a href="youji.php?log_id='+data[i]['log_id']+'">'+data[i]['log_title']+'</a></span>'+ 
-									'<span>'+data[i]['add_time']+'</span>'+
-								'</li>';
-					code += temp;
+		if ($('#appendedInputButton').val() != ""){
+			$.ajax({
+				url: 'php/ajax.php',
+				type: 'POST',
+				dataType: 'JSON',
+				data: {item: 'search_travel_notes', attraction: $('#appendedInputButton').val()},
+			})
+			.done(function(data) {
+				if (data){
+					var code = '';
+					for (var i=0; i<data.length; i++){
+						var temp = '<li>'+
+										'<span><a href="youji.php?log_id='+data[i]['log_id']+'">'+data[i]['log_title']+'</a></span>'+ 
+										'<span>'+data[i]['add_time']+'</span>'+
+									'</li>';
+						code += temp;
+					}
+					$('#recommend_place').fadeOut('slow', function() {
+						$('#recommend_place').html(code);
+						$('#recommend_place').fadeIn('slow');
+					});
 				}
-				$('#recommend_place').fadeOut('slow', function() {
-					$('#recommend_place').html(code);
-					$('#recommend_place').fadeIn('slow');
-				});
-			}
 
-		})
-		.fail(function() {
-			alert("请检查您的网络连接！");
-		});
-		
+			})
+			.fail(function() {
+				alert("请检查您的网络连接！");
+			});
+		}
 	});
 });
 
