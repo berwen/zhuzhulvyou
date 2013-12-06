@@ -25,7 +25,7 @@ class funciones_BD {
      */
     public function adduser($username, $password,$email) {
 		mysql_query("set names utf8");
-		$result = mysql_query("INSERT INTO users(username,mingzi,password) VALUES('$email','$username','$password')");
+		$result = mysql_query("INSERT INTO users(username,mingzi,password,caifu) VALUES('$email','$username','$password',200)");
 		mysql_query("use iwebsns");
         $jiami = md5('$password');
 		$sql="insert into isns_users (user_name,user_pws,user_sex,user_email,user_add_time,user_ico,invite_from_uid,is_pass,lastlogin_datetime,birth_year , birth_month , birth_day ,login_ip )"

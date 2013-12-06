@@ -70,13 +70,7 @@ function displayUsernameByDOM(){
   var ajax = false;
   ajax = new XMLHttpRequest();
   ajax.overrideMimeType("text/xml");
-//通过document.getElementById方法得到username的值
 
-//alert(globalLng);
-
-  /*ajax.open("POST","visitedplace.php",true);
-  ajax.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-  ajax.send("pName="+name+"&pUser="+user);*/
   $.ajax({
       url: 'php/ajax.php',
       type: 'POST',
