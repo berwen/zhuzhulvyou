@@ -14,54 +14,20 @@
 	<div id="header">
 		<div class="navbar row">
 		  <div class="navbar-inner">
-		    <div class="container">
-		 
-		      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
-		      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-		        <span class="icon-bar"></span>
-		        <span class="icon-bar"></span>
-		        <span class="icon-bar"></span>
-		      </a>
-		 
-		      <!-- Be sure to leave the brand out there if you want it shown -->
-		      <a class="brand" href="#">猪猪旅游</a>
-		      <!-- Everything you want hidden at 940px or less, place within here -->
-		      <div class="nav-collapse collapse" id="head_menu">
-		        <!-- .nav, .navbar-search, .navbar-form, etc -->
-		        <ul class="nav">
-				  <li class="active">
-				    <a href="#">主页</a>
-				  </li>
-				  <li><a href="destination_index.html">目的地</a></li>
-				  <li><a href="ticket.php">票务</a></li>
-				  <li><a href="/iwebsns/index.php">我的空间</a></li>
-				</ul>
-		      </div>
-		      <div class="navbar-form pull-left" id="head_login">
-				  <input type="text" class="span2" id="username" placeholder="用户名">
-				  <input type="password" class="span2" id="password" placeholder="密码">
-				  <button type="submit" class="btn" id="head_submit">登录</button>
-				  <button type="submit" class="btn">注册</button>
+		    
+		      <div class="navbar-form pull-left" id="head_login"> 
+				  <input type="text" class="span2" id="place" placeholder="想去的地方">
+				  <button type="submit" class="btn" id="head_submit" onclick = "friends()">匹配</button>
+				  <input type="text" class="span2" id="yusuan" placeholder="预算">
+				  <input type="text" class="span2" id="yuefen" placeholder="月份">
+				  <button type="submit" class="btn"  onclick = "travelplace()">搜索</button>
 			  </div>
 		 
 		    </div>
 		  </div>
 		</div>
 	</div>
-	<div class="container">
-		<div class="row ">
-			<div class="span6 offset3 layer2">
-				<img src="img/title_start_trip.png"/>
-				<p class="text-center" id="layer2_button">
-				<button class="btn btn-large btn-primary" type="button" onclick="window.location.href='plan.html';" >规划你的行程</button>
-				<button class="btn btn-large btn-primary" type="button" onclick="window.location.href='destination_index.html';">浏览推荐行程</button>
-				</p>
-			</div>
-		</div>
-		<div class="row layer1">
-			
-		</div>
-	</div>
+	
 	<div class="row" id="footer">
 		<div class="container">
 			<div class="footer_about">

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2013 年 12 月 06 日 19:34
+-- 生成日期: 2013 年 12 月 06 日 20:39
 -- 服务器版本: 5.6.12-log
 -- PHP 版本: 5.4.12
 
@@ -106,6 +106,30 @@ INSERT INTO `favplace_guest` (`id`, `placename`, `guestname`) VALUES
 (0, '华为', ''),
 (0, 'n', 'lihuaxin0033@163.com'),
 (0, 'casv', 'lihuaxin0033@163.com');
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `tourist_spot`
+--
+
+CREATE TABLE IF NOT EXISTS `tourist_spot` (
+  `placename` varchar(20) NOT NULL,
+  `mincost` int(11) NOT NULL,
+  `maxcost` int(11) NOT NULL,
+  `timefrom` int(11) NOT NULL,
+  `timeto` int(11) NOT NULL,
+  `danji` text NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- 转存表中的数据 `tourist_spot`
+--
+
+INSERT INTO `tourist_spot` (`placename`, `mincost`, `maxcost`, `timefrom`, `timeto`, `danji`) VALUES
+('黄山', 200, 700, 4, 7, '9月底'),
+('鼓浪屿', 500, 900, 4, 8, '冬天呀'),
+('哈尔滨', 10, 1000, 9, 12, '常年差不多吧');
 
 -- --------------------------------------------------------
 
