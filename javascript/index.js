@@ -15,20 +15,26 @@ if (username!=null && username!="")
       pFunc:"no"
     },
     function(data,status){
+      if(data['identity'] == "v") {
+          window.location.href="qiye_index.html"; 
+          return;
+      }
+      setCookie("curname",name,3);
+      setCookie("money",data["money"],3);
       $('body').on("click","#logout",function(){
-      $('#logout').remove();
-      $('#user_info').remove();
-      $('#head_login').fadeIn(1);
-      setCookie('curname',"",3);
-      $.post("php/access.php",
-      {
-        pName:"name",
-        pPass:"pass",
-        pFunc:"logout"
-      },
-      function(data,status){
-    //    alert("f");
-      },"json");
+        $('#logout').remove();
+        $('#user_info').remove();
+        $('#head_login').fadeIn(1);
+        setCookie('curname',"",3);
+        $.post("php/access.php",
+        {
+          pName:"name",
+          pPass:"pass",
+          pFunc:"logout"
+        },
+        function(data,status){
+
+        },"json");
     });
 //           //setCookie("curname",name,3);
     },"json");
@@ -50,14 +56,19 @@ else
       pFunc:"yes"
     },
     function(data,status){
+      
     //  if(data['identity'] == "c") 
-      alert("Data: "+data["login"]);
+   //   alert("Data: "+data["login"]);
      if(data["login"] =="1"){
           $('#head_login').fadeOut(1);
           $('#head_menu').append("<p style='float:left' id='user_info'>"+name+"欢迎登陆   当前财富"+data["money"]+"</p>");
           $('#head_menu').append("<button type='submit' class='btn' id='logout'>退出</button>");
           setCookie("curname",name,3);
           setCookie("money",data["money"],3);
+          if(data['identity'] == "v") {
+          window.location.href="qiye_index.html"; 
+          return;
+      }
      }else{
       alert("登陆信息错误，请重新登陆！");
      }
