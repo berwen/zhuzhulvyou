@@ -3,9 +3,13 @@ require "php/functions.php";
 if (!isset($_GET['log_id'])) header("location:destination_index.html");
 $log_id = $_GET['log_id'];
 $conn = connect_blog($config);
-$data = query("SELECT * FROM isns_blog WHERE log_id = :log_id",
+$article = query("SELECT * FROM isns_blog WHERE log_id = :log_id",
 			   array('log_id' => $log_id),
 			   $conn);
+$comment = query("SELECT visitor_name,content,add_time FROM isns_blog_comment
+	              WHERE log_id = :log_id",
+	              array('log_id' => $log_id),
+	              $conn);
  ?>
 
 <html>
@@ -62,8 +66,8 @@ $data = query("SELECT * FROM isns_blog WHERE log_id = :log_id",
 			<div class="span8" id="leftside">
 				<div class="row article">
 					<?php 
-						echo '<h3>' .$data[0]['log_title']. '</h3>';
-						echo $data[0]['log_content'];
+						echo '<h3>' .$article[0]['log_title']. '</h3>';
+						echo $article[0]['log_content'];
 					 ?>
 				</div>
 				<div class="row article_list">
@@ -86,9 +90,13 @@ $data = query("SELECT * FROM isns_blog WHERE log_id = :log_id",
 				</div>
 				<div class="row comment">
 					<h3>评论</h3>
-					<p>猪猪：</p>
-					<p>哈~不错，我请大家一起去！</p>
-					<p>2013/11/30 11:35</p>
+					<?php 
+					foreach ($comment as $row) {
+						echo '<p>'.$row['visitor_name'].'</p>';
+						echo '<p>'.$row['content'].'</p>';
+						echo '<p>'.$row['add_time'].'</p>';
+					}
+					 ?>
 					<textarea rows="3"></textarea>
 					<button type="submit" class="btn btn-primary">评论</button>
 				</div>
