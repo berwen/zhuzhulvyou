@@ -45,6 +45,35 @@ switch ($item) {
 					   $conn);
 		echo json_encode($data);
 		break;
+
+	case 'submit_comment':
+		$result = array();
+		if (true){//登录
+			$user_id = 1;
+			$comment = $_POST['comment'];
+			$log_id = $_POST['log_id'];
+			$conn = connect_blog($config);
+			$user_info = query("SELECT user_name,user_ico FROM isns_users WHERE user_id = :user_id",
+							    array("user_id" => $user_id),
+							    $conn);
+			$host_info = query("SELECT user_id FROM isns_blog WHERE log_id=:log_id",
+							    array('log_id' => $log_id),
+							    $conn);
+			query_without_results("INSERT INTO isns_blog_comment 
+								   (is_hidden,visitor_id,visitor_ico,log_id,host_id,visitor_name,content,add_time)
+								   VALUES(0,:visitor_id,:visitor_ico,:log_id,:host_id,:visitor_name,:comment,NOW())",
+								   array('visitor_id' => $user_id, 'visitor_ico' => $user_info[0]['user_ico'],'log_id' => $log_id,
+								   		 'host_id' => $host_info[0]['user_id'], 'visitor_name' => $user_info[0]['user_name'],
+								   		 'comment' => $comment),
+								   $conn);
+			$result['status'] = 'success';
+			echo json_encode($result);
+		}
+		else {
+			$result['status'] = 'nologin';
+			echo json_encode($result);
+		}
+		break;
 	default:
 		# code...
 		break;

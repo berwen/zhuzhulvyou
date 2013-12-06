@@ -19,11 +19,12 @@ $(document).ready(function() {
 });
 function addcity_funct()
 {
-	$("#plan_citylist").append("<div display='block'>"+$("#add_input").val()+"<span class='delete' onclick=delete_city()>删除</span>"+"</div>");
+	$("#plan_citylist").append("<div display='block'>"+$("#add_input").val()+"<span class='delete'><a href='#' onclick='delete_city(this)'>删除</a></span>"+"</div>");
 	$('#city_input').css("display","none");
 	$('#add_newcity').fadeIn(1);
 }
-function delete_city()
+
+function delete_city(e)
 {
-	this.parent('div').fadeOut(1);
+	$(e).parent().parent().remove();
 }
