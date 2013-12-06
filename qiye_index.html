@@ -5,6 +5,8 @@
 	<title>猪猪旅游-企业用户</title>
 	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
 	<link rel="stylesheet" type="text/css" href="css/qiye_index.css">
+	<link rel="stylesheet" type="text/css" href="jquery-ui-themes-1.10.3/themes/smoothness/jquery-ui.css">
+
 	<!-- // <script src="javascript/jquery.min.js"></script> -->
 	<!-- <script src="javascript/index.js"></script> -->
 	<!-- // <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script> -->
@@ -48,7 +50,8 @@
 		  </div>
 		</div>
 	</div>
-	<div class="container main_frame">
+	<div class="row">
+		<div class="container main_frame">
 		<div class="row">
 			<div class="span3" id="left_bar">
 				<div>系统功能</div>
@@ -57,9 +60,96 @@
 				<div id="ticket">编辑票务信息</div>
 			</div>
 			<div class="span8" id="right_bar">
-
+				<div id="edit_attraction">
+					<!-- <div class="form-horizontal"> -->
+					  <div class="control-group">
+					    <label class="control-label" for="AttractionName">景点名称&nbsp;&nbsp;</label>
+					    <div class="controls">
+					      <input class='span6'type="text" id="inputAttractionName" placeholder="景点名称">
+					    </div>
+					  </div>
+					  <div class="control-group">
+					    <label class="control-label" for="inputAttractionDescription">景点描述&nbsp;&nbsp;</label>
+					    <div class="controls">
+					      <textarea class="span6" rows="6" id="inputAttractionDescription" placeholder="景点描述"></textarea>
+					    </div>
+					  </div>
+					  <div class="control-group map">
+					  	地图
+					  </div>
+					  <div class="control-group">
+					    <label class="control-label" for="inputTicketPrice">门票价格&nbsp;&nbsp;</label>
+					    <div class="controls">
+					      <input class='span6'type="text" id="inputTicketPrice" placeholder="景点名称">
+					    </div>
+					  </div>
+					  <div class="control-group">
+						    <label class="control-label" for="inputTicketNumber">最大票量&nbsp;&nbsp;</label>
+						    <div class="controls">
+						      <input class='span6'type="text" id="inputTicketNumber" placeholder="最大票量">
+						    </div>
+						</div>
+					  <div class="control-group">
+					    <div class="controls control_button">
+					      <button type="submit" class="btn">提交</button>
+					      <button type="clear" class="btn">重置</button>
+					    </div>
+					  </div>
+					<!-- </div> -->
+				</div>
+				<div id='edit_discount'>
+					<div class="control-group">
+					    <label class="control-label" for="inputDiscountName">优惠名称&nbsp;&nbsp;</label>
+					    <div class="controls">
+					      <input class='span6'type="text" id="inputDiscountName" placeholder="优惠名a称">
+					    </div>
+					</div>
+					<div class="control-group">
+					    <label class="control-label" for="inputDiscountDescription">优惠描述&nbsp;&nbsp;</label>
+					    <div class="controls">
+					      <textarea class="span6" rows="6" id="inputDiscountDescription" placeholder="优惠描述"></textarea>
+					    </div>
+					</div>
+					<div>
+						<p>出发日期<input type="text" class="date"></p>
+						<p>返回日期<input type="text" class="date"></p>
+					</div>
+					<div class="control-group">
+					    <div class="controls control_button">
+					      <button type="submit" class="btn">提交</button>
+					      <button type="clear" class="btn">重置</button>
+					    </div>
+					 </div>
+				</div>
+				<div id="edit_ticket">
+					<div class="control-group">
+					    <label class="control-label" for="inputTicketName">门票名称&nbsp;&nbsp;</label>
+					    <div class="controls">
+					      <input class='span6'type="text" id="inputTicketName" placeholder="门票名称">
+					    </div>
+					</div>
+					<div class="control-group">
+					    <label class="control-label" for="inputPrice">门票价格&nbsp;&nbsp;</label>
+					    <div class="controls">
+					      <textarea class="span6" rows="6" id="inputPrice" placeholder="门票价格"></textarea>
+					    </div>
+					</div>
+					<div class="control-group">
+					    <label class="control-label" for="inputTicketNumber">最大票量&nbsp;&nbsp;</label>
+					    <div class="controls">
+					      <textarea class="span6" rows="6" id="inputTicketNumber" placeholder="最大票量"></textarea>
+					    </div>
+					</div>
+					<div class="control-group">
+					    <div class="controls control_button">
+					      <button type="submit" class="btn">提交</button>
+					      <button type="clear" class="btn">重置</button>
+					    </div>
+					 </div>
+				</div>
 			</div>
 		</div>
+	</div>
 	</div>
 	<div class="row" id="footer">
 		<div class="container" >
@@ -76,6 +166,7 @@
 	<!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script> -->
 	<script type="text/javascript" src="javascript/jquery-1.10.2.min.js"></script>
 	<script src="javascript/qiye_index.js"></script>
+	<script type="text/javascript" src="jquery-ui-themes-1.10.3/jquery-ui.js"></script>
 
 </body>
 <html>

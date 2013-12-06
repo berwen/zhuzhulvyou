@@ -3,7 +3,20 @@ $(document).ready(function() {
 		$('#head_login').fadeOut(1);
 		$('#head_menu').append("<p>aaa</p>");
 	});
-	$('#attraction').click(function(){
-
+	$('.date').datepicker();
+	$("#attraction").click(function(){
+		$("#edit_attraction").css("display","block");
+		$("#edit_discount").css("display","none");
+		$("#edit_ticket").css("display","none");
+	});
+	$("#discount").click(function(){
+		$("#edit_attraction").css("display","none");
+		$("#edit_discount").css("display","block");
+		$("#edit_ticket").css("display","none");
+	});
+	$("#ticket").click(function(){
+		$("#edit_attraction").css("display","none");
+		$("#edit_discount").css("display","none");
+		$("#edit_ticket").css("display","block");
 	});
 });

@@ -19,10 +19,10 @@ body{
 /*	border: 2px;
 	border-color: black;
 	border-style: solid;*/
-	height: 400px;
+	overflow: 
 }
 #left_bar{
-	height: 400px;
+	height: 700px;
 	border-style: solid;
 	border-top: 2px;
 	border-left: 2px;
@@ -38,4 +38,28 @@ body{
 	color: #c2c2c2;
 	font-weight: bold;
 	height: 100px;
+}
+#edit_attraction{
+	/*text-align: center;*/
+	display: none;
+}
+#edit_discount{
+	display: none;
+}
+#edit_ticket{
+	display: none;
+}
+.control_button{
+	text-align: center;
+	/*position: relative;
+	left: 90px;*/
+}
+.map{
+	width: 600px;
+	height: 370px;
+}
+#footer{
+}
+.control-group>label{
+	float: left;
 }
