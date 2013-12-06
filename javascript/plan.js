@@ -96,27 +96,29 @@ $(document).ready(function() {
 });
 function addcity_funct()
 {
-	$("#plan_citylist").append("<div display='block'>"+$("#add_input").val()+"</div>");
+	$("#plan_citylist").append("<div display='block'>"+$("#add_input").val()+"<span class='delete'><a href='#' onclick='delete_city(this)'>删除</a></span></div>");
 	$('#city_input').css("display","none");
 	$('#add_newcity').fadeIn(1);
 }
 
 function addcity_funct(placename)
 {
-	$("#plan_citylist").append("<div display='block'>"+placename+"</div>");
+	$("#plan_citylist").append("<div display='block'>"+placename+"<span class='delete'><a href='#' onclick='delete_city(this)'>删除</a></span></div>");
 	$('#city_input').css("display","none");
 	$('#add_newcity').fadeIn(1);
 }
 
+function delete_city(e){
+	$(e).parent().parent().remove();
+}
 
 function addcity_redo()
 {
-	//$("#plan_citylist").remove();
+	$("#plan_citylist").html("");
 	for(x in points){
 		gc.getLocation(points[x], function(rs){
     var addComp = rs.addressComponents;
     addcity_funct(addComp.city);
-   
 
     }); 
 	}
