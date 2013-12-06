@@ -1,0 +1,18 @@
+attraction_description
+	attraction_id autio_source id travel_notes user_id
+attraction_info
+	description id lat lon user_id lon name radius
+ticket_book_info
+	id max now price
+ticket_discount
+	description end_date id start_date ticket_id user_id
+ticket_info
+	attraction_id description id name user_id
+ticket_user_record
+	id ticket_id time user_id
+景点信息
+	景点名称 景点描述 音频解说 精度 维度 半径 票价 最大票量
+优惠信息
+	优惠描述 开始日期 结束日期 
+票务信息
+	景点名称 票价 最大票量  
