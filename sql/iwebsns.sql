@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2013 年 12 月 06 日 19:34
+-- 生成日期: 2013 年 12 月 06 日 23:36
 -- 服务器版本: 5.6.12-log
 -- PHP 版本: 5.4.12
 
@@ -290,7 +290,7 @@ CREATE TABLE IF NOT EXISTS `isns_currentuser` (
 --
 
 INSERT INTO `isns_currentuser` (`username`, `id`, `caifu`) VALUES
-('shishikan@163.com', 1, 210);
+('xiecheng@126.com', 1, 210);
 
 -- --------------------------------------------------------
 
@@ -860,14 +860,14 @@ CREATE TABLE IF NOT EXISTS `isns_online` (
   `session_code` char(32) DEFAULT NULL,
   PRIMARY KEY (`online_id`),
   UNIQUE KEY `user_id` (`user_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=117 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=118 ;
 
 --
 -- 转存表中的数据 `isns_online`
 --
 
 INSERT INTO `isns_online` (`online_id`, `user_id`, `user_name`, `user_sex`, `user_ico`, `birth_year`, `birth_province`, `birth_city`, `reside_province`, `reside_city`, `active_time`, `hidden`, `session_code`) VALUES
-(116, 16, 'shishikan', 1, 'skin/default/jooyea/images/d_ico_1_small.gif', NULL, NULL, NULL, NULL, NULL, 1386357995, 0, NULL);
+(117, 1, 'muxiaonuo', 1, 'uploadfiles/photo_store/2013/11/24/2013112411002844_ico_small.jpg', NULL, NULL, NULL, NULL, NULL, 1386372684, 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -1444,7 +1444,7 @@ CREATE TABLE IF NOT EXISTS `isns_users` (
   `activation_id` int(8) DEFAULT '-1' COMMENT '激活码id值',
   PRIMARY KEY (`user_id`),
   UNIQUE KEY `user_email` (`user_email`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=17 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=21 ;
 
 --
 -- 转存表中的数据 `isns_users`
@@ -1454,8 +1454,11 @@ INSERT INTO `isns_users` (`user_id`, `user_email`, `user_name`, `user_pws`, `use
 (1, 'lihuaxin0033@163.com', 'muxiaonuo', '6572bdaff799084b973320f43f09b363', 1, NULL, NULL, NULL, NULL, 'uploadfiles/photo_store/2013/11/24/2013112411002844_ico_small.jpg', 1, '2013-11-23 22:33:12', '', '', '', NULL, NULL, 4, 81, 0, NULL, NULL, 0, 0, '2013-11-30 13:08:07', 0, NULL, NULL, '127.0.0.1', 0, 'cyan', NULL, NULL, 'base', NULL, -1),
 (2, 'bwbw1992@163.com', 'berwin', 'e10adc3949ba59abbe56e057f20f883e', 1, NULL, NULL, NULL, NULL, 'skin/default/jooyea/images/d_ico_1_small.gif', 1, '2013-11-24 10:49:14', '', '', '', NULL, NULL, 1, 12, 0, NULL, NULL, 0, 0, '2013-11-24 10:49:14', 0, NULL, NULL, '59.78.8.155', 0, '0', NULL, NULL, 'base', NULL, -1),
 (5, 'bwbwbw', 'lihuaxin0033@163.com', 'lihuaxin003', 0, NULL, NULL, NULL, NULL, 'skin/default/jooyea/images/d_ico_1_small.gif', 0, '2013-11-24 10:49:14', '', '', '', NULL, NULL, 0, 11, 0, NULL, NULL, 0, 0, '0000-00-00 00:00:00', 1, NULL, NULL, '', 0, '0', NULL, NULL, 'base', NULL, -1),
+(18, 'xindongfang@gmail.com', '新东方', '243e61e9410a9f577d2d662c67025ee9', 1, NULL, NULL, NULL, NULL, 'skin/default/jooyea/images/d_ico_1_small.gif', 0, '0000-00-00 00:00:00', '', '', '', NULL, NULL, 0, 10, 0, NULL, NULL, 0, 0, '0000-00-00 00:00:00', 1, NULL, NULL, '', 0, '0', NULL, NULL, 'base', NULL, -1),
+(20, 'xiecheng@126.com', '携程', '243e61e9410a9f577d2d662c67025ee9', 1, NULL, NULL, NULL, NULL, 'skin/default/jooyea/images/d_ico_1_small.gif', 0, '0000-00-00 00:00:00', '', '', '', NULL, NULL, 0, 10, 0, NULL, NULL, 0, 0, '0000-00-00 00:00:00', 1, NULL, NULL, '', 0, '0', NULL, NULL, 'base', NULL, -1),
 (16, 'shishikan@163.com', 'shishikan', '243e61e9410a9f577d2d662c67025ee9', 1, NULL, NULL, NULL, NULL, 'skin/default/jooyea/images/d_ico_1_small.gif', 0, '0000-00-00 00:00:00', '', '', '', NULL, NULL, 0, 10, 0, NULL, NULL, 0, 0, '0000-00-00 00:00:00', 1, NULL, NULL, '', 0, '0', NULL, NULL, 'base', NULL, -1),
-(15, 'agagaga@163.com', 'vava', '243e61e9410a9f577d2d662c67025ee9', 1, NULL, NULL, NULL, NULL, 'skin/default/jooyea/images/d_ico_1_small.gif', 0, '0000-00-00 00:00:00', '', '', '', NULL, NULL, 0, 10, 0, NULL, NULL, 0, 0, '0000-00-00 00:00:00', 1, NULL, NULL, '', 0, '0', NULL, NULL, 'base', NULL, -1);
+(15, 'agagaga@163.com', 'vava', '243e61e9410a9f577d2d662c67025ee9', 1, NULL, NULL, NULL, NULL, 'skin/default/jooyea/images/d_ico_1_small.gif', 0, '0000-00-00 00:00:00', '', '', '', NULL, NULL, 0, 10, 0, NULL, NULL, 0, 0, '0000-00-00 00:00:00', 1, NULL, NULL, '', 0, '0', NULL, NULL, 'base', NULL, -1),
+(17, 'vdwvwv', 'vewv', '243e61e9410a9f577d2d662c67025ee9', 1, NULL, NULL, NULL, NULL, 'skin/default/jooyea/images/d_ico_1_small.gif', 0, '0000-00-00 00:00:00', '', '', '', NULL, NULL, 0, 10, 0, NULL, NULL, 0, 0, '0000-00-00 00:00:00', 1, NULL, NULL, '', 0, '0', NULL, NULL, 'base', NULL, -1);
 
 -- --------------------------------------------------------
 

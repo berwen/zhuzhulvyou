@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2013 年 12 月 06 日 22:50
+-- 生成日期: 2013 年 12 月 06 日 23:36
 -- 服务器版本: 5.6.12-log
 -- PHP 版本: 5.4.12
 
@@ -127,25 +127,28 @@ CREATE TABLE IF NOT EXISTS `users` (
   `username` varchar(20) NOT NULL,
   `mingzi` text NOT NULL,
   `password` varchar(20) NOT NULL,
-  `identity` varchar(10) NOT NULL,
+  `identity` int(10) NOT NULL,
   `caifu` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC AUTO_INCREMENT=17 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC AUTO_INCREMENT=21 ;
 
 --
 -- 转存表中的数据 `users`
 --
 
 INSERT INTO `users` (`id`, `username`, `mingzi`, `password`, `identity`, `caifu`) VALUES
-(2, 'lhc', '', 'acd', 'c', 520),
-(1, 'lihuaxin0033@163.com', 'muxiaonuo', 'lihuaxin003', 'c', 500),
-(5, 'bwbwbw', '', '123123', 'c', 200),
-(11, '2625689005@qq.com', 'lihuaxin', '123456', '', 0),
-(12, '328332569@qq.com', 'lihuaxin', '1234', '', 0),
-(13, 'cdsvsb', '', '', '', 0),
-(14, 'cdsvsb@qq.com', 'fafa', '1234', '', 0),
-(15, 'agagaga@163.com', 'vava', '1234', '', 0),
-(16, 'shishikan@163.com', 'shishikan', '1234', '', 200);
+(2, 'lhc', '', 'acd', 1, 520),
+(1, 'lihuaxin0033@163.com', 'muxiaonuo', 'lihuaxin003', 1, 500),
+(5, 'bwbwbw', '', '123123', 1, 200),
+(11, '2625689005@qq.com', 'lihuaxin', '123456', 1, 0),
+(12, '328332569@qq.com', 'lihuaxin', '1234', 1, 0),
+(13, 'cdsvsb', '', '', 1, 0),
+(14, 'cdsvsb@qq.com', 'fafa', '1234', 1, 0),
+(15, 'agagaga@163.com', 'vava', '1234', 1, 0),
+(16, 'shishikan@163.com', 'shishikan', '1234', 1, 200),
+(17, 'vdwvwv', 'vewv', 'qaz', 1, 200),
+(18, 'xindongfang@gmail.co', '新东方', 'qwer', 2, 200),
+(20, 'xiecheng@126.com', '携程', 'yhn', 2, 200);
 
 -- --------------------------------------------------------
 

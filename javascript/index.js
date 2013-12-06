@@ -17,7 +17,7 @@ if (username!=null && username!="")
       pFunc:"no"
     },
     function(data,status){
-      if(data['identity'] == "v") {
+      if(data['identity'] == '2') {
           window.location.href="qiye_index.html"; 
           return;
       }
@@ -57,8 +57,10 @@ else
     },
     function(data,status){
       
-    //  if(data['identity'] == "c") 
-   //   alert("Data: "+data["login"]);
+    if(data['identity'] == '2') {
+          window.location.href="qiye_index.html"; 
+          return;
+      }
      if(data["login"] =="1"){
           $('#head_login').fadeOut(1);
           $('#head_menu').append("<p style='float:left' id='user_info'>"+name+"欢迎登陆   当前财富"+data["money"]+"</p>");

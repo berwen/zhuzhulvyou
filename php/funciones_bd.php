@@ -25,20 +25,32 @@ class funciones_BD {
      */
     public function adduser($username, $password,$email) {
 		mysql_query("set names utf8");
-		$result = mysql_query("INSERT INTO users(username,mingzi,password,caifu) VALUES('$email','$username','$password',200)");
+		$result = mysql_query("INSERT INTO users(username,mingzi,password,identity,caifu) VALUES('$email','$username','$password',1,200)");
 		mysql_query("use iwebsns");
         $jiami = md5('$password');
 		$sql="insert into isns_users (user_name,user_pws,user_sex,user_email,user_add_time,user_ico,invite_from_uid,is_pass,lastlogin_datetime,birth_year , birth_month , birth_day ,login_ip )"
 					." values('$username','$jiami','1','$email','date(\"Y-m-d H:i:s\")','skin/default/jooyea/images/d_ico_1_small.gif',1,'','','','','','')";
-		
 		mysql_query($sql);
 		mysql_query("use ourmap");
         if ($result) {
-
             return true;
-
         } else {
+            return false;
+        }
+    }
 
+    public function addcompany($companyname, $password,$email) {
+        mysql_query("set names utf8");
+        $result = mysql_query("INSERT INTO users(username,mingzi,password,identity,caifu) VALUES('$email','$companyname','$password',2,200)");
+        mysql_query("use iwebsns");
+        $jiami = md5('$password');
+        $sql="insert into isns_users (user_name,user_pws,user_sex,user_email,user_add_time,user_ico,invite_from_uid,is_pass,lastlogin_datetime,birth_year , birth_month , birth_day ,login_ip )"
+                    ." values('$companyname','$jiami','1','$email','date(\"Y-m-d H:i:s\")','skin/default/jooyea/images/d_ico_1_small.gif',1,'','','','','','')";
+        mysql_query($sql);
+        mysql_query("use ourmap");
+        if ($result) {
+            return true;
+        } else {
             return false;
         }
 
