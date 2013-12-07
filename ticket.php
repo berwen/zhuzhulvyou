@@ -63,10 +63,12 @@ $discount_info = discount($config);
 					<p>返回日期<input type="text" class="date"></p>
 					<form class="form-search">
 					  <div class="input-append">
-					  	<input type="text" class="span1" placeholder="出发地" id="startplace">
-					    <input type="text" class="span1" placeholder="目的地" id="destplace">
+					  	<input type="text"  placeholder="出发地" id="startplace">
+					    <input type="text"  placeholder="目的地" id="destplace">
 					    
-					    <button type="submit" class="btn">Search</button>
+					    <span type="submit" class="btn">
+					    	<img src="img/search.png">
+					    </span>
 					  </div>
 					</form>
 				</div>

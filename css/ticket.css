@@ -81,3 +81,11 @@ body{
 	background-color: white;
 	border-radius: 5px;
 }*/
+.input-append > input{
+	width: 100px;
+	height: 30px;
+}
+span > img{
+	width: 20px;
+	height: 20px;
+}
