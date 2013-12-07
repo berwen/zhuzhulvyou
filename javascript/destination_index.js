@@ -47,8 +47,8 @@ $(document).ready(function() {
           $('#head_menu').append("<button type='submit' class='btn' id='logout'>退出</button>");
           setCookie("curname",name,3);
           setCookie("money",data["money"],3);
-          if(data['identity'] == "v") {
-          window.location.href="qiye_index.html"; 
+          if(data['identity'] == "2") {
+          window.location.href="qiye_index.php"; 
           return;
       }
      }else{
