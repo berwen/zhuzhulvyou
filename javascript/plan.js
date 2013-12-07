@@ -117,15 +117,11 @@ $(document).ready(function() {
       // alert(data[x]);
 
     $(".go_together").append("<div class='item'><div class='photo'><img src='img/back_black.png'></div><p>"+data[x]+"</p></div>");
-    //  if(data['identity'] == "c") 
-   //   alert("Data: "+data["login"]);
-    // alert(data[0]);
-    // alert(data[1]);
+
     },"json");
 		//
-		//$('.after_final').css('display','block');
+		$('.after_final').css('display','block');
 	});
-
 
 	$('.search').click(function(){
 
@@ -166,9 +162,7 @@ $(document).ready(function() {
 						curve = new BMapLib.CurveLine(points, {strokeColor:"blue", strokeWeight:3, strokeOpacity:0.5});
     					map.addOverlay(curve); //添加到地图中
 						local.search("公园");
-
 				}
-					
 	}, "上海市");
 	
 	

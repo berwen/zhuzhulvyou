@@ -20,7 +20,7 @@ $discount = query("SELECT ticket_info.name as ticket_info_name,ticket_discount.n
 	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
 	<link rel="stylesheet" type="text/css" href="css/qiye_index.css">
 	<link rel="stylesheet" type="text/css" href="jquery-ui-themes-1.10.3/themes/smoothness/jquery-ui.css">
-
+	<script type="text/javascript" src="http://api.map.baidu.com/api?v=1.4&ak=8c505add0e724b81c3e14ae6692e8531"></script>
 	<!-- // <script src="javascript/jquery.min.js"></script> -->
 	<!-- <script src="javascript/index.js"></script> -->
 	<!-- // <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script> -->
@@ -89,7 +89,7 @@ $discount = query("SELECT ticket_info.name as ticket_info_name,ticket_discount.n
 					      <textarea class="span6" rows="6" id="inputAttractionDescription" placeholder="景点描述"></textarea>
 					    </div>
 					  </div>
-					  <div class="control-group map">
+					  <div class="control-group map" id ="mapcontainer">
 					  	地图
 					  </div>
 					  <div class="control-group">
@@ -242,3 +242,42 @@ $discount = query("SELECT ticket_info.name as ticket_info_name,ticket_discount.n
 
 </body>
 </html>
+
+<script >
+var gc = new BMap.Geocoder();
+map = new BMap.Map("mapcontainer");                        // 创建Map实例
+map.centerAndZoom("中国", 5);     // 初始化地图,设置中心点坐标和地图级别
+map.enableScrollWheelZoom();
+var globalLat;
+var globalLng;
+var globalMarker;
+map.addEventListener("click",function(e){   //单击地图，形成折线覆盖物
+  if(!e.overlay){
+    newpoint = new BMap.Point(e.point.lng,e.point.lat);
+    globalLat = e.point.lat;
+    globalLng = e.point.lng;
+   // displayUsernameByDOM();
+    map.removeOverlay(globalMarker);
+    var newpoint = new BMap.Point(globalLng,globalLat);
+    globalMarker = new BMap.Marker(newpoint);  // 创建标注
+    map.addOverlay(globalMarker);              // 将标注添加到地图中
+    gc.getLocation(e.point, function(rs){
+    var addComp = rs.addressComponents;
+    
+  //  document.getElementById("destplace").value = addComp.city;
+    
+    sContent = addComp.province + ", " + addComp.city + ", " + addComp.district + ", " + addComp.street + ", " + addComp.streetNumber;
+    InfoWindow = new BMap.InfoWindow(sContent);
+    globalMarker.addEventListener("click", function(){
+        this.openInfoWindow(InfoWindow);
+       });
+    }); 
+   
+   // displayUsernameByDOM();
+	}
+	
+});
+
+	
+
+</script>
