@@ -1,10 +1,10 @@
 <?php 
 	$item = $_GET['item'];
-	$company_id = $_GET['company_id'];
+	
 
 	switch ($item) {
 		case "edit_ticket":
-
+			$company_id = $_GET['company_id'];
 			$attraction_id = $_POST['attraction'];
 			$name = $_POST['name'];
 			$price = $_POST['price'];
@@ -25,6 +25,7 @@
 			break;
 		
 		case "edit_discount":
+			$company_id = $_GET['company_id'];
 			$ticket_id = $_POST['ticket'];
 			$name = $_POST['name'];
 			$description = $_POST['description'];
@@ -38,6 +39,18 @@
 								   array('name'=>$name,'ticket_id'=>$ticket_id,'start_date'=>$start_date,'end_date'=>$end_date,
 								   		 'description'=>$description,'user_id'=>$company_id),
 								   $conn);
+			header("location:../qiye_index.php");
+			break;
+
+		case "delete_discount":
+			$discount_id = $_GET['discount_id'];
+
+			require "functions.php";
+			$conn = connect($config);
+			query_without_results("DELETE FROM ticket_discount WHERE id = :id",
+								   array('id'=>$discount_id),
+								   $conn);
+
 			header("location:../qiye_index.php");
 			break;
 

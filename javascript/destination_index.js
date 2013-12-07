@@ -71,9 +71,10 @@ $(document).ready(function() {
       },"json");
 
     });
-
-
-	$('#search_button').click(function() {
+ });
+}
+	
+  $('#search_button').click(function() {
 		if ($('#appendedInputButton').val() != ""){
 			$.ajax({
 				url: 'php/ajax.php',
@@ -105,11 +106,7 @@ $(document).ready(function() {
 		}
 		else window.location.href = "destination_index.html";
 	});
-});
 
-
-
-}
 
 
 
