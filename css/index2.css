@@ -1,30 +1,126 @@
 body{
-	overflow: scroll; 
-	/*background-color: #e2e2e2;*/
-	background-image: url(../img/index_bg1.jpg);
-	background-size: 100% 400%;
-	height: 100%; 
-	width: 100%;
-	left: 0px;
-	top: 0px;
 	font-family: Microsoft YaHei;
+	overflow: hidden;
 }
-.navigation_bar{
-	height: 100px;
-	width: 1300px;
-	background-image: url(../img/navigate_bar.png);
 }
-.container{
-
+/*
+root element for the scrollable.  when scrolling occurs this
+element stays still.
+*/
+.scrollable {
+  /* required settings */
+  position:absolute;
+  overflow:hidden;
+  width: 1366px;
+  height:500px;
+  z-index:-100;
 }
-
+ 
+/*
+root element for scrollable items. Must be absolutely positioned
+and it should have a extremely large width to accommodate scrollable
+items.  it's enough that you set width and height for the root element
+and not for this element.
+*/
+.scrollable .items {
+  /* this cannot be too large */
+  width:20000em;
+  position:absolute;
+}
+ 
+/*
+a single item. must be floated in horizontal scrolling.  typically,
+this element is the one that *you* will style the most.
+*/
+.items div {
+  float:left;
+}
+.navi-wrapper{
+	position: absolute;
+	z-index: 100;
+	width: 100%;
+	top: 40%;
+}
+.left_button{
+	position: absolute;
+	left: 20px;
+}
+.right_button{
+	position: absolute;
+	right: 20px;
+}
 #footer{
 	background-image: url(../img/layer_bg.png);
 	background-size: cover;
 	color: #c2c2c2;
 	font-weight: bold;
 	height: 100px;
-	position: fixed;
-	bottom: 0;
-	display: none;
+	width: 100%;
+	text-align: center;
+	position: absolute;
+	bottom: 0px;
+}
+.header{
+	z-index: 101;
+	width: 1300px;
+	position: absolute;
+}
+.header > div{
+	float: left;
+	position: relative;
+	cursor:pointer;
+}
+.header	> img{
+	position: absolute;
+}
+.home{
+	width: 100px;
+	height: 40px;
+	top: 23px;
+	left: 180px;
+
+}
+.destination{
+	width: 130px;
+	height: 40px;
+	top: 23px;
+	left: 210px;
+}
+.ticket{
+	width: 120px;
+	height: 40px;
+	top: 23px;
+	left: 220px;
+}
+.my_space{
+	width: 150px;
+	height: 40px;
+	top: 23px;
+	left: 220px;
+}
+.input_username{
+	top:30px;
+	left: 220px;
+}
+.input_username > input{
+	width: 160px;
+}
+.input_password{
+	top:30px;
+	left: 230px;
+}
+.input_password > input{
+	width: 160px;
+}
+.login{
+	width: 40px;
+	height: 40px;
+	top: 30px;
+	left: 242px;
+}
+.register{
+	width: 40px;
+	height: 40px;
+	top: 30px;
+	left: 257px;
 }

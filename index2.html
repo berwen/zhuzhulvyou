@@ -5,23 +5,69 @@
 	<title>猪猪旅游-首页</title>
 	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
 	<link rel="stylesheet" type="text/css" href="css/index2.css">
+	<script type="text/javascript" src="javascript/jquery.min.js"></script>
+  	<script type="text/javascript" src="javascript/jquery.tools.min.js"></script>
 	<!-- // <script src="javascript/jquery.min.js"></script> -->
 	<!-- <script src="javascript/index.js"></script> -->
 	<!-- // <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script> -->
 </head>
 <body>
 	<!-- <div style="display:none;"><img src="bg.jpg"></div> -->
-	<div id="header">
+	<div class='content'>
+		<div class="background">
+			<div class='navi-wrapper'>
+				<div class="left_button">
+					<a class="prev browse left"><img src="img/back_black.png"></a>
+				</div>
+				<div class="right_button">
+					<a class="next browse right"><img src="img/next_black.png"></a>
+				</div>
+			</div>
+			
+			<div class="scrollable" id="scrollable">
+			    <!-- root element for the items -->
+			    <div class="items">
+			      <div>
+			      	<a href="plan.html">
+			        	<img src="img/index_bg1.jpg" />
+			      	</a>
+			      </div>
+			      <div>
+			      	<a href="destination_index.html">
+			      		<img src="img/index_bg2.jpg" />
+			      	</a>
+			      </div>
+			      <div>
+			      	<a href="destination_index.html">
+			     	   <img src="img/index_bg3.jpg" />
+			      	</a>
+			      </div>
+			      <div>
+			      	<a href="/iwebsns/index.php">
+			        	<img src="img/index_bg4.jpg" />
+			      	</a>
+			      </div>
+			    </div>
+			</div>
+		</div>
+		<div class="header">
+			<img src="img/navigate_bar.png">
+			<div class='home'onclick="window.location.href='index.html';"></div>
+			<div class='destination' onclick="window.location.href='destination_index.html';"></div>
+			<div class='ticket'onclick="window.location.href='ticket.php';"></div>
+			<div class='my_space'onclick="window.location.href='/iwebsns/index.php';"></div>
+			<div class="input_username">
+				<input type="text" placeholder="用户名">
+			</div>
+			<div class='input_password'>
+				<input type="password" placeholder="密码">
+			</div>
+			<div class='login'></div>
+			<div class='register'></div>
+		</div>
+		
 	</div>
-	<div class="navigation_bar">
-	</div>
-	<div>
-		<img src="img/back_black.png">
-		<img src="img/back.png">
-		<img src="img/next_black.png">
-		<img src="img/next.png">
-	</div>
-	<div class="row" id="footer">
+	<div id="footer">
 		<div class="container">
 			<div class="footer_about">
 				<p>我们是谁？我们是“妈妈说和猪猪一起写代码才能进决赛队”!</p>
@@ -34,8 +80,7 @@
 	<script src="bootstrap/js/bootstrap.min.js"></script>
 	<!-- // <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script> -->
 	<!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script> -->
-	<script type="text/javascript" src="javascript/jquery-1.10.2.min.js"></script>
-	<script src="javascript/index.js"></script>
+	<script src="javascript/index2.js"></script>
 
 </body>
 <html>
