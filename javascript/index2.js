@@ -30,7 +30,7 @@ if (username!=null && username!="")
       if(data['identity'] == '2') {
         setCookie("companyname",name,3);
           setCookie("curname","",3);
-          window.location.href="qiye_index.html"; 
+          window.location.href="qiye_index.php"; 
           return;
       }
       $('body').on("click","#logout",function(){
