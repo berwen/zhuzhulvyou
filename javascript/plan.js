@@ -40,7 +40,7 @@ map.addEventListener("dblclick",function(e){   //双击地图，形成多边形�
 	gc.getLocation(e.point, function(rs){
     var addComp = rs.addressComponents;
     addcity_funct(addComp.city);
-    //placelist.push(addComp.city);
+    placelist.push(addComp.city);
     }); 
 
 });
@@ -96,7 +96,76 @@ $(document).ready(function() {
 		
 		// console.log(placelist);
 	});
+	$('.open_map').click(function(){
+		window.open ("map.html")
+	});
 
+
+	$('.final_plan').click(function(){
+		$('.after_submit').fadeOut(1);
+		$('.after_final').css('display','block');
+	});
+
+	$('.search').click(function(){
+		//$('.place_list').children('select').val();
+			//alert($("input[type='checkbox']").attr('value'));
+		
+
+	gc.getPoint($('.place_list').children('select').val(), function(e){
+				newpoint = new BMap.Point(e.lng,e.lat);
+		
+				map.centerAndZoom(new BMap.Point(e.lng,e.lat), 14);
+
+				var local = new BMap.LocalSearch(map, {
+  					renderOptions:{map: map}
+				});
+
+
+
+
+				if($("input[id='zhusu']").is(':checked')) {
+						map.clearOverlays();
+						//local.search("");
+						curve = new BMapLib.CurveLine(points, {strokeColor:"blue", strokeWeight:3, strokeOpacity:0.5});
+    					map.addOverlay(curve); //添加到地图中
+						local.search("旅店");
+				}
+				if($("input[id='canyin']").is(':checked')) {
+						//map.clearOverlays();
+						map.clearOverlays();
+						//local.search("");
+						curve = new BMapLib.CurveLine(points, {strokeColor:"blue", strokeWeight:3, strokeOpacity:0.5});
+    					map.addOverlay(curve); //添加到地图中
+						local.search("饭店");
+				}
+
+				
+				
+					
+				if($("input[id='jiaotong']").is(':checked')) {
+					map.clearOverlays();
+						curve = new BMapLib.CurveLine(points, {strokeColor:"blue", strokeWeight:3, strokeOpacity:0.5});
+    					map.addOverlay(curve); //添加到地图中
+						local.search("车站");
+
+				 }
+					
+				if($("input[id='yule']").is(':checked')) {
+						map.clearOverlays();
+						curve = new BMapLib.CurveLine(points, {strokeColor:"blue", strokeWeight:3, strokeOpacity:0.5});
+    					map.addOverlay(curve); //添加到地图中
+						local.search("酒吧");
+
+				}
+					
+	}, "上海市");
+	
+	
+//	local.searchNearby("食宿", $('.place_list').children('select').val());
+		//$('.after_submit').fadeOut(1);
+		//$('.after_final').css('display','block');
+	});
+	
 
 });
 function addcity_funct()
