@@ -1,6 +1,25 @@
 <?php 
+
 require "php/functions.php";
-$company_id = 121;
+
+
+
+ $con = mysql_connect("localhost","root","");
+                      if (!$con){  
+                        die('Could not connect: ' . mysql_error());
+                      }  
+                      mysql_query("set names utf8");
+                      mysql_query("use iwebsns");
+                      $result1 = mysql_query("select username from isns_currentuser where id=1");
+                     // $userArray=array();
+                      $row1 = mysql_fetch_row($result1);
+                      $tmp = $row1[0];
+                      mysql_query("use ourmap");
+                      $result2 = mysql_query("select id from users where username='$tmp'");
+                     // $userArray=array();
+                      $row2 = mysql_fetch_row($result2);
+
+$company_id = $row2[0];
 $conn = connect($config);
 $attraction = query("SELECT * FROM attraction_info WHERE user_id = :id",
 				     array('id' => $company_id),
@@ -53,12 +72,12 @@ $discount = query("SELECT ticket_info.name as ticket_info_name,ticket_discount.n
 				<!--  <li><a href="#">我的空间</a></li>  -->
 				</ul>
 		      </div>
-		      <div class="navbar-form pull-left" id="head_login">
+		      <!-- <div class="navbar-form pull-left" id="head_login">
 				  <input type="text" class="span2" placeholder="用户名">
 				  <input type="text" class="span2" placeholder="密码">
 				  <button type="submit" class="btn" id="head_submit">登录</button>
 				  <button type="submit" class="btn">注册</button>
-			  </div>
+			  </div> -->
 		 
 		    </div>
 		  </div>

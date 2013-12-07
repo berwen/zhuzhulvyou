@@ -143,3 +143,14 @@ this element is the one that *you* will style the most.
 	/*left: 315px;*/
 	left: 275px;
 }
+#user_info{
+	float: left;
+	position: relative;
+	left: 230px;
+	top: 30px;
+}
+#logout{	
+	position: relative;
+	left: 235px;
+	top: 30px;
+}
