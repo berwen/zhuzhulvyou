@@ -103,13 +103,31 @@ $(document).ready(function() {
 
 	$('.final_plan').click(function(){
 		$('.after_submit').fadeOut(1);
-		$('.after_final').css('display','block');
+		var name = $('.place_list').children('select').val();
+		name = name + "";
+		$.post("php/matching.php",
+  		{
+      		pName:name,
+     		pCost:"0",
+      		pFunc:"friends"
+    		},
+    	function(data,status){
+    	//alert("f");
+      for(x in data)
+      // alert(data[x]);
+
+    $(".go_together").append("<div class='item'><div class='photo'><img src='img/back_black.png'></div><p>"+data[x]+"</p></div>");
+    //  if(data['identity'] == "c") 
+   //   alert("Data: "+data["login"]);
+    // alert(data[0]);
+    // alert(data[1]);
+    },"json");
+		//
+		//$('.after_final').css('display','block');
 	});
 
+
 	$('.search').click(function(){
-		//$('.place_list').children('select').val();
-			//alert($("input[type='checkbox']").attr('value'));
-		
 
 	gc.getPoint($('.place_list').children('select').val(), function(e){
 				newpoint = new BMap.Point(e.lng,e.lat);
@@ -121,14 +139,12 @@ $(document).ready(function() {
 				});
 
 
-
-
 				if($("input[id='zhusu']").is(':checked')) {
 						map.clearOverlays();
 						//local.search("");
 						curve = new BMapLib.CurveLine(points, {strokeColor:"blue", strokeWeight:3, strokeOpacity:0.5});
     					map.addOverlay(curve); //添加到地图中
-						local.search("旅店");
+						local.search("宾馆");
 				}
 				if($("input[id='canyin']").is(':checked')) {
 						//map.clearOverlays();
@@ -137,24 +153,19 @@ $(document).ready(function() {
 						curve = new BMapLib.CurveLine(points, {strokeColor:"blue", strokeWeight:3, strokeOpacity:0.5});
     					map.addOverlay(curve); //添加到地图中
 						local.search("饭店");
-				}
-
-				
-				
-					
+				}	
 				if($("input[id='jiaotong']").is(':checked')) {
 					map.clearOverlays();
 						curve = new BMapLib.CurveLine(points, {strokeColor:"blue", strokeWeight:3, strokeOpacity:0.5});
     					map.addOverlay(curve); //添加到地图中
 						local.search("车站");
 
-				 }
-					
+				 }	
 				if($("input[id='yule']").is(':checked')) {
 						map.clearOverlays();
 						curve = new BMapLib.CurveLine(points, {strokeColor:"blue", strokeWeight:3, strokeOpacity:0.5});
     					map.addOverlay(curve); //添加到地图中
-						local.search("酒吧");
+						local.search("公园");
 
 				}
 					
@@ -200,6 +211,14 @@ function addcity_redo()
 	//$('#city_input').css("display","none");
 	//$('#add_newcity').fadeIn(1);
 }
+
+
+// function friends(name){
+
+ 
+//  // var pass = document.getElementById("password").value;
+  
+//  }
 
 // function redo()
 // {
