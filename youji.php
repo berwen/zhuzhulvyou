@@ -2,6 +2,7 @@
 require "php/functions.php";
 if (!isset($_GET['log_id'])) header("location:destination_index.html");
 $log_id = $_GET['log_id'];
+$attraction = $_GET['attraction'];
 $conn = connect_blog($config);
 $article = query("SELECT * FROM isns_blog WHERE log_id = :log_id",
 			   array('log_id' => $log_id),
@@ -83,7 +84,7 @@ $comment = query("SELECT visitor_name,content,add_time FROM isns_blog_comment
 				</div>
 			</div>
 			<div class="span4" id="rightside">
-				<div class="row lytieshi">
+				<div id = "weather"class="row lytieshi">
 					<h3>旅游贴士</h3>
 					<p>漠河气温极低，大家注意保暖！</p>
 					<p>ps：南方的同学千万不要在室外把舌头放到铁上面去哦~~</p>
@@ -118,5 +119,18 @@ $comment = query("SELECT visitor_name,content,add_time FROM isns_blog_comment
 	<!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script> -->
 	<script type="text/javascript" src="javascript/jquery-1.10.2.min.js"></script>
 	<script src="javascript/youji.js"></script>
+	<script>
+	var url = "<?=$attraction?>";
+	$.getJSON("http://api.openweathermap.org/data/2.5/weather?q="+url+"&lang=zh_cn&callback=?", function(json, textStatus) {
+			console.log(json);
+			code = "";
+			code = "<h3>旅游贴士："+url+"</h3>"+
+				   "<p>" + json.weather[0].description.toString() +"<p>"+
+				   "<p> 最高温度："+(json.main.temp_max-273.15).toString()+"</p>"+
+				   "<p> 最低温度："+(json.main.temp_min-273.15).toString()+"</p>"+
+				   "<p> 湿度："+json.main.humidity.toString()+"%</p>";
+			$('#weather').html(code);
+	});
+	</script>
 </body>
 <html>

@@ -87,7 +87,7 @@ $(document).ready(function() {
 					var code = '';
 					for (var i=0; i<data.length; i++){
 						var temp = '<li>'+
-										'<span><a href="youji.php?log_id='+data[i]['log_id']+'">'+data[i]['log_title']+'</a></span>'+ 
+										'<span><a href="youji.php?log_id='+data[i]['log_id']+'&attraction='+$('#appendedInputButton').val()+'">'+data[i]['log_title']+'</a></span>'+ 
 										'<span>'+data[i]['add_time']+'</span>'+
 									'</li>';
 						code += temp;
