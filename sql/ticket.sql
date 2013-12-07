@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2013 年 12 月 07 日 05:45
+-- 生成日期: 2013 年 12 月 07 日 10:25
 -- 服务器版本: 5.5.24-log
 -- PHP 版本: 5.4.3
 
@@ -55,17 +55,17 @@ CREATE TABLE IF NOT EXISTS `attraction_info` (
   `lat` double NOT NULL,
   `lon` double NOT NULL,
   `user_id` int(11) NOT NULL,
-  `radius` double NOT NULL,
+  `radius` double DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
 
 --
 -- 转存表中的数据 `attraction_info`
 --
 
 INSERT INTO `attraction_info` (`id`, `name`, `description`, `lat`, `lon`, `user_id`, `radius`) VALUES
-(1, 'SJTU', 'SJTU', 44, 88, 121, 10),
-(2, '拉萨', '好远', 29, 91, 121, 10);
+(1, 'SJTU', 'SJTU', 44, 88, 121, 1),
+(2, '拉萨', '好远', 29, 91, 121, 1);
 
 -- --------------------------------------------------------
 
@@ -86,11 +86,11 @@ CREATE TABLE IF NOT EXISTS `ticket_book_info` (
 --
 
 INSERT INTO `ticket_book_info` (`id`, `price`, `max`, `now`) VALUES
-(1, 5, 100, 5),
+(1, 5, 100, 6),
 (2, 50, 9999, 0),
 (3, 30, 1111, 10),
 (4, 10, 50, 0),
-(5, 0, 9999, 0);
+(5, 0, 9999, 1);
 
 -- --------------------------------------------------------
 
@@ -116,7 +116,6 @@ CREATE TABLE IF NOT EXISTS `ticket_discount` (
 --
 
 INSERT INTO `ticket_discount` (`id`, `name`, `ticket_id`, `start_date`, `end_date`, `description`, `user_id`) VALUES
-(1, '5折', 1, '2013-11-15', '2013-12-07', '5折', 121),
 (4, '免费！', 2, '2013-12-01', '2013-12-10', '免费！', 121),
 (5, '买一送一', 3, '2013-12-12', '2013-12-19', '买一送一', 121),
 (7, '圣诞节！', 1, '2013-12-20', '2013-12-31', '精美小礼物~', 121);
@@ -159,7 +158,7 @@ CREATE TABLE IF NOT EXISTS `ticket_user_record` (
   `ticket_id` int(11) NOT NULL,
   `time` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=18 ;
 
 --
 -- 转存表中的数据 `ticket_user_record`
@@ -174,7 +173,9 @@ INSERT INTO `ticket_user_record` (`id`, `user_id`, `ticket_id`, `time`) VALUES
 (6, 121, 2, '2013-12-05 20:30:08'),
 (7, 121, 3, '2013-12-05 20:30:18'),
 (8, 121, 3, '2013-12-06 16:36:39'),
-(9, 20, 3, '2013-12-07 11:03:22');
+(15, 21, 1, '2013-12-07 16:07:27'),
+(16, 21, 1, '2013-12-07 16:07:27'),
+(17, 21, 5, '2013-12-07 16:08:09');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
