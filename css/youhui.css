@@ -1,6 +1,7 @@
 body{
 	overflow: scroll; 
-	background-color: #cce1fc;
+	/*background-color: #cce1fc;*/
+	background-color: #fffcfe;
 	height: 100%; 
 	width: 100%;
 	left: 0px;
@@ -68,7 +69,7 @@ body{
 .article{
 	height: 400px;
 }
-.main{
+/*.main{
 	border-radius: 5px;
 	background-color: white;
-}
+}*/

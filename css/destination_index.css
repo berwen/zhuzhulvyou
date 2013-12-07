@@ -1,6 +1,7 @@
 body{
 	overflow: scroll; 
-	background-color: #e2e2e2;
+	/*background-color: #e2e2e2;*/
+	background-color: #fffcfe;
 	height: 100%; 
 	width: 100%;
 	left: 0px;

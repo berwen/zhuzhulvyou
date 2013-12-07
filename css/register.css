@@ -1,6 +1,7 @@
 body{
 	overflow: scroll; 
-	background-color: #cce1fc;
+	/*background-color: #cce1fc;*/
+	background-color: #fffcfe;
 	/*background-image: url(../img/bg2.jpg);*/
 	background-size: cover;
 	height: 100%; 
@@ -13,12 +14,11 @@ body{
 	/*background-image: url(http://image.xinli001.com/20121106/09155481d07eddc284ae7e.jpg); */
 	
 }
-.main_frame{
+/*.main_frame{
 	background-color: white;
 	border-radius: 5px;
 	padding: 5px;
-	/*text-align: center;*/
-}
+}*/
 #left_bar{
 	height: 700px;
 	border-style: solid;
