@@ -100,7 +100,6 @@ $(document).ready(function() {
 		$('.after_submit').fadeOut(1);
 		$('.after_final').css('display','block');
 	});
-
 });
 function addcity_funct()
 {
