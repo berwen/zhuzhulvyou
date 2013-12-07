@@ -75,7 +75,7 @@ gc.getPoint(palcename, function(e){
 }
 
 
-
+var placelist=[];
 $(document).ready(function() {
 	$(function(){
 		$(".date").datepicker();
@@ -89,12 +89,21 @@ $(document).ready(function() {
 		$('#city_input').css("display","block");
 	});
 	$('#add_button').click(function(){
+		placelist.push($("#add_input").val());
 		addcity_funct($("#add_input").val());
 		addDestination($('#add_input').val());
 	});
 	$('.submit_plan').click(function(){
 		$('.planlist').fadeOut(1);
 		$('.after_submit').css('display','block');
+		for(var i=0;i<placelist.length;i++)
+			$('.place_list').children('select').append("<option>"+placelist[i]+"</option>");
+			// $('.place_list').append("<p>"+placelist[i]+"</p>");
+		// console.log(placelist);
+	});
+	$('.final_plan').click(function(){
+		$('.after_submit').fadeOut(1);
+		$('.after_final').css('display','block');
 	});
 
 });

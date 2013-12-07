@@ -48,12 +48,6 @@ body{
 	margin:30px 0px 30px 0px;
 	list-style: none;
 }
-.item{
-	margin: 10px 20px 10px 20px;
-	width: 230px;
-	height: 230px;
-	float: left;
-}
 #footer{
 	background-image: url(../img/layer_bg.png);
 	background-size: cover;
@@ -81,5 +75,18 @@ body{
 	background-color: white;
 }
 .after_submit{
+	display: none;
+}
+.go_together{
+	width: 300px
+}
+.item{
+	margin: 10px 5px 10px 5px;
+	width: 90px;
+	height: 80px;
+	float: left;
+}
+.after_final
+{
 	display: none;
 }

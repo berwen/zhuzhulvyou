@@ -6,7 +6,7 @@
 	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
 	<link rel="stylesheet" type="text/css" href="css/plan.css">
 	<!-- <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css"> -->
-	<script type="text/javascript" src="http://api.map.baidu.com/api?v=1.4&key=1bbe1bfaa50c4eb69022911a5a8735ea;"></script>
+	<script type="text/javascript" src="http://api.map.baidu.com/api?v=1.4&ak=1bbe1bfaa50c4eb69022911a5a8735ea;"></script>
 	<script type="text/javascript" src="http://api.map.baidu.com/library/CurveLine/1.5/src/CurveLine.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="jquery-ui-themes-1.10.3/themes/smoothness/jquery-ui.css"> 
 	<!-- // <script src="javascript/jquery.min.js"></script> -->
@@ -59,6 +59,7 @@
 					<h3>规划行程</h3>
 					<div>出发日期<input type="text" class="date span2"></div>
 					<div>出发城市<input type="text" class="span2"></div>
+					<div>预算资金<input type="text" class="span2 budet"></div>
 					<div id="plan_citylist"></div>
 					<div class="addcity">
 						<a href="javascript:void(0);" id="add_newcity">+添加新城市</a>
@@ -72,7 +73,7 @@
 					</div>
 					<button class="btn btn-success submit_plan">确定行程</button>
 				</div>
-				<div class="after_submit">
+				<div class="row after_submit">
 					<div class="service_list">
 						<h4>服务信息</h4>
 						<p>选择你想查看的服务信息</p>
@@ -103,14 +104,38 @@
 						<h4>旅游地点</h4>
 						<p>请选择旅游地点</p>
 						<select multiple="multiple">
-						  <!-- <option>1</option>
-						  <option>2</option>
-						  <option>3</option>
-						  <option>4</option>
-						  <option>5</option> -->
 						</select>
 						<br>
 						<button class="btn btn-success final_plan">确定行程</button>
+					</div>
+				</div>
+				<div class="row after_final">
+					<h3>他们也想去</h3>
+					<div class="row go_together">
+						<div class='item'>
+							<div class='photo'>
+								<img src="img/back_black.png">
+							</div>
+							<p>name</p>
+						</div>
+						<div class='item'>
+							<div class='photo'>
+								<img src="img/back_black.png">
+							</div>
+							<p>name</p>
+						</div>
+						<div class='item'>
+							<div class='photo'>
+								<img src="img/back_black.png">
+							</div>
+							<p>name</p>
+						</div>
+						<div class='item'>
+							<div class='photo'>
+								<img src="img/back_black.png">
+							</div>
+							<p>name</p>
+						</div>
 					</div>
 				</div>
 			</div>
