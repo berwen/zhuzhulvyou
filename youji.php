@@ -45,7 +45,7 @@ $comment = query("SELECT visitor_name,content,add_time FROM isns_blog_comment
 			        <ul class="nav">
 					  <li ><a href="index.html">主页</a></li>
 					  <li class="active"><a href="#">目的地</a></li>
-					  <li><a href="ticket.html">票务</a></li>
+					  <li><a href="ticket.php">票务</a></li>
 					  <li><a href="#">我的空间</a></li>
 					</ul>
 			      </div>
