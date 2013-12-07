@@ -52,18 +52,22 @@
 		</div>
 		<div class="header">
 			<img src="img/navigate_bar.png">
-			<div class='home'onclick="window.location.href='index.html';"></div>
-			<div class='destination' onclick="window.location.href='destination_index.html';"></div>
-			<div class='ticket'onclick="window.location.href='ticket.php';"></div>
-			<div class='my_space'onclick="window.location.href='/iwebsns/index.php';"></div>
-			<div class="input_username">
-				<input type="text" placeholder="用户名">
+			<div id="head_menu">
+				<div class='home'onclick="window.location.href='index.html';"></div>
+				<div class='destination' onclick="window.location.href='destination_index.html';"></div>
+				<div class='ticket'onclick="window.location.href='ticket.php';"></div>
+				<div class='my_space'onclick="window.location.href='/iwebsns/index.php';"></div>
 			</div>
-			<div class='input_password'>
-				<input type="password" placeholder="密码">
+			<div id = "head_login">
+				<div class="input_username">
+					<input type="text" placeholder="用户名" id="username">
+				</div>
+				<div class='input_password'>
+					<input type="password" placeholder="密码" id="password">
+				</div>
+				<div class='login' id="head_submit"></div>
+				<div class='register' onclick="location.href='register.html'"></div>
 			</div>
-			<div class='login'></div>
-			<div class='register'></div>
 		</div>
 		
 	</div>
