@@ -68,7 +68,16 @@ this element is the one that *you* will style the most.
 .header > div{
 	float: left;
 	position: relative;
+}
+#head_menu > div{
+	position: relative;
+	float: left;
 	cursor:pointer;
+}
+#head_login>div{
+	position: relative;
+	float: left;
+	cursor: pointer;
 }
 .header	> img{
 	position: absolute;
@@ -76,7 +85,7 @@ this element is the one that *you* will style the most.
 .home{
 	width: 100px;
 	height: 40px;
-	top: 23px;
+	top: 23px;	
 	/*left: 245px;*/
 	left: 185px;
 
@@ -116,7 +125,7 @@ this element is the one that *you* will style the most.
 	/*left: 285px;*/
 	left: 245px;
 }
-.input_password > input{
+.input_password > input{	
 	width: 150px;
 	height: 20px;
 }
@@ -125,7 +134,7 @@ this element is the one that *you* will style the most.
 	height: 40px;
 	top: 30px;
 	/*left: 300px;*/
-	left: 260px;
+	left: 265px;
 }
 .register{
 	width: 40px;

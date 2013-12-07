@@ -116,7 +116,7 @@ $(document).ready(function() {
       for(x in data)
       // alert(data[x]);
 
-    $(".go_together").append("<div class='item'><div class='photo'><img src='img/back_black.png'></div><p>"+data[x]+"</p></div>");
+    $(".go_together").append("<div class='item'><div class='photo'><img src='img/smallman.gif'></div><p>"+data[x]+"</p></div>");
 
     },"json");
 		//
@@ -205,6 +205,32 @@ function addcity_redo()
 	//$('#city_input').css("display","none");
 	//$('#add_newcity').fadeIn(1);
 }
+
+
+ function travelplace(){
+
+  var cost = document.getElementById("yusuan").value;
+    var name = document.getElementById("yuefen").value;
+
+
+
+ // var pass = document.getElementById("password").value;
+  $.post("php/matching.php",
+  {
+      pName:name,
+      pCost:cost,
+      pFunc:"jingdian"
+    },
+    function(data,status){
+       //alert(cost+"F"+name);
+      for(x in data){
+
+      	$(".recommand_place").append("<li>"+data[x][0]+"  旅游淡季： "+data[x][1]+"</li>");
+
+      }
+      //  alert(data[x][0] + data[x][1]);
+    },"json");
+ }
 
 
 // function friends(name){
