@@ -87,14 +87,9 @@ $(document).ready(function() {
 					var code = '';
 					for (var i=0; i<data.length; i++){
 						var temp = '<li>'+
-<<<<<<< HEAD
-										'<span><a href="youji.php?log_id='+data[i]['log_id']+'&attraction='+$('#appendedInputButton').val()+'">'+data[i]['log_title']+'</a></span>'+ 
-										'<span>'+data[i]['add_time']+'</span>'+
+										'<span class="title"><a href="youji.php?log_id='+data[i]['log_id']+'&attraction='+$('#appendedInputButton').val()+'">'+data[i]['log_title']+'</a></span>'+ 
+										'<span class="time">'+data[i]['add_time']+'</span>'+
 									'</li>';
-=======
-										'<span class="title"><a href="youji.php?log_id='+data[i]['log_id']+'">'+data[i]['log_title']+'</a></span>'+ 
-										'<span class="time">'+data[i]['add_time']+'</span>'+'</li>';
->>>>>>> 2f705d7eabccc2bc7f2dad598ac8a7264a94e43b
 						code += temp;
 					}
 					$('#recommend_place').fadeOut('slow', function() {
