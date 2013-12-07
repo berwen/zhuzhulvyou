@@ -1,7 +1,12 @@
 
 
 function friends(){
+curname = getCookie('curname');
 
+if(curname == ""){
+  alert("请先登录！");
+  return;
+}
   var name = document.getElementById("place").value;
  // var pass = document.getElementById("password").value;
   $.post("php/matching.php",
@@ -21,7 +26,12 @@ function friends(){
  }
 
  function travelplace(){
+curname = getCookie('curname');
 
+if(curname == ""){
+  alert("请先登录！");
+  return;
+}
   var cost = document.getElementById("yusuan").value;
     var name = document.getElementById("yuefen").value;
 
@@ -39,10 +49,13 @@ function friends(){
     },"json");
  }
 
- function favplace(){
-name = getCookie('curname');
 
-if(name == ""){
+
+
+ function favplace(){
+curname = getCookie('curname');
+
+if(curname == ""){
   alert("请先登录！");
   return;
 }
@@ -55,7 +68,7 @@ placearray = [];
  // var pass = document.getElementById("password").value;
   $.post("php/matching.php",
   {
-      pName:name,
+      pName:curname,
       pCost:"cost",
       pFunc:"favplace"
     },
@@ -75,31 +88,55 @@ placearray = [];
               else{
                 placecount[$.inArray(addComp.city, placearray)]++;
               }
-             // alert(placecount[$.inArray(addComp.city, placearray)]);
+ 
           }
           }); 
       }
 
-      //for(y in placearray){
-       // alert(placearray.length);
-    //  }
-
-
-    //   var tmp = -1;
-    //   var tmpposition;
-    //   y=0;
-    //   for (;y<placecount.length;y++){
-    //     if(placecount[y]>tmp){
-    //       tmp = placecount[y];
-    //       tmpposition = y;
-    //     }
-    //   } 
-    
-    // alert("cc"+placearray[y]);
 
 
     },"json");
  }
+
+
+
+
+ function favfriend(){
+curname = getCookie('curname');
+//alert(curname);
+if(curname == ""){
+  alert("请先登录！");
+  return;
+}
+var gc = new BMap.Geocoder();
+friendsarray = [];
+
+  $.post("php/matching.php",
+  {
+      pName:curname,
+      pCost:"cost",
+      pFunc:"favfriend"
+    },
+    function(data,status){
+     
+       for(x in data){
+
+            if(data[x]!=""){
+              if($.inArray(data[x], friendsarray)==-1){
+                friendsarray.push(data[x]);
+             //   placecount.push(1);
+                alert(data[x]);
+              }
+              else{
+            
+              }
+
+          }
+  
+      }
+    },"json");
+ }
+
 
 
 function setCookie(c_name,value,expiredays)

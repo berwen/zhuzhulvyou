@@ -18,6 +18,8 @@ if (username!=null && username!="")
     },
     function(data,status){
       if(data['identity'] == '2') {
+        setCookie("companyname",name,3);
+          setCookie("curname","",3);
           window.location.href="qiye_index.html"; 
           return;
       }
@@ -33,7 +35,7 @@ if (username!=null && username!="")
           pFunc:"logout"
         },
         function(data,status){
-
+          window.location.href="index.html"; 
         },"json");
     });
 //           //setCookie("curname",name,3);
@@ -58,6 +60,8 @@ else
     function(data,status){
       
     if(data['identity'] == '2') {
+          setCookie("companyname",name,3);
+          setCookie("curname","",3);
           window.location.href="qiye_index.html"; 
           return;
       }
@@ -89,6 +93,7 @@ else
       },
       function(data,status){
     //    alert("f");
+    window.location.href="index.html"; 
       },"json");
 
     });

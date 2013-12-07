@@ -45,7 +45,7 @@ $func = $_POST['pFunc'];
             }
            echo json_encode($dataArray);
 		}
-		if($func=="favplace"){
+		else if($func=="favplace"){
 			$con = mysql_connect("localhost","root","");
                       if (!$con){  
                         die('Could not connect: ' . mysql_error());
@@ -65,6 +65,31 @@ $func = $_POST['pFunc'];
 				$row2 = mysql_fetch_row($result2);
 				$dataArray[$num]["lat"] = $row2[0];
 				$num++;
+			}
+			echo json_encode($dataArray);
+		}
+		else if($func=="favfriend"){
+			$con = mysql_connect("localhost","root","");
+                      if (!$con){  
+                        die('Could not connect: ' . mysql_error());
+                      } 
+            mysql_query("set names utf8");
+			mysql_query("use ourmap");
+			$result=mysql_query("SELECT placename FROM favplace_guest WHERE guestname='$placename' "); 
+			$dataArray=array();
+			//$cnt = 0;	
+			$num = 0;
+			while($row = mysql_fetch_row($result)){
+				$tmp = $row[0];
+				$result1=mysql_query("SELECT guestname FROM favplace_guest WHERE placename='$tmp' and guestname!='$placename' ");
+				//$row1 = mysql_fetch_row($result1);
+				while($row1 = mysql_fetch_row($result1)){
+					$dataArray[$num]= $row1[0];
+			//	$result2=mysql_query("SELECT lat FROM favplace WHERE placename='$tmp' ");
+			//	$row2 = mysql_fetch_row($result2);
+			//	$dataArray[$num]["lat"] = $row2[0];
+				$num++;
+			}
 			}
 			echo json_encode($dataArray);
 		}

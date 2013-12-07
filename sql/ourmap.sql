@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2013 年 12 月 06 日 23:36
+-- 生成日期: 2013 年 12 月 07 日 00:51
 -- 服务器版本: 5.6.12-log
 -- PHP 版本: 5.4.12
 
@@ -38,6 +38,7 @@ CREATE TABLE IF NOT EXISTS `currentuser` (
 --
 
 INSERT INTO `currentuser` (`username`, `id`) VALUES
+('lihuaxin0033@163.com', 1),
 ('lihuaxin0033@163.com', 1);
 
 -- --------------------------------------------------------
@@ -63,13 +64,13 @@ CREATE TABLE IF NOT EXISTS `favplace` (
 --
 
 INSERT INTO `favplace` (`placename`, `visited`, `placetype`, `placeintro`, `lng`, `lat`, `pic`, `sound`) VALUES
-('快乐大本营', 1, '综艺节目', '很好看的综艺节目，每天都会看哦！', 112.990007, 28.230034, 'upload/Jellyfish.jpg', 'upload/'),
+('快乐大本营', 0, '综艺节目', '很好看的综艺节目，每天都会看哦！', 112.990007, 28.230034, 'upload/Jellyfish.jpg', 'upload/'),
 ('vwvw', 0, 'vwvw', 'vwvwvwvw', 121.426461, 31.089609, '', ''),
-('擦手擦', 0, 'vava', '', 121.436954, 31.091279, '', ''),
-('vewvew', 1, 'brwabre', '你忍忍enetne', 121.476192, 31.152891, 'upload/122.jpg', ''),
-('NALI', 1, 'FAV', 'EFVW', 121.368107, 31.174645, 'upload/X.jpg', ''),
-('n', 0, 'n', 'n', 121.399728, 31.056916, 'upload/snslogo (2).gif', 'upload/top-5-countdown-for-week-ending-23nov13.mp3'),
-('casv', 0, 'vev', 'vevevev', 121.537133, 31.285807, 'upload/Penguins.jpg', 'upload/');
+('擦手擦', 1, 'vava', '', 121.436954, 31.091279, '', ''),
+('vewvew', 3, 'brwabre', '你忍忍enetne', 121.476192, 31.152891, 'upload/122.jpg', ''),
+('NALI', 5, 'FAV', 'EFVW', 121.368107, 31.174645, 'upload/X.jpg', ''),
+('n', 1, 'n', 'n', 121.399728, 31.056916, 'upload/snslogo (2).gif', 'upload/top-5-countdown-for-week-ending-23nov13.mp3'),
+('casv', 3, 'vev', 'vevevev', 121.537133, 31.285807, 'upload/Penguins.jpg', 'upload/');
 
 -- --------------------------------------------------------
 
@@ -78,19 +79,19 @@ INSERT INTO `favplace` (`placename`, `visited`, `placetype`, `placeintro`, `lng`
 --
 
 CREATE TABLE IF NOT EXISTS `favplace_guest` (
-  `placename` varchar(50) NOT NULL,
-  `guestname` varchar(50) NOT NULL,
-  UNIQUE KEY `placename` (`placename`)
+  `guestname` varchar(20) NOT NULL,
+  `placename` varchar(20) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- 转存表中的数据 `favplace_guest`
 --
 
-INSERT INTO `favplace_guest` (`placename`, `guestname`) VALUES
-('NALI', 'lihuaxin0033@163.com'),
-('vewvew', 'lihuaxin0033@163.com'),
-('快乐大本营', 'lihuaxin0033@163.com');
+INSERT INTO `favplace_guest` (`guestname`, `placename`) VALUES
+('shishikan@163.com', 'vewvew'),
+('shishikan@163.com', 'NALI'),
+('lihuaxin0033@163.com', 'vewvew'),
+('lihuaxin0033@163.com', '擦手擦');
 
 -- --------------------------------------------------------
 
