@@ -1,0 +1,116 @@
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+
+<title>猪猪地图</title>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=1.4&ak=1bbe1bfaa50c4eb69022911a5a8735ea"></script>
+
+</head>
+<body>
+<div style="width:80%;height:500px;border:1px solid gray;text-align:center;" id="container"></div>
+
+
+
+
+<table style="width:100%;height:70px;">
+<tr>
+<td style="height:50px;">起点站:<input type="text" class="span2" id="start" placeholder="起点"></td>
+<td style="height:50px;">终点站:<input type="text" class="span2" id="end" placeholder="终点"></td>
+<td style="height:50px;"><input type="button" value="查找线路" onclick="bus()" /></td>
+</tr>
+<tr>
+<td style="height:100px;"><div id = "showfriend" name = "showfriend"> </div></td>
+<td style="height:100px;"><div id = "showplace" name = "showplace"> </div></td>
+</tr>
+</table>
+ 
+<script type="text/javascript" src="javascript/jquery-1.10.2.min.js"></script>
+</body>
+ 
+</html>
+
+
+
+
+
+
+
+
+<!-- 
+<table style="width:100%;height:70px;">
+<tr>
+<td style="width:50%;height:50px;"><input id="startBtn" type="button" onclick="favfriend();" value="找基友" /></td>
+<td style="width:50%;height:50px;"><input type="button" value="猜你喜欢" onclick="favplace()" /></td>
+</tr>
+<tr>
+<td style="width:50%;height:100px;"><div id = "showfriend" name = "showfriend"> </div></td>
+<td style="width:50%;height:100px;"><div id = "showplace" name = "showplace"> </div></td>
+</tr>
+</table> -->
+ 
+
+
+<script type="text/javascript">
+ map = new BMap.Map("container");
+map.centerAndZoom("上海市", 11);
+map.enableScrollWheelZoom();
+map.addControl(new BMap.NavigationControl());
+map.addControl(new BMap.ScaleControl({anchor: BMAP_ANCHOR_BOTTOM_LEFT}));   
+map.addControl(new BMap.OverviewMapControl({isOpen:true, anchor: BMAP_ANCHOR_BOTTOM_RIGHT})); 
+map.addControl(new BMap.MapTypeControl({mapTypes: [BMAP_NORMAL_MAP,BMAP_HYBRID_MAP]}));     //2D图，卫星图
+
+map.addControl(new BMap.MapTypeControl({anchor: BMAP_ANCHOR_TOP_RIGHT}));    //左上角，默认地图控件
+map.setCurrentCity("上海");   //由于有3D图，需要设置城市哦 
+
+
+var contextMenu = new BMap.ContextMenu();
+var txtMenuItem = [
+  {
+   text:'放大',
+   callback:function(){map.zoomIn()}
+  },
+  {
+   text:'缩小',
+   callback:function(){map.zoomOut()}
+  },
+  {
+   text:'放置到最大级',
+   callback:function(){map.setZoom(18)}
+  },
+  {
+   text:'查看全国',
+   callback:function(){map.setZoom(4)}
+  },
+  {
+   text:'在此添加标注',
+   callback:function(p){
+    var marker = new BMap.Marker(p), px = map.pointToPixel(p);
+    map.addOverlay(marker);
+   }
+  }
+ ];
+
+
+ for(var i=0; i < txtMenuItem.length; i++){
+  contextMenu.addItem(new BMap.MenuItem(txtMenuItem[i].text,txtMenuItem[i].callback,100));
+  if(i==1 || i==3) {
+   contextMenu.addSeparator();
+  }
+ }
+ map.addContextMenu(contextMenu);
+ 
+ function bus(){
+ 	 var start= document.getElementById("start").value;
+ 	 var end= document.getElementById("end").value;
+ //	 alert(start);
+ 	var transit = new BMap.TransitRoute(map, {
+  renderOptions: {map: map}
+});
+transit.search(start, end);
+ }
+
+ 
+ </script>

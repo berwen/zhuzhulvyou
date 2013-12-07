@@ -1,6 +1,16 @@
 
 username=getCookie('curname');
 tmoney=getCookie('money');
+
+$(function(){ 
+    $.getJSON("getTaoIP.php",function(json){ 
+        var myprovince2 = json.data.region;         
+        var mycity2 = json.data.city;
+         $('#head_foremenu').append(json.data.city);
+        //alert("您所在的城市是："+myprovince2+mycity2); 
+    }); 
+}); 
+
 if (username!=null && username!="")
 {
 
@@ -68,14 +78,6 @@ else
      if(data["login"] =="1"){
           $('#head_login').fadeOut(1);
           $('#head_menu').append("<p style='float:left' id='user_info'>"+name+"欢迎登陆   当前财富"+data["money"]+"</p>");
-          $(function(){ 
-            $.getJSON("getTaoIP.php",function(json){ 
-              //var myprovince2 = json.data.region;         
-            var mycity2 = json.data.city;
-            $('#head_menu').append(" 定位:"+ json.data.city +" ");
-            //alert("您所在的城市是："+myprovince2+mycity2); 
-                }); 
-          }); 
           $('#head_menu').append("<button type='submit' class='btn' id='logout'>退出</button>");
           setCookie("curname",name,3);
           setCookie("money",data["money"],3);

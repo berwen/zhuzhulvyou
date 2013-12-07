@@ -77,50 +77,58 @@ this element is the one that *you* will style the most.
 	width: 100px;
 	height: 40px;
 	top: 23px;
-	left: 180px;
+	/*left: 245px;*/
+	left: 185px;
 
 }
 .destination{
 	width: 130px;
 	height: 40px;
 	top: 23px;
+	/*left: 270px;*/
 	left: 210px;
 }
 .ticket{
 	width: 120px;
 	height: 40px;
 	top: 23px;
-	left: 220px;
+	/*left: 275px;*/
+	left: 215px;
 }
 .my_space{
 	width: 150px;
 	height: 40px;
 	top: 23px;
+	/*left: 275px;*/
 	left: 220px;
 }
 .input_username{
 	top:30px;
-	left: 220px;
+	/*left: 275px;*/
+	left: 235px;
 }
 .input_username > input{
-	width: 160px;
+	width: 150px;
+	height: 20px;
 }
 .input_password{
 	top:30px;
-	left: 230px;
+	/*left: 285px;*/
+	left: 245px;
 }
 .input_password > input{
-	width: 160px;
+	width: 150px;
+	height: 20px;
 }
 .login{
 	width: 40px;
 	height: 40px;
 	top: 30px;
-	left: 242px;
+	left: 300px;
 }
 .register{
 	width: 40px;
 	height: 40px;
 	top: 30px;
-	left: 257px;
+	left: 315px;
 }
