@@ -97,7 +97,7 @@ $(document).ready(function() {
 		$('.planlist').fadeOut(1);
 		$('.after_submit').css('display','block');
 		for(var i=0;i<placelist.length;i++)
-			$('.place_list').children('select').append("<option>"+placelist[i]+"</option>");
+			$('.place_list').children('select').append("<option value='"+placelist[i]+"'>"+placelist[i]+"</option>");
 			// $('.place_list').append("<p>"+placelist[i]+"</p>");
 		// console.log(placelist);
 	});
