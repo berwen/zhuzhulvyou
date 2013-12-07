@@ -84,7 +84,11 @@ $func = $_POST['pFunc'];
 				$result1=mysql_query("SELECT guestname FROM favplace_guest WHERE placename='$tmp' and guestname!='$placename' ");
 				//$row1 = mysql_fetch_row($result1);
 				while($row1 = mysql_fetch_row($result1)){
-					$dataArray[$num]= $row1[0];
+					$tmp1=$row1[0];
+					$result2=mysql_query("SELECT mingzi FROM users WHERE username='$tmp1' ");
+					$row2 = mysql_fetch_row($result2);
+					$dataArray[$num]=$row2[0];
+					 
 			//	$result2=mysql_query("SELECT lat FROM favplace WHERE placename='$tmp' ");
 			//	$row2 = mysql_fetch_row($result2);
 			//	$dataArray[$num]["lat"] = $row2[0];

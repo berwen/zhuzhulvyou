@@ -10,16 +10,10 @@ map.addControl(new BMap.MapTypeControl({mapTypes: [BMAP_NORMAL_MAP,BMAP_HYBRID_M
 
 map.addControl(new BMap.MapTypeControl({anchor: BMAP_ANCHOR_TOP_RIGHT}));    //左上角，默认地图控件
 map.setCurrentCity("北京");   //由于有3D图，需要设置城市哦 
-// 覆盖区域图层测试
-//map.addTileLayer(new BMap.PanoramaCoverageLayer());
 
-// var stCtrl = new BMap.PanoramaControl(); //构造全景控件
-// stCtrl.setOffset(new BMap.Size(20, 20));
-// map.addControl(stCtrl);//添加全景控件
-//   var a = $.getJSON(url);
 var points = [];
 var gc = new BMap.Geocoder();
-
+var placelist=[];
 
 
 
@@ -36,7 +30,7 @@ curve.enableEditing(); //开启编辑功能
 // alert(bb[bb.length-1].lng);
 
 map.addEventListener("dblclick",function(e){   //双击地图，形成多边形覆盖物
-	points.push(new BMap.Point(e.point.lng,e.point.lat)) 
+	points.push(new BMap.Point(e.point.lng,e.point.lat)); 
 	//removeoverlay(curve);
 	map.clearOverlays();
 	curve = new BMapLib.CurveLine(points, {strokeColor:"blue", strokeWeight:3, strokeOpacity:0.5});
@@ -46,6 +40,7 @@ map.addEventListener("dblclick",function(e){   //双击地图，形成多边形�
 	gc.getLocation(e.point, function(rs){
     var addComp = rs.addressComponents;
     addcity_funct(addComp.city);
+    placelist.push(addComp.city);
     }); 
 
 });
@@ -75,7 +70,7 @@ gc.getPoint(palcename, function(e){
 }
 
 
-var placelist=[];
+
 $(document).ready(function() {
 	$(function(){
 		$(".date").datepicker();
@@ -97,10 +92,21 @@ $(document).ready(function() {
 		$('.planlist').fadeOut(1);
 		$('.after_submit').css('display','block');
 		for(var i=0;i<placelist.length;i++)
+<<<<<<< HEAD
 			$('.place_list').children('select').append("<option value='"+placelist[i]+"'>"+placelist[i]+"</option>");
+=======
+			$('.place_list').children('select').append("<option>"+placelist[i]+"</option>");
+
+>>>>>>> ba38ccc3db401ba1930d2ea1a8b1189755ca20ff
 			// $('.place_list').append("<p>"+placelist[i]+"</p>");
 		// console.log(placelist);
 	});
+
+	// $('.place_list').children('select').children('option').click(
+	// 	function(){
+	// 		alert("this.val()");
+	// 	}
+	// );
 	$('.final_plan').click(function(){
 		$('.after_submit').fadeOut(1);
 		$('.after_final').css('display','block');
