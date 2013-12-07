@@ -82,13 +82,9 @@
 <td style="width:50%;height:100px;"><div id = "showplace" name = "showplace"> </div></td>
 </tr>
 </table>
- 
 <script type="text/javascript" src="../javascript/jquery-1.10.2.min.js"></script>
 </body>
- 
 </html>
-
-
 
 <script type="text/javascript">
 map = new BMap.Map("container");                        // 创建Map实例
@@ -100,9 +96,6 @@ var newpoint;   //一个经纬度
 var points = [];    //数组，放经纬度信息
 var polyline = new BMap.Polyline(); //折线覆盖物
 y=dataArray.length-1;
-// url = "http://api.map.baidu.com/location/ip?ip=112.65.223.31&ak=1bbe1bfaa50c4eb69022911a5a8735ea&coor=bd09ll;";
-//   var a = $.getJSON(url);
-
 
   for (var x=0;x<=y;x++) 
   {

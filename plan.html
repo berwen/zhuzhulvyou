@@ -6,7 +6,7 @@
 	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
 	<link rel="stylesheet" type="text/css" href="css/plan.css">
 	<!-- <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css"> -->
-	<script type="text/javascript" src="http://api.map.baidu.com/api?v=1.4&ak=1bbe1bfaa50c4eb69022911a5a8735ea;"></script>
+	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=8c505add0e724b81c3e14ae6692e8531"></script>
 	<script type="text/javascript" src="http://api.map.baidu.com/library/CurveLine/1.5/src/CurveLine.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="jquery-ui-themes-1.10.3/themes/smoothness/jquery-ui.css"> 
 	<!-- // <script src="javascript/jquery.min.js"></script> -->
@@ -72,30 +72,32 @@
 					</div>
 					<button class="btn btn-success submit_plan">确定行程</button>
 				</div>
+				<br><br>
+				<div class="row planlist">
+					<h3>查看本地</h3>
+					<div id="plan_citylist"></div>
+					
+					<button class="btn btn-success open_map">打开地图</button>
+				</div>
 				<div class="row after_submit">
 					<div class="service_list">
 						<h4>服务信息</h4>
 						<p>选择你想查看的服务信息</p>
-						<!-- <select>
-						  <option>住宿</option>
-						  <option>餐饮</option>
-						  <option>交通</option>
-						  <option>娱乐</option>
-						</select> -->
+
 						<label class="checkbox">
-						  <input type="checkbox" value="">
+						  <input type="checkbox" value="1" id = "zhusu">
 						  住宿
 						</label>
 						<label class="checkbox">
-						  <input type="checkbox" value="">
+						  <input type="checkbox" value="2" class = "canyin">
 						  餐饮
 						</label>
 						<label class="checkbox">
-						  <input type="checkbox" value="">
+						  <input type="checkbox" value="3" class = "jiaotong">
 						  交通
 						</label>
 						<label class="checkbox">
-						  <input type="checkbox" value="">
+						  <input type="checkbox" value="4" class = "yule">
 						  娱乐
 						</label>
 					</div>
@@ -106,35 +108,13 @@
 						</select>
 						<br>
 						<button class="btn btn-success final_plan">确定行程</button>
+						<button class="btn btn-success search">搜索</button>
 					</div>
 				</div>
 				<div class="row after_final">
 					<h3>他们也想去</h3>
 					<div class="row go_together">
-						<div class='item'>
-							<div class='photo'>
-								<img src="img/back_black.png">
-							</div>
-							<p>name</p>
-						</div>
-						<div class='item'>
-							<div class='photo'>
-								<img src="img/back_black.png">
-							</div>
-							<p>name</p>
-						</div>
-						<div class='item'>
-							<div class='photo'>
-								<img src="img/back_black.png">
-							</div>
-							<p>name</p>
-						</div>
-						<div class='item'>
-							<div class='photo'>
-								<img src="img/back_black.png">
-							</div>
-							<p>name</p>
-						</div>
+						
 					</div>
 				</div>
 			</div>

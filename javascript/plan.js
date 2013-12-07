@@ -52,8 +52,7 @@ function addDestination(palcename){
 gc.getPoint(palcename, function(e){
 	if(e){
 		//alert(e.lng);
-		globalMarker = new BMap.Marker(e);  // 创建标注
-
+		globalMarker = new BMap.Marker(e);  
 		 map.addOverlay(globalMarker); //添加到地图中
 		newpoint = new BMap.Point(e.lng,e.lat);
 		
@@ -91,15 +90,88 @@ $(document).ready(function() {
 	$('.submit_plan').click(function(){
 		$('.planlist').fadeOut(1);
 		$('.after_submit').css('display','block');
+
 		for(var i=0;i<placelist.length;i++)
 			$('.place_list').children('select').append("<option value='"+placelist[i]+"'>"+placelist[i]+"</option>");
+		
 		// console.log(placelist);
 	});
+	$('.open_map').click(function(){
+		window.open ("map.html")
+	});
+
 
 	$('.final_plan').click(function(){
 		$('.after_submit').fadeOut(1);
+		var name = $('.place_list').children('select').val();
+		name = name + "";
+		$.post("php/matching.php",
+  		{
+      		pName:name,
+     		pCost:"0",
+      		pFunc:"friends"
+    		},
+    	function(data,status){
+    	//alert("f");
+      for(x in data)
+      // alert(data[x]);
+
+    $(".go_together").append("<div class='item'><div class='photo'><img src='img/back_black.png'></div><p>"+data[x]+"</p></div>");
+
+    },"json");
+		//
 		$('.after_final').css('display','block');
 	});
+
+	$('.search').click(function(){
+
+	gc.getPoint($('.place_list').children('select').val(), function(e){
+				newpoint = new BMap.Point(e.lng,e.lat);
+		
+				map.centerAndZoom(new BMap.Point(e.lng,e.lat), 14);
+
+				var local = new BMap.LocalSearch(map, {
+  					renderOptions:{map: map}
+				});
+
+
+				if($("input[id='zhusu']").is(':checked')) {
+						map.clearOverlays();
+						//local.search("");
+						curve = new BMapLib.CurveLine(points, {strokeColor:"blue", strokeWeight:3, strokeOpacity:0.5});
+    					map.addOverlay(curve); //添加到地图中
+						local.search("宾馆");
+				}
+				if($("input[id='canyin']").is(':checked')) {
+						//map.clearOverlays();
+						map.clearOverlays();
+						//local.search("");
+						curve = new BMapLib.CurveLine(points, {strokeColor:"blue", strokeWeight:3, strokeOpacity:0.5});
+    					map.addOverlay(curve); //添加到地图中
+						local.search("饭店");
+				}	
+				if($("input[id='jiaotong']").is(':checked')) {
+					map.clearOverlays();
+						curve = new BMapLib.CurveLine(points, {strokeColor:"blue", strokeWeight:3, strokeOpacity:0.5});
+    					map.addOverlay(curve); //添加到地图中
+						local.search("车站");
+
+				 }	
+				if($("input[id='yule']").is(':checked')) {
+						map.clearOverlays();
+						curve = new BMapLib.CurveLine(points, {strokeColor:"blue", strokeWeight:3, strokeOpacity:0.5});
+    					map.addOverlay(curve); //添加到地图中
+						local.search("公园");
+				}
+	}, "上海市");
+	
+	
+//	local.searchNearby("食宿", $('.place_list').children('select').val());
+		//$('.after_submit').fadeOut(1);
+		//$('.after_final').css('display','block');
+	});
+	
+
 });
 function addcity_funct()
 {
@@ -133,6 +205,14 @@ function addcity_redo()
 	//$('#city_input').css("display","none");
 	//$('#add_newcity').fadeIn(1);
 }
+
+
+// function friends(name){
+
+ 
+//  // var pass = document.getElementById("password").value;
+  
+//  }
 
 // function redo()
 // {

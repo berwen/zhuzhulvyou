@@ -8,15 +8,24 @@ $(document).ready(function() {
 		$("#edit_attraction").css("display","block");
 		$("#edit_discount").css("display","none");
 		$("#edit_ticket").css("display","none");
+		$("#view_discount_detail").css("display","none");
 	});
 	$("#discount").click(function(){
 		$("#edit_attraction").css("display","none");
 		$("#edit_discount").css("display","block");
 		$("#edit_ticket").css("display","none");
+		$("#view_discount_detail").css("display","none");
 	});
 	$("#ticket").click(function(){
 		$("#edit_attraction").css("display","none");
 		$("#edit_discount").css("display","none");
 		$("#edit_ticket").css("display","block");
+		$("#view_discount_detail").css("display","none");
+	});
+	$("#view_discount").click(function(){
+		$("#edit_attraction").css("display","none");
+		$("#edit_discount").css("display","none");
+		$("#edit_ticket").css("display","none");
+		$("#view_discount_detail").css("display","block");
 	});
 });
