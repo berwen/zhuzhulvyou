@@ -19,7 +19,7 @@ body{
 	height: 50px;
 }
 #up_part{
-	background-image: url(../img/destination_search_bg.png);
+	background-image: url(../img/destination_uppart_bg.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 }
@@ -31,6 +31,13 @@ body{
 #search_bar{
 	position: relative;
 	left: 5px;
+}
+#search_button{
+	width: 30px;
+	height: 30px;
+	position: relative;
+	left: 5px;
+	cursor:pointer;
 }
 .recommend_ul{
 	float: left;
@@ -64,4 +71,12 @@ body{
 	color: #c2c2c2;
 	font-weight: bold;
 	height: 100px;
+}
+.time{
+	float: right;
+}
+.recommend_place{
+	height: auto;
+	height: 400px;
+	min-height: 400px;
 }

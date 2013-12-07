@@ -28,8 +28,7 @@ body{
 	/*margin-left:10px; */
 }
 .article{
-	height: 400px;
-	overflow: auto;
+	min-height:400px; 
 	margin: 0 10px 0 10px;
 }
 .lytieshi .comment{
