@@ -126,8 +126,8 @@ $comment = query("SELECT visitor_name,content,add_time FROM isns_blog_comment
 			code = "";
 			code = "<h3>旅游贴士："+url+"</h3>"+
 				   "<p>" + json.weather[0].description.toString() +"<p>"+
-				   "<p> 最高温度："+(json.main.temp_max-273.15).toString()+"</p>"+
-				   "<p> 最低温度："+(json.main.temp_min-273.15).toString()+"</p>"+
+				   "<p> 最高温度："+(json.main.temp_max-273.15).toFixed(0).toString()+"</p>"+
+				   "<p> 最低温度："+(json.main.temp_min-273.15).toFixed(0).toString()+"</p>"+
 				   "<p> 湿度："+json.main.humidity.toString()+"%</p>";
 			$('#weather').html(code);
 	});
