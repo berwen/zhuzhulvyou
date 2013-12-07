@@ -92,13 +92,7 @@ $(document).ready(function() {
 		$('.planlist').fadeOut(1);
 		$('.after_submit').css('display','block');
 		for(var i=0;i<placelist.length;i++)
-<<<<<<< HEAD
 			$('.place_list').children('select').append("<option value='"+placelist[i]+"'>"+placelist[i]+"</option>");
-=======
-			$('.place_list').children('select').append("<option>"+placelist[i]+"</option>");
-
->>>>>>> ba38ccc3db401ba1930d2ea1a8b1189755ca20ff
-			// $('.place_list').append("<p>"+placelist[i]+"</p>");
 		// console.log(placelist);
 	});
 
@@ -107,10 +101,6 @@ $(document).ready(function() {
 	// 		alert("this.val()");
 	// 	}
 	// );
-	$('.final_plan').click(function(){
-		$('.after_submit').fadeOut(1);
-		$('.after_final').css('display','block');
-	});
 
 });
 function addcity_funct()
