@@ -53,6 +53,10 @@ body{
 #view_discount_detail{
 	display: none;
 }
+#view_ticket_detail{
+	display: none;
+}
+
 .control_button{
 	text-align: center;
 	/*position: relative;

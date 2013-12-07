@@ -73,6 +73,7 @@ $discount = query("SELECT ticket_info.name as ticket_info_name,ticket_discount.n
 				<div id="discount"><a href="#">编辑优惠信息</a></div>
 				<div id="ticket"><a href="#">编辑票务信息</a></div>
 				<div id="view_discount"><a href="#">查看已填加优惠信息</a></div>
+				<div id="view_ticket"><a href="#">查看已填加的票务</a></div>
 			</div>
 			<div class="span8" id="right_bar">
 				<div id="edit_attraction">
@@ -216,6 +217,34 @@ $discount = query("SELECT ticket_info.name as ticket_info_name,ticket_discount.n
 							}
 						}
 						else echo "无已填加的优惠信息！";
+					 ?>
+					</div>
+				</div>
+				<div id="view_ticket_detail">
+					<div class="control-group">
+					<?php 
+						$ticket_detail = query("SELECT ticket_info.id,name,price,max,now FROM ticket_info INNER JOIN ticket_book_info
+												ON ticket_info.id = ticket_book_info.id WHERE user_id = :id",
+												array('id'=>$company_id),
+												$conn);
+						if ($ticket_detail){
+							foreach ($ticket_detail as $row) {
+								echo '<li>'.
+										'<span>'.$row['name'].'&nbsp;&nbsp;</span>'.
+										'<span>'.$row['price'].'&nbsp;&nbsp;</span>'.
+										'<span>'.$row['max'].'&nbsp;&nbsp;</span>'.
+										'<span>'.$row['now'].'&nbsp;&nbsp;</span>'.	
+									 '</li>';	
+								$book_detail = query("SELECT user_id FROM ticket_user_record WHERE ticket_id=:id",
+													  array('id'=>$row['id']),
+													  $conn);
+								if ($book_detail){
+									foreach ($book_detail as $line) {
+										echo $line['user_id'].'&nbsp;&nbsp;';
+									}
+								}
+							}
+						}else echo "无添加票务记录！";	
 					 ?>
 					</div>
 				</div>

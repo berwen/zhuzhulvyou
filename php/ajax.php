@@ -40,6 +40,12 @@ switch ($item) {
 		
 		if ($username!=""){//改为登录
 			$conn = connect($config);
+			$info = query("SELECT max,now FROM ticket_book_info WHERE id = :id",
+						   array('id'=>$ticket_id),
+						   $conn);
+			query_without_results("UPDATE ticket_book_info SET now = :new WHERE id = :id",
+								   array('id' => $ticket_id,'new'=>$info[0]['now']+1),
+								   $conn);
 			book_ticket($conn, $user_id, $ticket_id);
 			$result['status'] = 'success';
 		}
