@@ -2,12 +2,16 @@
 require "php/functions.php";
 $company_id = 121;
 $conn = connect($config);
-$attraction = query("SELECT id,name FROM attraction_info WHERE user_id = :id",
+$attraction = query("SELECT * FROM attraction_info WHERE user_id = :id",
 				     array('id' => $company_id),
 				     $conn);
-$ticket = query("SELECT id,name FROM ticket_info WHERE user_id = :id",
+$ticket = query("SELECT * FROM ticket_info WHERE user_id = :id",
 				 array('id' => $company_id),
 				 $conn);
+$discount = query("SELECT ticket_info.name as ticket_info_name,ticket_discount.name as ticket_discount_name,start_date,end_date,ticket_discount.id FROM ticket_discount INNER JOIN ticket_info 
+			       ON ticket_discount.ticket_id=ticket_info.id WHERE ticket_discount.user_id = :id",
+				   array('id' => $company_id),
+				   $conn);
  ?>
 <html>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
@@ -68,6 +72,7 @@ $ticket = query("SELECT id,name FROM ticket_info WHERE user_id = :id",
 				<div id="attraction"><a href="#">编辑景点信息</a></div>
 				<div id="discount"><a href="#">编辑优惠信息</a></div>
 				<div id="ticket"><a href="#">编辑票务信息</a></div>
+				<div id="view_discount"><a href="#">查看已填加优惠信息</a></div>
 			</div>
 			<div class="span8" id="right_bar">
 				<div id="edit_attraction">
@@ -195,6 +200,24 @@ $ticket = query("SELECT id,name FROM ticket_info WHERE user_id = :id",
 						    </div>
 						</div>
 					</form>
+				</div>
+				<div id="view_discount_detail">
+					<div class="control-group">
+					<?php
+						if ($discount){
+							foreach ($discount as $row) {
+								echo '<li>'.
+										'<span>'.$row['ticket_info_name'].'</span>'.
+										'<span>'.$row['ticket_discount_name'].'</span>'.
+										'<span>'.$row['start_date'].'</span>'.
+										'<span>'.$row['end_date'].'</span>'.
+										'<span><a href="php/company.php?item=delete_discount&discount_id='.$row['id'].'">删除</a>'.
+									 '</li>';
+							}
+						}
+						else echo "无已填加的优惠信息！";
+					 ?>
+					</div>
 				</div>
 			</div>
 		</div>
