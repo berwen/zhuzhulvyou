@@ -52,8 +52,7 @@ function addDestination(palcename){
 gc.getPoint(palcename, function(e){
 	if(e){
 		//alert(e.lng);
-		globalMarker = new BMap.Marker(e);  // 创建标注
-
+		globalMarker = new BMap.Marker(e);  
 		 map.addOverlay(globalMarker); //添加到地图中
 		newpoint = new BMap.Point(e.lng,e.lat);
 		
