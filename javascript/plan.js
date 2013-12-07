@@ -90,22 +90,13 @@ $(document).ready(function() {
 	$('.submit_plan').click(function(){
 		$('.planlist').fadeOut(1);
 		$('.after_submit').css('display','block');
-		//for(var i=0;i<placelist.length;i++)
-		//	$('.place_list').children('select').append("<option>"+placelist[i]+"</option>");
 
-			// $('.place_list').append("<p>"+placelist[i]+"</p>");
+		for(var i=0;i<placelist.length;i++)
+			$('.place_list').children('select').append("<option value='"+placelist[i]+"'>"+placelist[i]+"</option>");
+		
 		// console.log(placelist);
 	});
 
-	// $('.place_list').children('select').children('option').click(
-	// 	function(){
-	// 		alert("this.val()");
-	// 	}
-	// );
-	$('.final_plan').click(function(){
-		$('.after_submit').fadeOut(1);
-		$('.after_final').css('display','block');
-	});
 
 });
 function addcity_funct()
