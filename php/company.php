@@ -54,6 +54,23 @@
 			header("location:../qiye_index.php");
 			break;
 
+		case "submit_attraction":
+			$company_id = $_POST['company_id'];
+			$name = $_POST['name'];
+			$description = $_POST['description'];
+			$lat = $_POST['lat'];
+			$lon = $_POST['lon'];
+
+			require "functions.php";
+			$conn = connect($config);
+			query_without_results("INSERT INTO attraction_info (name,description,lat,lon,user_id)
+								   VALUES(:name,:description,:lat,:lon,:user_id)",
+								   array('name'=>$name,'description'=>$description,'lat'=>$lat,'lon'=>$lon,'user_id'=>$company_id),
+								   $conn);
+			$result =array();
+			$result['status'] = 'success';
+			echo json_encode($result);
+			break;
 		default:
 			break;
 	}

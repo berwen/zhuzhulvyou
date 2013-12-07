@@ -78,39 +78,29 @@ $discount = query("SELECT ticket_info.name as ticket_info_name,ticket_discount.n
 			<div class="span8" id="right_bar">
 				<div id="edit_attraction">
 					<!-- <div class="form-horizontal"> -->
-					  <div class="control-group">
-					    <label class="control-label" for="AttractionName">景点名称&nbsp;&nbsp;</label>
-					    <div class="controls">
-					      <input class='span6'type="text" id="inputAttractionName" placeholder="景点名称">
-					    </div>
-					  </div>
-					  <div class="control-group">
-					    <label class="control-label" for="inputAttractionDescription">景点描述&nbsp;&nbsp;</label>
-					    <div class="controls">
-					      <textarea class="span6" rows="6" id="inputAttractionDescription" placeholder="景点描述"></textarea>
-					    </div>
-					  </div>
-					  <div class="control-group map" id ="mapcontainer">
-					  	地图
-					  </div>
-					  <div class="control-group">
-					    <label class="control-label" for="inputTicketPrice">门票价格&nbsp;&nbsp;</label>
-					    <div class="controls">
-					      <input class='span6'type="text" id="inputTicketPrice" placeholder="景点名称">
-					    </div>
-					  </div>
-					  <div class="control-group">
-						    <label class="control-label" for="inputTicketNumber">最大票量&nbsp;&nbsp;</label>
+					<form>					
+						  <div class="control-group">
+						    <label class="control-label" for="AttractionName">景点名称&nbsp;&nbsp;</label>
 						    <div class="controls">
-						      <input class='span6'type="text" id="inputTicketNumber" placeholder="最大票量">
+						      <input class='span6'type="text" id="inputAttractionName" placeholder="景点名称">
 						    </div>
-						</div>
-					  <div class="control-group">
-					    <div class="controls control_button">
-					      <button type="submit" class="btn">提交</button>
-					      <button type="clear" class="btn">重置</button>
-					    </div>
-					  </div>
+						  </div>
+						  <div class="control-group">
+						    <label class="control-label" for="inputAttractionDescription">景点描述&nbsp;&nbsp;</label>
+						    <div class="controls">
+						      <textarea class="span6" rows="6" id="inputAttractionDescription" placeholder="景点描述"></textarea>
+						    </div>
+						  </div>
+						  <div class="control-group map" id ="mapcontainer">
+						  	地图
+						  </div>
+						  <div class="control-group">
+						    <div class="controls control_button">
+						      <input type="submit" class="btn" onclick=<?php echo '"submit_attraction('.$company_id.')"' ?>></button>
+						      <input type="reset" class="btn"></button>
+						    </div>
+						  </div>
+					</form>
 					<!-- </div> -->
 				</div>
 				<div id='edit_discount'>
@@ -306,6 +296,27 @@ map.addEventListener("click",function(e){   //单击地图，形成折线覆盖�
 	}
 	
 });
+
+function submit_attraction(id){
+	if ($('#inputAttractionName').val()!="" && $('#inputAttractionDescription').val()!="" && typeof(globalLat) !='undefined' && typeof(globalLng)!='undefined'){
+		$.ajax({
+			url: 'php/company.php?item=submit_attraction',
+			type: 'POST',
+			dataType: 'JSON',
+			data: {company_id: id, name: $('#inputAttractionName').val(), description: $('#inputAttractionDescription').val(),lat: globalLat, lon: globalLng},
+		})
+		.done(function(data) {
+			switch (data['status']){
+				case 'success': alert("成功添加"); break;
+				default : alert("添加失败");
+			}
+		})
+		.fail(function() {
+			alert("请检查您的网络链接！");
+		});
+	}else alert("不能为空！");
+	
+}
 
 	
 
