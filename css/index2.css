@@ -124,11 +124,13 @@ this element is the one that *you* will style the most.
 	width: 40px;
 	height: 40px;
 	top: 30px;
-	left: 300px;
+	/*left: 300px;*/
+	left: 260px;
 }
 .register{
 	width: 40px;
 	height: 40px;
 	top: 30px;
-	left: 315px;
+	/*left: 315px;*/
+	left: 275px;
 }
