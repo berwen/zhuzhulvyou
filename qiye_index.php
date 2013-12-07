@@ -5,6 +5,9 @@ $conn = connect($config);
 $attraction = query("SELECT id,name FROM attraction_info WHERE user_id = :id",
 				     array('id' => $company_id),
 				     $conn);
+$ticket = query("SELECT id,name FROM ticket_info WHERE user_id = :id",
+				 array('id' => $company_id),
+				 $conn);
  ?>
 <html>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
@@ -105,36 +108,52 @@ $attraction = query("SELECT id,name FROM attraction_info WHERE user_id = :id",
 					<!-- </div> -->
 				</div>
 				<div id='edit_discount'>
-					<div class="control-group">
-					    <label class="control-label" for="inputDiscountName">优惠名称&nbsp;&nbsp;</label>
-					    <div class="controls">
-					      <input class='span6'type="text" id="inputDiscountName" placeholder="优惠名a称">
-					    </div>
-					</div>
-					<div class="control-group">
-					    <label class="control-label" for="inputDiscountDescription">优惠描述&nbsp;&nbsp;</label>
-					    <div class="controls">
-					      <textarea class="span6" rows="6" id="inputDiscountDescription" placeholder="优惠描述"></textarea>
-					    </div>
-					</div>
-					<div>
-						<p>出发日期<input type="text" class="date"></p>
-						<p>返回日期<input type="text" class="date"></p>
-					</div>
-					<div class="control-group">
-					    <div class="controls control_button">
-					      <button type="submit" class="btn">提交</button>
-					      <button type="clear" class="btn">重置</button>
-					    </div>
-					 </div>
+					<form action=<?php echo 'php/company.php?item=edit_discount&company_id='.$company_id ?> method="post">
+						<div class="control-group">
+						    <label class="control-label" for="DiscountTicketName">票务名称&nbsp;&nbsp;</label>
+						    <div class="controls">
+						      	<select class='span6' name="ticket" id="DiscountTicketName">
+						      		<?php 
+						      		if($ticket){
+						      			foreach ($ticket as $row) {
+						    				echo '<option value='.$row['id'].'>'.$row['name'].'</option>';
+						    			}
+						      		}
+						      		 ?>
+						      	</select>
+						    </div>
+						</div>
+						<div class="control-group">
+						    <label class="control-label" for="inputDiscountName">优惠名称&nbsp;&nbsp;</label>
+						    <div class="controls">
+						      <input class='span6'type="text" id="inputDiscountName" placeholder="优惠名a称" name="name">
+						    </div>
+						</div>
+						<div class="control-group">
+						    <label class="control-label" for="inputDiscountDescription">优惠描述&nbsp;&nbsp;</label>
+						    <div class="controls">
+						      <textarea class="span6" rows="6" id="inputDiscountDescription" placeholder="优惠描述" name="description"></textarea>
+						    </div>
+						</div>
+						<div>
+							<p>开始日期<input type="text" class="date" name="start_date"></p>
+							<p>结束日期<input type="text" class="date" name="end_date"></p>
+						</div>
+						<div class="control-group">
+						    <div class="controls control_button">
+						      <input type="submit" class="btn"></button>
+						      <input type="reset" class="btn"></button>
+						    </div>
+						 </div>
+					</form>
 				</div>
 				<div id="edit_ticket">
-					<form action=<?php echo 'php/insert_ticket.php?company_id='.$company_id ?> method="post">
+					<form action=<?php echo 'php/company.php?item=edit_ticket&company_id='.$company_id ?> method="post">
 					 	<div class="control-group">
 						    <label class="control-label" for="inputTicketAttraction">景点名称&nbsp;&nbsp;</label>
 						    <div class="controls">
 <!-- 						      <input class='span6'type="text" id="inputTicketAttraction" placeholder="景点名称" name="attraction"> -->
-						    	<select class='span6' name="attraction">
+						    	<select class='span6' name="attraction" id="inputTicketAttraction">
 						    		<?php 
 						    		if($attraction){
 						    			foreach ($attraction as $row) {
