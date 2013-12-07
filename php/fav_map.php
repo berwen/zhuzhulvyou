@@ -4,6 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
   <script type="text/javascript">
     user = <?php 
              $con = mysql_connect("localhost","root","");
@@ -60,20 +61,6 @@
                       }
                       echo json_encode($dataArray);
                   ?>
-                //  var a = <?php 
-                //   $url="http://api.map.baidu.com/location/ip?ip=112.65.223.31&ak=1bbe1bfaa50c4eb69022911a5a8735ea&coor=bd09ll";
-                //     $json_data=file_get_contents($url);
-                //     $xml_data=json_decode($json_data);
-                //     $result=array();
-                //     $result=$xml_data->address; //获取国家名称
-                //  //   $result[]=$xml_data->data->area;  //获取区域名称，如华东
-                // ///    $result[]=$xml_data->data->region;  //获取省份名称
-                //  //   $result[]=$xml_data->data->city;  //获取城市名称
-                //   //  $result[]=$xml_data->data->isp;   //获取运营商名称
-                //     echo json_encode($result);
-                //     ?>
-
- //  alert(a[0]);
    </script> 
 <title>行政区域工具</title>
 <script type="text/javascript" src="http://api.map.baidu.com/api?v=1.2&ak=1bbe1bfaa50c4eb69022911a5a8735ea"></script>
@@ -81,10 +68,22 @@
 </head>
 <body>
 <div style="width:100%;height:700px;border:1px solid gray" id="container"></div>
-<p><input id="startBtn" type="button" onclick="startTool();" value="开启取点工具" /><input type="button" onclick="map.clearOverlays();document.getElementById('info').innerHTML = '';points=[];" value="清除" p>
-<div id="info"></div>
-<input type="button" value="显示参数" onclick="getParam()" />
 
+
+
+
+<table style="width:100%;height:70px;">
+<tr>
+<td style="width:50%;height:50px;"><input id="startBtn" type="button" onclick="favfriend();" value="找基友" /></td>
+<td style="width:50%;height:50px;"><input type="button" value="猜你喜欢" onclick="favplace()" /></td>
+</tr>
+<tr>
+<td style="width:50%;height:100px;"><div id = "showfriend" name = "showfriend"> </div></td>
+<td style="width:50%;height:100px;"><div id = "showplace" name = "showplace"> </div></td>
+</tr>
+</table>
+ 
+<script type="text/javascript" src="../javascript/jquery-1.10.2.min.js"></script>
 </body>
  
 </html>
@@ -373,6 +372,74 @@ document.getElementById("addfavplace").innerHTML  ="<h4 style='margin:0 0 5px 0;
         "<img style='float:right;margin:4px' id='imgDemo' src='http://app.baidu.com/map/images/tiananmen.jpg' width='139' height='104' title='天安门'/>" + 
         "类型："+pType+"<br>介绍:" + intro+ "</div><div id='vButton'><input type='Button' name='visited' id='visited' value='标记去过' onclick='displayUsernameByDOM();''> </div><input type='Submit' name='enviar' value='赞'> ";
 }
-// var InfoWindow = "h";
-// globalMarker.addEventListener("mouseover", function(e){this.openInfoWindow(InfoWindow);});
+
+
+function favfriend(){
+
+document.getElementById("showfriend").innerHTML = "匹配出志同道合的好友有: <br>";
+var gc = new BMap.Geocoder();
+friendsarray = [];
+
+  $.post("matching.php",
+  {
+      pName:user,
+      pCost:"cost",
+      pFunc:"favfriend"
+    },
+    function(data,status){
+     
+       for(x in data){
+
+            if(data[x]!=""){
+              if($.inArray(data[x], friendsarray)==-1){
+                friendsarray.push(data[x]);
+             //   placecount.push(1);
+                document.getElementById("showfriend").innerHTML += "<li>" + friendsarray[x] + "</li> ";
+               // alert();
+              }
+          }
+  
+      }
+    },"json");
+
+}
+
+ function favplace(){
+
+var gc = new BMap.Geocoder();
+placearray = [];
+    placecount = [];
+document.getElementById("showplace").innerHTML = "匹配出您喜欢的地方: <br>";
+  $.post("matching.php",
+  {
+      pName:user,
+      pCost:"cost",
+      pFunc:"favplace"
+    },
+    function(data,status){
+     //  alert("F"+data);
+     
+       for(x in data){
+          var newpoint = new BMap.Point(data[x]["lng"],data[x]["lat"]);
+          gc.getLocation(newpoint, function(rs){
+            var addComp = rs.addressComponents;
+            if(addComp.city!=""){
+              if($.inArray(addComp.city, placearray)==-1){
+                placearray.push(addComp.city);
+                placecount.push(1);
+                document.getElementById("showplace").innerHTML += "<li>" + addComp.city + "</li> ";
+               // alert(addComp.city);
+              }
+              else{
+                placecount[$.inArray(addComp.city, placearray)]++;
+              }
+ 
+          }
+          }); 
+      }
+    },"json");
+ }
+
+
 </script>
+
