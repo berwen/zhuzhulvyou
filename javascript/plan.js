@@ -40,7 +40,7 @@ map.addEventListener("dblclick",function(e){   //双击地图，形成多边形�
 	gc.getLocation(e.point, function(rs){
     var addComp = rs.addressComponents;
     addcity_funct(addComp.city);
-    placelist.push(addComp.city);
+    //placelist.push(addComp.city);
     }); 
 
 });
@@ -91,8 +91,8 @@ $(document).ready(function() {
 	$('.submit_plan').click(function(){
 		$('.planlist').fadeOut(1);
 		$('.after_submit').css('display','block');
-		for(var i=0;i<placelist.length;i++)
-			$('.place_list').children('select').append("<option>"+placelist[i]+"</option>");
+		//for(var i=0;i<placelist.length;i++)
+		//	$('.place_list').children('select').append("<option>"+placelist[i]+"</option>");
 
 			// $('.place_list').append("<p>"+placelist[i]+"</p>");
 		// console.log(placelist);
