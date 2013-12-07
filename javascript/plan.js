@@ -96,11 +96,10 @@ $(document).ready(function() {
 		// console.log(placelist);
 	});
 
-	// $('.place_list').children('select').children('option').click(
-	// 	function(){
-	// 		alert("this.val()");
-	// 	}
-	// );
+	$('.final_plan').click(function(){
+		$('.after_submit').fadeOut(1);
+		$('.after_final').css('display','block');
+	});
 
 });
 function addcity_funct()
