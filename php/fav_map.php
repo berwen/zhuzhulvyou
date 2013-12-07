@@ -1,6 +1,3 @@
-<?php 
-       setcookie('ouruser','lihuaxin0033@163.com');
-?>
 
 
 
@@ -9,7 +6,20 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <script type="text/javascript">
     user = <?php 
-            echo json_encode($_COOKIE['ouruser']);
+             $con = mysql_connect("localhost","root","");
+                      if (!$con){  
+                        die('Could not connect: ' . mysql_error());
+                      }  
+                      mysql_query("set names utf8");
+                      mysql_query("use iwebsns");
+                      $result1 = mysql_query("select * from isns_currentuser;");
+                      $cnt=0;
+                      $userArray=array();
+                      $row1 = mysql_fetch_array($result1);
+                   //     $tmp = $row1['placename'];
+                      $userArray=$row1['username'];
+//                      setcookie('ouruser','$userArray');
+                      echo json_encode($userArray);
           ?>
 
     dataArray = <?php
@@ -18,6 +28,10 @@
                         die('Could not connect: ' . mysql_error());
                       }  
                       mysql_query("set names utf8");
+                      mysql_query("use iwebsns");
+                      $result1 = mysql_query("select * from isns_currentuser;");
+                      $row1 = mysql_fetch_array($result1);
+                      $user=$row1['username'];
                       mysql_query("use ourmap");
                       $aString="";
                       $result1 = mysql_query("select * from favplace;");
@@ -31,7 +45,7 @@
                         $dataArray[$cnt][3]=$row1['placeintro'];
                         $dataArray[$cnt][4]=$row1['lng'];
                         $dataArray[$cnt][5]=$row1['lat'];
-                        $user = $_COOKIE['ouruser'];
+                       // $user = $_COOKIE['ouruser'];
                         $result2 = mysql_query("SELECT * from favplace_guest WHERE placename = '$tmp' AND guestname = '$user'");
                         $dataArray[$cnt][6]=0;
                         while($row1 = mysql_fetch_array($result2))
@@ -70,18 +84,6 @@
 <p><input id="startBtn" type="button" onclick="startTool();" value="开启取点工具" /><input type="button" onclick="map.clearOverlays();document.getElementById('info').innerHTML = '';points=[];" value="清除" p>
 <div id="info"></div>
 <input type="button" value="显示参数" onclick="getParam()" />
-<!-- JiaThis Button BEGIN -->
-<div class="jiathis_style_32x32">
-	<a class="jiathis_button_qzone"></a>
-	<a class="jiathis_button_tsina"></a>
-	<a class="jiathis_button_tqq"></a>
-	<a class="jiathis_button_weixin"></a>
-	<a class="jiathis_button_renren"></a>
-	<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
-	<a class="jiathis_counter_style"></a>
-</div>
-<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1373849947402474" charset="utf-8"></script>
-<!-- JiaThis Button END -->
 
 </body>
  
@@ -93,6 +95,7 @@
 map = new BMap.Map("container");                        // 创建Map实例
 map.centerAndZoom("闵行区", 12);     // 初始化地图,设置中心点坐标和地图级别
 map.enableScrollWheelZoom();
+
 var key = 1;    //开关
 var newpoint;   //一个经纬度
 var points = [];    //数组，放经纬度信息
@@ -321,6 +324,7 @@ function displayUsernameByDOM(){
   ajax.open("POST","visitedplace.php",true);
   ajax.setRequestHeader("Content-type","application/x-www-form-urlencoded");
   ajax.send("pName="+name+"&pUser="+user);
+ // alert(name+ " "+user);
   window.location.href="/zhuzhulvyou/php/fav_map.php"; 
 }
 

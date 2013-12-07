@@ -132,7 +132,7 @@ class funciones_BD {
     public function addvisitor($placename, $username) {
        mysql_query("set names utf8");
 
-        $result = mysql_query("INSERT INTO favplace_guest(placename,guestname) VALUES('$placename','$username')");
+        $result = mysql_query("INSERT INTO favplace_guest(guestname,placename) VALUES('$username','$placename')");
         mysql_query("UPDATE favplace set visited = visited + 1 WHERE placename = '$placename'");
     
         if ($result) {
